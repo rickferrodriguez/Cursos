@@ -1,0 +1,30 @@
+.main-nav {
+  margin-top: 10px;
+  list-style: none;
+  padding-left: 0px; /* un espacio interno en un contenedor */
+  background-color: #13a4a4;
+}
+
+.main-nav__item {
+  display: inline-block; /* alinear elementos dentro del bloque */
+}
+
+.main-nav__link {
+  color: white;
+  padding: 5px;
+  border-radius: 2px; /* permite agregar un borde redondeado a un elemento */
+  text-decoration: none;
+  background-color: red;
+}
+
+.main-nav__link:hover {
+  background-color: aqua;
+}
+
+.main-nav__link:active {
+  background-color: black;
+}
+/* El after significa que después de un contenido, en nuestro caso el elemento link que le coloque lo que tiene dentro */
+.main-nav__link::after {
+  content: " | ";
+}

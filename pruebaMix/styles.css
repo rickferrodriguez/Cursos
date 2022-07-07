@@ -1,0 +1,44 @@
+.nav {
+    padding: 0%;
+    margin: 0;
+    background-color: aqua;
+}
+
+.item-nav {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: overline;
+    color: black;
+    text-decoration-color:brown;
+    -moz-text-decoration-color:brown;
+}
+
+.section {
+    margin-top: 15px;
+    padding-left: 50px;
+    background-color: coral;
+    padding: 15px;
+}
+
+.section__link {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+.section__link_blue {
+    background-color: blue;
+    
+}
+
+.section__link_red {
+    background-color:rgb(233, 19, 19);
+    
+}
+
+.section__link_orange {
+    background-color:orangered;
+    
+}

@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --fondoPrimario: #fcf7f8;
+  --colorOscuro: #1a1e21;
+  --azulPrimario: #3860ec;
+  --azulSecundario: #2247ce;
+}
+
+body {
+  background: var(--fondoPrimario);
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.contenedor {
+  max-width: 500px;
+  width: 90%;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.titulo {
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--colorOscuro);
+  margin-bottom: 20px;
+}
+
+/* ? ------------- Estilos del Formulario ------------- */
+
+.formulario .grupo {
+  margin-bottom: 60px;
+}
+
+.formulario .grupo > input {
+  height: 50px;
+  width: 100%;
+  border-radius: 3px;
+  border: none;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.formulario .grupo > label {
+  display: block;
+  color: var(--colorOscuro);
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.formulario .radio input,
+.formulario .checkbox input {
+  margin-right: 10px;
+}
+
+.formulario .checkbox label {
+  margin-right: 20px;
+}
+
+.boton {
+  width: 100%;
+  background: var(--azulPrimario);
+  display: inline-block;
+  padding: 25px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: 0.3s ease all;
+}
+
+.boton:hover {
+  background: var(--azulSecundario);
+}
+
+/* ? ------------- Pseudoclases ------------- */
+
+/* Sirve para agregarle estilos al objeto con el que el usuario se encuentra en ese momento, por ejemplo dentro de un formulario cuando el usuario se encuentra usando esa caja de texto*/
+.formulario .nombre:focus {
+  border: 3px solid var(--azulPrimario);
+}
+
+/* Sirve para agregarle estilos a un objeto que se encuentre en un estado deshabilitado */
+.formulario .id:disabled {
+  background: #1a1e21;
+}
+
+/* Sirve para agregarle estilos a un objeto que se encuentre en un estado invalidado */
+.formulario .correo:invalid {
+  background: #c36e6e;
+  border: none;
+}
+
+/* Sirve para agregarle estilos a un objeto que se encuentre en un estado validado */
+.formulario .correo:valid {
+  background: green;
+  border: none;
+}
+
+/* Sirve para agregarle estilos a un objeto que se encuentre en un estado requerido */
+.formulario .mensaje:required {
+  background: red;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+/* Sirve para agregarle estilos a un objeto ckeck o button radius se encuentren en estado marcado */
+.formulario .radio input:checked {
+  box-shadow: 0px 0px 10px 1px var(--azulPrimario);
+}
+
+/* Sirve para agregarle estilos a un objeto ue ya venga con un valor por defecto*/
+.formulario .checkbox input:default {
+  box-shadow: 0px 0px 10px 1px var(--azulPrimario);
+}
+
+/* Sirve para agregarle estilos a un objeto que tenga condiciones y se encuentre fuera del rango */
+.formulario .edad:out-of-range {
+  background: #c36e6e;
+}
+
+/* Sirve para agregarle estilos a un objeto que tenga condiciones y se encuentre dentro del rango */
+.formulario .edad:in-range {
+  background: green;
+}

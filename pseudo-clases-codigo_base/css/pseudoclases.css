@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --fondoPrimario: #fcf7f8;
+  --colorOscuro: #1a1e21;
+  --azul: #3860ec;
+}
+
+body {
+  background: var(--fondoPrimario);
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+ul {
+  margin: 0;
+}
+
+.contenedor {
+  max-width: 500px;
+  width: 90%;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.titulo {
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--colorOscuro);
+  margin-bottom: 20px;
+}
+
+.grupo {
+  padding: 60px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.grupo div p,
+.grupo div div,
+.grupo div span,
+.grupo ul li {
+  background: #dbdbdb;
+  padding: 10px;
+}
+
+/* ? ------------- PSEUDO-CLASES ------------- */
+/* Sirve para agregarle estilos a un objeto que en ese momento se encuentra activo o presionado */
+.enlace:active {
+  background: #3860ec;
+}
+
+/* Agrega estilos a un link sin ser visitado */
+.enlace:link {
+  color: rgb(18, 205, 1);
+}
+
+/* Agrega estilos a un link visitado */
+.enlace:visited {
+  color: red;
+}
+
+/* Agrega estilos a un objeto cuando el mouse pasa por el encima de él */
+.enlace:hover {
+  color: chocolate;
+}
+/* ? --- --- --- --- PARRAFOS --- --- --- --- */
+/* `first-child` llama a el primero objeto dentro de un grupo */
+.parrafos p:first-child {
+  background: var(--azul);
+  color: white;
+}
+
+/* Llama al último objeto dentro de un grupo */
+.parrafos p:last-child {
+  background: black;
+  color: white;
+}
+/* ? --- --- --- --- ELEMENTOS --- --- --- --- */
+
+/* Llama al primer objeto de un tipo determinado dentro de un grupo*/
+.elementos span:first-of-type {
+  background: var(--azul);
+  color: bisque;
+}
+
+/* Llama al ultimo objeto de un tipo determinado dentro de un grupo*/
+.elementos p:last-of-type {
+  background: blueviolet;
+  color: white;
+}
+/* ? --- --- --- --- LISTA --- --- --- --- */
+
+/* Sirve para llamar a uno o varios objetos dentro de un grupo */
+.lista :nth-child(odd) {
+  background: #3860ec;
+  color: white;
+}
+
+/* Sirve para llamar a uno o varios objetos dentro de un grupo pero cuenta de arriba hacia abajo */
+.lista :nth-last-child(odd) {
+  background: black;
+  color: #dbdbdb;
+}
+/* ? --- --- --- --- LISTA 2 --- --- --- --- */
+
+/* Sirve para llamar a uno o varios objetos dentro de un grupo según el tipo */
+.lista2 p:nth-of-type(2) {
+  background: var(--azul);
+  color: antiquewhite;
+}
+
+/* Sirve para llamar a uno o varios objetos dentro de un grupo segun el tipo pero cuenta de abajo hacia arriba*/
+.lista2 p:nth-last-of-type(odd) {
+  background: black;
+  color: white;
+}
+/* ? --- --- --- --- LISTA 3 --- --- --- --- */
+
+/* Llama a un objeto siempre y cuando sea el unico que exite dentro de un grupo */
+.lista3 p:only-child {
+  background: darkcyan;
+  color: white;
+}
+/* ? --- --- --- --- LISTA 4 --- --- --- --- */
+
+/* Llama al único objeto que existe dentro de un grupo según el tipo */
+.lista4 p:only-of-type {
+  background: red;
+  color: white;
+}

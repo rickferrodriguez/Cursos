@@ -1,0 +1,233 @@
+/* Se eliminan estas propiedades que se agregan por defecto, en este caso diría que se aplica al body o al html por el tema de las herencias. */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* Realiza un cálculo automático dentro de toda la caja, para reasignar el tamaño del objeto para que este puede ser visualizado de forma correcta en la pantalla */
+}
+
+body {
+  /* font-size: 75%; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+  font-size: inherit; /* Permite heredar el estilo CSS de su padre o contenedor */
+}
+
+h1 {
+  color: purple;
+  font-family: serif;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 18px;
+  font-family: monospace; /* Se llaman multiples fuentes en caso de que nuestro ordenador no pueda reproducirlas */
+}
+
+.nav {
+  margin-top: 10px;
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Ya lo había realizado antes, pero es importante llamar a la lista de elementos <li> que queremos agregarle esa característica*/
+.list-group {
+  display: inline-block;
+}
+
+/* Mantenerse dentro de la especificidad es importante */
+.link {
+  text-decoration: none;
+  color: white;
+  background: aquamarine;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+/* Se aplica la pseudoclase al elemento <li> en este caso la clase .list-group ya que tienen un mismo padre, pero, para aplicar el estilo a la etiqueta <a> o la clase .link, hay que descender hasta ella */
+.nav .list-group:last-child .link {
+  background: pink;
+}
+
+.caja__link:hover {
+  color: chartreuse;
+}
+
+.model {
+  width: calc(
+    100% -20px -35px
+  ); /* Gracias a este cálculo pude restar los 35px de izquierday derecha y los 20px de arriba hacia abajo, que se estaban agregando en el padding para que este objeto pueda caber en la página */
+  height: 500px;
+  border: 10px solid grey; /* El solid me permite mostrar este borde */
+  padding: 20px 35px; /* Un espaciado de arriba hacia abajo y de derecha a izquierda */
+}
+
+.shop-section {
+  background: burlywood;
+}
+.shop {
+  margin-top: 30px;
+  margin-left: 35px;
+}
+
+.shop__list:nth-last-child(2n) .shop__link:hover {
+  background: black;
+  color: white;
+  text-decoration: overline;
+  text-decoration-color: rgb(255, 35, 35);
+}
+
+.shop__link {
+  text-decoration: none;
+}
+
+/* ----COMBINADORES --------------- */
+
+/* ----Hermano cercano----------------*/
+/* Importante: según la definición del curso es mejor usar este combinar con selectores, por ahora utilizaré clases pero sé que es mejor usar las etiquetas */
+
+/* Agregar un estilo a todas las clases .comb__par que se encuentren a lado de la clase .comb__t2 */
+.comb__t2 + .comb__par {
+  color: red;
+}
+
+.comb {
+  margin-top: 15px;
+}
+
+/* En terminos de mejorar la especificidad es mejor utilizar este
+h2 + p {
+  color: blue;
+}
+ */
+
+/* ----- Hermano general -------------*/
+
+/* Agregar estilos css a todos los elementos <p> que se encuentran **DESPUES** de los bloques o elementos <h2>
+  es importante el despues, por si existen etiquetas <p> antes del <h2> no le va a agregar el estilo
+ */
+h2 ~ p {
+  color: blue;
+}
+
+/* ------ Combinadores Hijo ----------*/
+
+/* Agrega estilo a la etiqueta <p> que sea hija directa de la etiqueta <div>  */
+div > p {
+  color: green;
+}
+
+/* ----- Combinadores descendiente -----*/
+/* Agrega estilo css a todas las etiquetas o elementos que se encuentren dentro del bloque, elemento o etiqueta */
+div .comb__par-hijo {
+  color: gold;
+}
+
+/* ------- Pruebas Flexbox ----------*/
+
+.cont-flex {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px; /* Establece un espacio entre distintos elementos*/
+  border: 10px solid firebrick;
+  align-items: flex-start; /* En caso de que exista denro de estos elementos uno mas grande que otro, permite ajustar cada uno de ellos según su propio tamaño y no e del más grande */
+  /*flex-direction: row; Permite determinar cómo se visualizn estos elementos, en modo de columan o en modo de filas*/
+}
+
+.card {
+  background: greenyellow;
+  align-items: flex;
+  width: 100%;
+}
+
+.card:nth-child(odd) {
+  background: pink;
+}
+/* Si la pantalla tiene menos de 768px los elementos se mostrarán en forma de columna */
+@media (max-width: 768px) {
+  .cont-flex {
+    flex-direction: column;
+  }
+}
+
+/* Clase medidas */
+.comb-medidas {
+  margin-top: 20px;
+  border: 16px solid burlywood;
+  background-color: rgb(140, 216, 233);
+  width: 100%; /*Esto significa que este objeto ocupará el 100% del espacio disponible de la página */
+  height: 200px;
+}
+
+.p-medidas {
+  font-size: 16px;
+}
+
+/* Medidas EM (NO RECOMENDABLE) */
+/* Toma el tamaño de fuente de su padre directo y modifica su tamaño a conveniencia, por ejemplo, si la etiqueta <div> es la que proporciona una fuente de 16px, 1em son estos 16px y según lo colocado después del punto lo cambiará más grande o pequeño según un regla de tres */
+.text-EM {
+  font-size: 16px;
+  margin-top: 16px;
+  border: 15px solid blueviolet;
+}
+
+.p-EM {
+  font-size: 1.5em;
+}
+
+.text-medidas {
+  font-size: 1.5em;
+}
+
+/* Medidas REM (Siempre usar) */
+/* Siempre va a tener referencia al estilo que tenga la etiqueta ROOT o el ROOT de nuestro proyecto que es el <html>, que siempre va a ser de 16px */
+.text-REM {
+  margin-top: 16px;
+  border: 15px solid blueviolet;
+  display: flex;
+  padding: 10px;
+}
+
+.text-REM * {
+  width: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.p-REM {
+  font-size: 1rem; /* 1 rem son 16px por defecto del html, pero después de su modificacion equivale a 10px */
+}
+
+.p-REM_mod-rem {
+  font-size: 1.6rem; /* 1.6rem después de la modificacion del <html> ahora equivale a 16px */
+}
+
+/* Clase Medidas Max/Min width */
+
+.fake-main {
+  width: 90vh;
+  min-height: 500px; /* Define un mínimo de tamaño en la altura pero el contenido es más grande le pedimos que se adapte*/
+  border: 15px solid green;
+  background: chartreuse;
+}
+
+.b-maxmin {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  min-width: 320px; /* define el ancho mínimo al que puede llegar este objeto en la página web en relación al 60% del width agregado anteriormente*/
+  max-width: 800px; /* Define el ancho máximo que puede llegar a tener este objeto en la página web en relación a 60% del width agregado anteriormente*/
+  margin: 0 auto; /* La primera parte le agrega 0p de margen arriba y abajo, pero de izquierda a derecha se asignará automaticamente para que el contenido se quede en el centro*/
+  border: 2px solid blue;
+  background-image: url(./images/mob.jpg);
+}
+
+.b-maxmin__text {
+  background: white;
+  display: flex;
+  height: 100%;
+  width: 160px;
+}

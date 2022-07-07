@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+section:nth-child(odd) {
+  background: yellow;
+}
+
+h2 {
+  font-size: 4vmax; /* Define el tamaño máximo en el que un objeto puede ser renderizado según el viewport (tamaño de la pantalla), para este ejemplo, el tamaño de la fuente puede crecer a placer entre más grande sea la ventana, pero solo puede llegar hasta el 4% del viewport cuando la ventana se va haciendo más pequeña, el texno se puede hacer más pequeño que eso*/
+}
+
+h3 {
+  font-size: 7vmin; /* para este ejercicio se determina que el objeto puede hacerse tan pequeño como la ventana de la página, pero no puede hacerse mas grande que el 7% del viewport cuando la ventana se va haciendo mas grande.*/
+}

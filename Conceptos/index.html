@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conceptos</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 id="page-title" class="tittle">Empresa</h1>
+      <nav>
+        <ul id="main-nav" class="nav">
+          <!-- las etiquetas <a> no se encuentran bajo el mimso elemento padre <li> por lo tanto no son hermanas -->
+          <li class="list-group"><a class="link" href="">Home</a></li>
+          <li class="list-group"><a class="link" href="">Cursos</a></li>
+          <li class="list-group"><a class="link" href="">Instructores</a></li>
+          <li class="list-group"><a class="link" href="">Blog</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="model">
+      <section class="model__herencia">
+        <h1>Main</h1>
+        <p>Soy un parrafo</p>
+      </section>
+      <section class="model__box">
+        <h1>Soy un título de caja</h1>
+        <div class="caja">
+          <p>Soy un parrafo de caja</p>
+          <a class="caja__link" href="">Nueva</a>
+        </div>
+      </section>
+      <section class="shop-section">
+        <ul id="shop-nav" class="shop">
+          <!-- las etiquetas <a> no se encuentran bajo el mimso elemento padre <li> por lo tanto no son hermanas -->
+          <li class="shop__list"><a class="shop__link" href="">Leche</a></li>
+          <li class="shop__list"><a class="shop__link" href="">Huevos</a></li>
+          <li class="shop__list">
+            <a class="shop__link" href="">Arina</a>
+          </li>
+          <li class="shop__list">
+            <a class="shop__link" href="">Mantequilla</a>
+          </li>
+        </ul>
+      </section>
+      <!-- Combinaciones hermano cercano -->
+      <div class="comb">
+        <h1>Combinaciones hermano cercano</h1>
+        <h2 class="comb__t2">Soy un h2</h2>
+        <p class="comb__par">Soy un parrafo</p>
+        <h3 class="comb__t3">Soy un h3</h3>
+        <h2 class="comb__t2">Soy un h2</h2>
+        <p class="comb__par">Soy un parrafo</p>
+        <h2 class="comb__t2">Soy un h2</h2>
+        <p class="comb__par">Soy un parrafo</p>
+        <p class="comb__par">Soy un parrafo</p>
+      </div>
+      <!-- Hermano general -->
+      <div class="comb">
+        <h1>Hermano general</h1>
+        <h2>Soy un h2</h2>
+        <p>Soy una etiqueta p</p>
+        <h2>Soy un h2</h2>
+        <h3>Soy un h3</h3>
+        <p>Soy una etiqueta</p>
+        <p>Soy una etiqueta</p>
+      </div>
+      <!-- Combinadores hijo -->
+      <div class="comb">
+        <h1>Combinaciones hijo</h1>
+        <article>
+          <!-- Este texto no se ve afectado porque su padre directo es un <artile> no es un <div> -->
+          <p>Soy un texto</p>
+        </article>
+        <section>
+          <div>
+            <p>Soy un texto</p>
+          </div>
+        </section>
+        <p>Soy un texto</p>
+      </div>
+      <!-- Combinador descendiente -->
+      <div class="comb">
+        <h1>Combinaciones Descendiente</h1>
+        <article class="comb__art">
+          <p class="comb__par-hijo">Soy un texto</p>
+        </article>
+        <section>
+          <div>
+            <p class="comb__par-hijo">Soy un texto</p>
+          </div>
+        </section>
+        <p class="comb__par-hijo">Soy un texto</p>
+      </div>
+      <!-- Pruebas flexbox -->
+      <h1>Pruebas flexbox</h1>
+      <div class="cont-flex">
+        <article class="card">
+          <p class="card__par">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud
+          </p>
+        </article>
+        <article class="card">
+          <p class="card__par">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud
+          </p>
+        </article>
+        <article class="card">
+          <p class="card__par">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </article>
+      </div>
+      <!-- Clase medidas -->
+      <div class="comb-medidas">
+        <h1>Clase medidas</h1>
+        <p class="p-medidas">Soy un texto de ejemplo para la clase de medias</p>
+      </div>
+      <!-- Medidas EM -->
+      <div class="text-EM">
+        <h1>Clase medidas EM</h1>
+        <p class="p-EM">Texto de ejemplo</p>
+        <div class="text-medidas">
+          <p class="p-EM">Soy otro texto para las Medidas EM</p>
+        </div>
+      </div>
+      <!-- MEDIDAS REM -->
+      <div class="text-REM">
+        <h1>Clase medidas REM</h1>
+        <p class="p-REM">Soy un ejemplo de REM</p>
+        <p class="p-REM_mod-rem">Soy un segundo texto REM</p>
+      </div>
+      <!-- MEDIDAS Max/Min width -->
+      <div class="fake-main">
+        <section class="b-maxmin">
+          <p class="b-maxmin__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus,
+            recusandae facere, maxime ex unde laboriosam accusamus nulla
+            consequatur quibusdam rem vel pariatur culpa et fugit impedit nihil
+            non quaerat? Aliquam. Rem dolorum possimus asperiores nam quos sint
+            iusto delectus impedit dolore odit dolor error nemo ratione
+            praesentium repellat nulla perferendis assumenda, officia aperiam
+            voluptate facere expedita magnam! Dolores, sit ipsam. In animi,
+            quisquam laudantium ipsa debitis ducimus tempora aliquid, sed ex
+            ipsam ea, voluptate repellendus velit aut dolore eveniet
+            consequuntur. Accusantium assumenda beatae voluptates eius
+            voluptatum facilis obcaecati esse illo. Libero magni, soluta
+            consequuntur nam delectus facere quis dolor illum maiores earum
+            maxime explicabo sapiente? Ratione, officiis in voluptatem quam
+            dolores rem molestias similique dolor dolore consequuntur nesciunt
+            ut molestiae! Deserunt eaque quo corporis fugit veritatis quod nobis
+            repudiandae temporibus? Tempora aperiam natus dicta ab deserunt
+            consequuntur distinctio obcaecati nobis. Necessitatibus officia
+            aliquid iure vitae architecto? Quasi officia quod sequi! Ad vitae
+            quidem dignissimos, eveniet libero ipsam ducimus magni, quibusdam
+            minima recusandae ratione numquam voluptatem iusto. Provident
+            dolorum doloremque laboriosam est recusandae. Cum doloribus sunt
+            doloremque perspiciatis suscipit veritatis dolores? Nisi possimus
+            reiciendis, voluptate, laborum labore ullam quasi esse ad in
+            deserunt, consectetur consequatur sapiente dicta molestiae dolores
+            commodi vitae placeat. Accusamus veniam quisquam fugit error ut eos
+            vero. Et. Eum laudantium labore totam rerum at laboriosam cumque quo
+            beatae corrupti. Suscipit neque molestiae error quia deleniti natus
+            deserunt obcaecati optio fuga enim possimus impedit iusto, non
+            dolores illo corporis?
+          </p>
+          <p class="b-maxmin__text">Texto de ejemplo 2</p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
