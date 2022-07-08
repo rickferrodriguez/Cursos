@@ -17,7 +17,8 @@ html {
   border: 2px black dotted;
   display: inline-block;
   position: relative;
-  margin: 10% 25%;
+  margin-top: 22px;
+  margin-left: 10px;
   width: 400px;
   height: 400px;
 }
@@ -60,4 +61,51 @@ html {
   position: relative;
   width: 80%;
   font-size: 1.6rem;
+}
+
+.card {
+  background-color: teal;
+  width: 400px;
+  height: 400px;
+  margin-top: 22px;
+  margin-left: 10px;
+  position: relative;
+  border-style: groove;
+}
+
+.block-image {
+  position: absolute;
+  z-index: 2;
+}
+.block-image__imagen {
+  width: 68%;
+  height: 68%;
+  left: 42%;
+  top: -113px;
+  position: relative;
+}
+
+.header-tittle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.8rem;
+  width: 50%;
+  background-color: rgb(139, 115, 52);
+  border-radius: 10px;
+  position: relative;
+  left: 25%;
+  bottom: 20px;
+  text-align: center;
+  border-style: groove;
+}
+
+.block-cont-text {
+  position: absolute;
+  width: 50%;
+  left: 7px;
+  font-size: 1.6rem;
+  margin-top: 10%;
+}
+
+.block-text {
+  text-align: left;
 }
