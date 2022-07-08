@@ -74,8 +74,8 @@ html {
 }
 
 .block-image {
-  position: absolute;
-  z-index: 2;
+  position: absolute; /* Este absolute es relativo al bloque card y no al bloque contenedor general*/
+  z-index: 2; /* Hago que la imagen se encuentre al frente de todos los demás bloques y elementos*/
 }
 .block-image__imagen {
   width: 68%;
@@ -91,7 +91,7 @@ html {
   width: 50%;
   background-color: rgb(139, 115, 52);
   border-radius: 10px;
-  position: relative;
+  position: relative; /* Relativo a su posición inicial dentro de la carta*/
   left: 25%;
   bottom: 20px;
   text-align: center;
@@ -100,10 +100,10 @@ html {
 
 .block-cont-text {
   position: absolute;
-  width: 50%;
-  left: 7px;
+  width: 43%;
+  left: 40px;
   font-size: 1.6rem;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .block-text {
