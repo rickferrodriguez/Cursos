@@ -1,0 +1,58 @@
+/* Display block */
+
+.section-db {
+  border: 2px black dotted;
+  margin: 10px;
+}
+
+.block-element {
+  background-color: greenyellow;
+
+  padding: 20px;
+}
+
+/* Display inline */
+
+.section-di {
+  border: 2px black dotted;
+  height: 100%;
+  margin: 10px;
+}
+
+.div-di {
+  height: 30px;
+}
+
+.parrafo {
+  display: inline; /* Importante que al usar este inline, no se puede editar el padding, el height ni el margin, solo la izquiera y la derecha*/
+  padding: 0 10px;
+  font-size: 20px;
+  background-color: aquamarine;
+}
+
+/* Display inline-block */
+
+.section-dib {
+  border: 2px black dotted;
+  height: 100%;
+  margin: 10px;
+}
+
+.lista {
+  list-style: none;
+  display: inline-block;
+  margin: 0 10px;
+  padding-left: 10px;
+}
+
+.lista__a {
+  text-decoration: none;
+  background-color: violet;
+  border: 2px black dotted;
+  font-size: 20px;
+}
+
+.lista:last-child .lista__a {
+  background-color: rgb(50, 219, 219);
+  text-decoration: underline;
+}
