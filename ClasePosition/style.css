@@ -100,6 +100,7 @@ html {
 
 .block-cont-text {
   position: absolute;
+  z-index: 2; /* Cuidado con no colocar los elementos a la misma altura (z-index) porque si ha otro elemento dentro del mismo contenedor detrás y es un texto este no se podrá seleccionar*/
   width: 43%;
   left: 40px;
   font-size: 1.6rem;
