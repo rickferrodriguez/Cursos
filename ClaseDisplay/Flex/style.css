@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.container {
+  border: 0.3rem solid black;
+  display: flex;
+}
+
+.box {
+  width: 10rem;
+  height: 10rem;
+}
+
+.box1 {
+  background-color: aqua;
+}
+
+.box2 {
+  background-color: bisque;
+}
+
+.box3 {
+  background-color: violet;
+}
+
+.box4 {
+  background-color: teal;
+}
+
+.box5 {
+  background-color: blue;
+}
+
+.box6 {
+  background-color: chartreuse;
+}
