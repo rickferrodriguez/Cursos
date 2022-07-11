@@ -16,14 +16,14 @@ body {
   border: 0.3rem solid black;
   display: flex;
   flex-direction: row;
-  width: 700px;
+  width: 900px;
 }
 
 .box {
   width: 10rem;
   height: 10rem;
 }
-
+/* Se indica en este flex que, el grow es cero, es decir no podrá crecer  ni obtener una parte del de espacio que sobra del contenedor flex, shrink es 1 es decir que si va a poder encogerse en relación al basis pero su velocidad es la default, y el basis es automático, es decir, el tamaño del item será automatico en relación al espacio que sobre */
 .box1 {
   background-color: aqua;
   flex: initial;
@@ -33,13 +33,16 @@ body {
   background-color: bisque;
   flex: 5 2 auto;
 }
-
+/* En este se indica el grow como 1, es decir, que se dará una parte del espacio que sobra a este item, el shrink es 1 y el basis es auto */
 .box3 {
   background-color: violet;
+  flex: auto;
 }
 
+/* Se indica que el grow es cero, el shrink es cero y el basis es auto */
 .box4 {
   background-color: teal;
+  flex: none;
 }
 
 .box5 {
