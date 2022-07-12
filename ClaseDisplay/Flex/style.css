@@ -61,3 +61,11 @@ body {
 .box6 {
   background-color: chartreuse;
 }
+
+/* Justify content */
+.container3 {
+  display: flex;
+  border: 0.3rem solid black;
+  justify-content: center; /* Ajustar en contenido en relación a los valores que brinda el atributo, para este caso el centro*/
+  flex-wrap: wrap; /* Los elementos se alinearán para ubicarse siempre en el centro sin salirse del contenedor*/
+}
