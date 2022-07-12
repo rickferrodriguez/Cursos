@@ -43,6 +43,7 @@ body {
   display: flex;
   flex-direction: row-reverse; /* Determina la dirección en la que se van a mostrar los hijos, en este caso como si fuera una fila y con un orden invertido*/
   border: 0.3rem solid black;
+  flex-wrap: wrap; /* Indica como se ubicarán los hijos en funcion del tamaño de la pantalla, con el 'wrap' los items se acoplarán para que todos puedan caber dentro del contenedor y con el 'nowrap' los elementos saldrán del contenedor*/
 }
 .block2 {
   width: 10rem;
