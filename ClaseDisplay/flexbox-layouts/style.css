@@ -59,3 +59,10 @@ body {
   height: 400px;
   align-items: stretch; /* Afecta el crecimiento de un elemento, al parecer dentro del cross axis, si los items no tienen predefinidos un tamaño este elemento crecerá hasta ocupar todo el espacio sobrante dentro del contendor*/
 }
+
+/* align items baseline */
+.container4 {
+  display: flex;
+  border: 0.3rem solid black;
+  align-items: baseline; /* Toma el espacio de su contenido sin efectar el sobrante del contendor */
+}
