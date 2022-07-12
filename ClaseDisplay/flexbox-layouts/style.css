@@ -33,6 +33,8 @@ body {
 }
 .box3 {
   background-color: blue;
+  order: -3;
+  flex: 2 1 auto;
 }
 .box4 {
   background-color: chocolate;
@@ -65,4 +67,21 @@ body {
   display: flex;
   border: 0.3rem solid black;
   align-items: baseline; /* Toma el espacio de su contenido sin efectar el sobrante del contendor */
+}
+
+/* flex: grow y flex: basis*/
+/* basicamente se indica que los items dentro del contenedor se puedan ajustar para que no se salgan y gracias al flex: 1 1 10rem se está indicando que cada uno de los items pueda obtener un parte del espacio que sobra y que el tamaño del contenedor flex de cada uno de los items sea de 10rem es decir 100px */
+.container5 {
+  display: flex;
+  border: 0.3rem solid black;
+  flex-flow: row wrap;
+}
+
+.block1 {
+  flex: 1 1 10rem;
+  height: 10rem;
+}
+
+.block1:nth-child(even) {
+  background-color: violet;
 }
