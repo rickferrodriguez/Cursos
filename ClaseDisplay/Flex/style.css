@@ -16,10 +16,9 @@ body {
   border: 0.3rem solid black;
   display: flex;
   flex-direction: row;
-  width: 900px;
 }
 
-.box {
+.block {
   width: 10rem;
   height: 10rem;
 }
@@ -39,10 +38,19 @@ body {
   flex: auto;
 }
 
-/* Se indica que el grow es cero, el shrink es cero y el basis es auto */
+/* PARTE 2 */
+.container2 {
+  display: flex;
+  flex-direction: row-reverse; /* Determina la dirección en la que se van a mostrar los hijos, en este caso como si fuera una fila y con un orden invertido*/
+  border: 0.3rem solid black;
+}
+.block2 {
+  width: 10rem;
+  height: 10rem;
+}
+
 .box4 {
   background-color: teal;
-  flex: none;
 }
 
 .box5 {
