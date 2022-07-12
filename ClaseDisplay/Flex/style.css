@@ -69,3 +69,17 @@ body {
   justify-content: center; /* Ajustar en contenido en relación a los valores que brinda el atributo, para este caso el centro*/
   flex-wrap: wrap; /* Los elementos se alinearán para ubicarse siempre en el centro sin salirse del contenedor*/
 }
+
+/* space around */
+.container4 {
+  display: flex;
+  border: 0.3rem solid black;
+  justify-content: space-around; /* Agrega un espacio en la izquierda y dercha de los items en relación con el espacio que sobra dentro del contenedor*/
+}
+
+/* espace evenly */
+.container5 {
+  display: flex;
+  justify-content: space-evenly; /* Agrega un espacio igual en la izquierda y derecha de los items en relación al espacio que sobre del contenedor */
+  border: 0.3rem solid black;
+}
