@@ -1,3 +1,12 @@
+/* El root siempre hace referencia al html. Es decir todo lo que exista here will be global*/
+:root {
+  --primary-color: rgb(17, 56, 194);
+  --header-color: rgb(42, 60, 79);
+  --footer-color: rgb(35, 94, 203);
+  --header-primary-size: 4rem;
+  --main-font-size: 1.8rem;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,21 +20,22 @@ html {
 header {
   width: 100vw;
   height: 15vh;
-  background-color: rgb(68, 81, 164);
+  background-color: var(--primary-color);
 }
 
 main {
   width: 100vw;
   height: 70vh;
-  font-size: 1.8rem;
+  font-size: var(--main-font-size);
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: var(--header-primary-size);
+  color: var(--header-color);
 }
 
 footer {
   width: 100vw;
   height: 15vh;
-  background-color: cornflowerblue;
+  background-color: var(--footer-color);
 }
