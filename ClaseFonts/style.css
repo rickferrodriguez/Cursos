@@ -1,0 +1,19 @@
+:root {
+  --font-body: "Roboto", sans-serif;
+  --font-body-size: 1.8rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--font-body);
+}
+
+p {
+  font-size: var(--font-body-size);
+}
