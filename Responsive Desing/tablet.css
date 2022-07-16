@@ -1,0 +1,8 @@
+/* Vista de Tablet */
+@media (min-width: 600px) {
+  .c2,
+  .c3,
+  .c4 {
+    width: 50%;
+  }
+}
