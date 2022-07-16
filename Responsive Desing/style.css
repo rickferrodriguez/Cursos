@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  width: 100vw;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 100%;
+  min-width: 150px;
+  height: 150px;
+}
+
+.c1 {
+  background-color: rgb(14, 62, 255);
+}
+.c2 {
+  background-color: rgb(16, 111, 228);
+}
+.c3 {
+  background-color: rgb(4, 120, 162);
+}
+.c4 {
+  background-color: rgb(11, 239, 255);
+}
+.c5 {
+  background-color: rgb(15, 255, 239);
+}
