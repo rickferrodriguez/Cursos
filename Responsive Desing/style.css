@@ -39,3 +39,14 @@ body {
 .c5 {
   background-color: rgb(15, 255, 239);
 }
+
+/* Siempre los media querys al final */
+
+/* Vista de Tablet */
+@media (min-width: 600px) {
+  .c2,
+  .c3,
+  .c4 {
+    width: 50%;
+  }
+}
