@@ -23,12 +23,13 @@ body {
 
 main {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   width: 100vw;
 }
 
 .box {
   width: 100%;
+  min-width: 200px;
 }
 
 .container {
