@@ -11,3 +11,7 @@ html {
 body {
   font-size: 1, 6rem;
 }
+
+[class*="item"]:nth-child(odd) {
+  background-color: wheat;
+}
