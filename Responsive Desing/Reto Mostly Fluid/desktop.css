@@ -1,0 +1,11 @@
+@media (min-width: 1024px) {
+  .item-a,
+  .item-b,
+  .item-c {
+    width: 33.3%;
+    height: 200px;
+  }
+  .item-d {
+    height: 500px;
+  }
+}

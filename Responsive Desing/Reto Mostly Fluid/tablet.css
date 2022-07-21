@@ -1,6 +1,14 @@
 @media (min-width: 768px) {
   .item-b,
   .item-a {
-    width: 49.5%;
+    width: 50%;
+  }
+
+  .item-c {
+    height: 200px;
+  }
+
+  .item-d {
+    height: 250px;
   }
 }
