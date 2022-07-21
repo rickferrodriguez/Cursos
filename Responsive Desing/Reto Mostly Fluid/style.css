@@ -10,6 +10,7 @@ html {
 
 body {
   font-size: 1, 6rem;
+  width: 100%;
 }
 
 header {
@@ -18,7 +19,13 @@ header {
   margin: 10px;
 }
 
-body {
+.navbar {
+  width: 100px;
+}
+
+.header-li {
+  display: flex;
+  justify-content: space-between;
 }
 
 main {
@@ -29,7 +36,9 @@ main {
 
 .box {
   width: 100%;
-  min-width: 200px;
+  min-width: 367px;
+  height: 70px;
+  margin: 2px;
 }
 
 .container {
@@ -37,4 +46,11 @@ main {
 
 .item-b {
   background-color: violet;
+  border-color: black;
+  border-style: solid;
+}
+
+.li-footer {
+  display: flex;
+  justify-content: space-around;
 }
