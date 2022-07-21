@@ -33,20 +33,39 @@ header {
 }
 
 main {
+  width: 100vw;
+}
+
+.container {
+  width: 99%;
   display: flex;
   flex-flow: row wrap;
-  width: 100vw;
 }
 
 .box {
   width: 100%;
-  min-width: 367px;
   height: 70px;
   margin: 2px;
 }
 
 .item-b {
   background-color: violet;
+  border-color: black;
+  border-style: solid;
+}
+
+.item-a {
+  background-color: aqua;
+  border-color: black;
+  border-style: solid;
+}
+.item-c {
+  background-color: darkgray;
+  border-color: black;
+  border-style: solid;
+}
+.item-d {
+  background-color: gold;
   border-color: black;
   border-style: solid;
 }
