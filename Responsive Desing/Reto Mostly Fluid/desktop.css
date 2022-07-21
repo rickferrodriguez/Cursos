@@ -1,4 +1,9 @@
 @media (min-width: 1024px) {
+  .container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .item-a,
   .item-b,
   .item-c {
