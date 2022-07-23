@@ -46,8 +46,13 @@ html {
 }
 
 @media (min-width: 800px) {
-  .c3,
-  .c4 {
-    width: 50%;
+  .c1 {
+    width: 25%;
+  }
+  .c2 {
+    width: 35%;
+  }
+  .c3 {
+    width: 40%;
   }
 }
