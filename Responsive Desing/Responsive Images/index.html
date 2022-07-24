@@ -10,6 +10,9 @@
   <body>
     <main>
       <picture>
+        <!-- mucho cuidado con el orden de los
+        <source />
+        porque pueden sobreescribir otras paginas -->
         <source media="(min-width:1300px)" srcset="./imgs/large.jpg" />
         <source media="(min-width:1000px)" srcset="./imgs/medium.jpg" />
         <img src="./imgs/small.jpg" alt="es una imagen de ejemplo" />
