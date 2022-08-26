@@ -27,6 +27,15 @@
   row-gap: 5px;
 }
 
+.contenedor4 {
+  background-color: chartreuse;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: 100px 100px 100px;
+  grid-template-columns: 100px 100px;
+  gap: 20px;
+}
+
 .item {
   border: 5px solid #00bcd4;
   font-size: 4rem;
