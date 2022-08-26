@@ -1,0 +1,14 @@
+.contenedor {
+  border: 5px;
+  background-color: #fff1ff;
+  display: grid;
+  grid-template-columns: 100px 200px 250px; /* with this we can say how many columns we want -- */
+  grid-template-rows: 150px 200px; /* with this property we can define the size of the rows and hon many we are going to have */
+  /* we can add a property that when we used by default  we add the size of the rows */
+  /* grid-auto-rows: 150px; we are saying that i want that the rows have 150px of size */
+}
+
+.item {
+  border: 5px solid #00bcd4;
+  font-size: 4rem;
+}
