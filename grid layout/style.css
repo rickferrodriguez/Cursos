@@ -131,3 +131,17 @@
     grid-column: 2 / 3;
     grid-row: 3/3;
 }
+
+.contenedor7 {
+    border: 5px solid black;
+    background-color: #fff1ff;
+    display: grid; 
+    grid-template-columns: minmax(30px, 300px) 200px minmax(60px, 250px) ;  /* este valor sirve para que podamos agregarle un valor máximo y minimo a nuestras columnas */
+    grid-template-rows: repeat(3, auto);  /* este valor de auto es agregado para que el alto de las filas se adapte al contenido */
+}
+
+.item7 {
+    border: 5px solid blue;
+    font-size: 2rem;
+}
+
