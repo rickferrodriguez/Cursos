@@ -18,3 +18,13 @@ console.log(objeto);
 // Saber el tipo de elemento que llamamos para imprimir 
 // Esto lo podemos hacer con la palabra "typeof"
  console.log(typeof nombre);
+
+
+// Tipos de datos: Boolean (true, false)
+var booleano = false;
+console.log(typeof booleano);
+
+// Tipos de datos function: estos permiten ejecutar múltiples lineas de código y son reutilizables.
+function miFuncion(){}
+console.log(miFuncion);
+
