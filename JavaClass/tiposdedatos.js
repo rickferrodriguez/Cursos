@@ -51,3 +51,6 @@ console.log(X);
 //null = ausencia de valor
 var nulo = null;
 console.log(nulo); /* este tipo de valor es un objeto que no contiene nada en su interior */
+
+var campeones = ['vayne','olaf', 'shivanna' ]; /* los arreglos son de tipo object */
+console.log(campeones);
