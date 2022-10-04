@@ -22,3 +22,11 @@ console.log(inicial);
 
 const apellidoCons = "Perez";
 // apellidoCons = "real"; en este caso el las constantes no pueden ser cambiadas nunca, si se dejara este codigo el sistema will show an error.
+
+// Good practices for variables on JavaScript
+// Se puede crear multiples variables en la misma linea. eg.
+let x, y;
+x = 20 , y = 10; // tambien se pueden asignar en la misma linea de la siguiente forma.
+let resultado = x + y; 
+console.log(resultado);
+
