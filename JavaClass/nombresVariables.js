@@ -8,4 +8,3 @@ let nombreCompleto = "Juan Perez"
 let a1nombreCompleto;
 let _nombreCompleto;
 let $nombreCompleto;
-
