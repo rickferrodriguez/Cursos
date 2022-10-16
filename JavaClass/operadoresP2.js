@@ -94,5 +94,21 @@ if ( isNaN(numeroString)){
     console.log("este no es un numero por completo")
 }
 else{
-    console.log("este es otro tipo de valor")
+    let edad = transformado >= 18  ? "Esta persona puede botar ( Mayor de Edad)" : "Esta persona no puede botar ( Menor de Edad)";
+    console.log(edad);
 }
+
+// Precedencia de operadores
+
+let x = 5 , y = 10
+let z = ++x + y--
+console.log(x)
+console.log(y)
+console.log(z)
+
+let resuldo = 4 + 5 * 6 / 3; // 4+((5*6)/3)
+console.log(resuldo);
+
+resuldo = (4 + 5) * 6 / 3; // ((4 + 5)*6)/3
+console.log(resuldo);
+
