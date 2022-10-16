@@ -1,4 +1,4 @@
-let a = 3 , b = 2, c = "3";
+let a = 3 , b = 2, c = "3", d = 33;
 
 let comparison = a == b; // este revisa el valor sin importar el tipo
 console.log(comparison); //internamente lo que bota es un false, es decir que estan comparaciones son de tipo boolean
@@ -28,3 +28,15 @@ console.log("Esta relacion de menor que es: " + relacion); // tambien se puede h
 let relacionMenIgu = a <= b; // Menor o igual
 console.log("Esta relacion menor o igual es: " + relacionMenIgu); // tambien se puede con el mayor igual
 
+// Operadores logicos, AND
+// Este se utiliza con este simbolo "&&"
+
+let valorMaximo = 10, valorMinimo = 0;
+
+// En este caso para que este valor me regrese un verdadero ambas condiciones en medio del '&&' deben ser verdaderas, en caso de que no sea asi irá por la condición del 'else'
+if( d >= valorMinimo && d <= valorMaximo){
+    console.log("este valor se encuentra dentro del rango");
+}
+else {
+    console.log("este valor no se encuentra dentro del rango");
+}
