@@ -40,3 +40,51 @@ if( d >= valorMinimo && d <= valorMaximo){
 else {
     console.log("este valor no se encuentra dentro del rango");
 }
+
+
+//Operadores lógicos, OR, se utiliza con el simbolo '||'
+//En este caso con que cualquiera de las variables sea verdadera la respuesta será "true"
+
+let vacaciones = false, diaDescanso = false;
+
+// Parece que de entrada el operador inicia con la posibilidad de que las variables sean verdaderas 
+if( vacaciones || diaDescanso ) { 
+    console.log("El padre puede asistir ");
+}
+// Dado que pase lo contrario el sistema botara false 
+else {
+    console.log("El padre no puede asistir")
+}
+
+// Operador Ternario
+
+// lo que hace esto operador es guardar dentro de la variable uno de los resuldos sea falso o verdadero
+let resultado = ( 3 > 2 ) ? "Verdadero, este es mayor" : "esto es falso, es menor";
+console.log(resultado);
+
+
+let valorPar = 24;
+let esPar = (valorPar % 2 == 0) ? "Verdadero, este valor es par" : "Falso, este valor no es par";
+console.log(esPar);
+
+
+// Transformar un numero de String a Number
+
+let miNumero = "20";
+// Importante para transformar un String en un Number
+let transformado = Number(miNumero);
+
+let edad = transformado >= 18  ? "Esta persona puede botar ( Mayor de Edad)" : "Esta persona no puede botar ( Menor de Edad)";
+console.log(typeof transformado)
+console.log(edad);
+
+// Importante, tambien se puede cambiar el tipo en medio de una operacion
+if ( Number(miNumero) === 20 ) {
+    console.log("Esta persona puede botar ( Mayor de Edad)");
+}
+else {
+    console.log("Esta persona no puede botar ( Menor de Edad)");
+}
+
+
+
