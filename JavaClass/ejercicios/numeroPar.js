@@ -6,3 +6,14 @@ if (b % 2 == 0){
 else {
     console.log("este valor no es par")
 }
+
+// Ejercicio es mayor de edad
+
+let edad = 20, adulto = 18;
+
+if (edad >= adulto)
+    console.log("este es un adulto");
+else {
+    console.log("Este es un menor de edad");
+}
+
