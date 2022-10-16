@@ -86,5 +86,13 @@ else {
     console.log("Esta persona no puede botar ( Menor de Edad)");
 }
 
+// Para verificar que efectivamente un valor es un numero se puede usar la funcion 'isNaN' 
 
+let numeroString = "24x";
 
+if ( isNaN(numeroString)){
+    console.log("este no es un numero por completo")
+}
+else{
+    console.log("este es otro tipo de valor")
+}
