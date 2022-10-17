@@ -27,5 +27,5 @@ e += 3; // e = e + 3 (el resultado sería 7 porque a vale 4)
 console.log("el resultado es: " + e);
 
 //Este operador compuesto puede ser utilizado con los demás operadores.
-a -= 4; // a = a - 4 (el resultado sería -1 porque a es igual a 3)
+a -= 4; // 
 console.log("el resultado con el menos: " + a);
