@@ -12,7 +12,7 @@ else{
 let resultado = condition ? console.log("Condición verdadera"): console.log("Condición Falsa");
 
 // Exercise if/else multiple conditions
-let a = 4;
+let a = 2;
 
 if (a == 1){
     console.log("Number one");
@@ -23,8 +23,11 @@ else if (a == 2){
 else if (a == 3){
     console.log("Number three");
 }
+else if (a == 4){
+    console.log("Number three");
+}
 else{
-    console.log("Number four");
+    console.log("No se encuentra dentro del rango de numeros");
 }
 
 
@@ -67,6 +70,51 @@ else{
 }
 console.log("Your are on: " + temporada);
     
+// Control sentence Switch on JavaScript
+// In this case we are going to call the variable 'a' that we created before
+
+let numeroTexto = 'Valor desconocido';
+
+switch ( a ){
+    case 1:
+        numeroTexto = 'Number one';
+        break;
+    case 2:
+        numeroTexto = 'Number two';
+        break;
+    case 3:
+        numeroTexto = 'Number three';
+        break
+    case 4:
+        numeroTexto = 'Number four';
+        break
+    default:
+        numeroTexto = 'Caso no encontrado';
+}
+console.log(numeroTexto);
+
+// Exercise, season calculator with switch on JavaScript
+
+let month = 2, messageSeasons ="You're on: ";
+let season ='';
+
+switch ( month ){
+    case 1 : case 2: case 3:
+        season = 'spring';
+        break;
+    case 4 : case 5: case 6:
+        season = 'summer';
+        break;
+    case 7 : case 8: case 9:
+        season = 'autumn';
+        break;
+    case 10 : case 11: case 12:
+        season = 'winter';
+        break;
+    default:
+        messageSeasons = 'incorrect value';
+}
+console.log(messageSeasons + season);
 
 
 
