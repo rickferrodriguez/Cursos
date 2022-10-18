@@ -95,9 +95,9 @@ console.log(numeroTexto);
 
 // Exercise, season calculator with switch on JavaScript
 
-let month = 2, messageSeasons ="You're on: ";
+let month = 8, messageSeasons ="You're on: ";
 let season ='';
-
+console.log( alterSeasons);
 switch ( month ){
     case 1 : case 2: case 3:
         season = 'spring';
@@ -113,6 +113,7 @@ switch ( month ){
         break;
     default:
         messageSeasons = 'incorrect value';
+        break;
 }
 console.log(messageSeasons + season);
 
