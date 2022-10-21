@@ -51,6 +51,10 @@ while (i < sits.length){
         sits[i]=persona;
         console.log(contador);
         console.log(sits);
+    }
+    else {
+        sits.push('');
+        console.log(sits);
         break;
     }
 }
