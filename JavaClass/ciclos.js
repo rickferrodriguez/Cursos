@@ -25,3 +25,14 @@ for (let i = 0; i < 3; i++){
     console.log(i);
 }
 console.log("Fin del ciclo for");
+
+
+// Palabra 'break' en Javascript
+
+for (let contador = 0; contador <= 10; contador++){
+    if (contador % 2 == 0){
+        console.log(contador);
+        break; // este break sirve para que me envie el primer valor par que encuentre y tambien terima el ciclo
+    }
+}
+console.log("Fin del ciclo for con un break");

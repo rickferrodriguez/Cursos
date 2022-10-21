@@ -36,7 +36,7 @@ console.log("el resultado del pre-incremento es decir que se suma en 1 su valor 
 //Post-incremento (el operador ++ después de la variable)
 let u = 0;
 
-u = j++;
+
 console.log("el resultado del Post-incremento, es decir, este suma su valor en 1 pero no lo hace en ese instante, si no que lo deja pendiente para cuando esta variable se la vuelva a utilizar"+ u);
 
 //operadores de Pre-decremento, funciona igual que en el ejercicio anterior pero restando en 1 su valor, exactamente en ese momento
