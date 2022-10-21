@@ -59,7 +59,3 @@ while (i < sits.length){
     }
 }
 
-const seasons = ['spring','summer','fall','winter'];
-const actual = 2;
-
-
