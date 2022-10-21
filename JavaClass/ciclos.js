@@ -40,5 +40,25 @@ console.log("Fin del ciclo for con un break");
 // Palabra 'continue' en Javascript
 
 for (let i = 0; i <= 10; i++){
+    if ( i % 2 !== 0 ) {
+        continue; // Ir a la siguiente iteración
+    }
+    else{
+    console.log(i);
+    }
 }
+console.log("Fin del ciclo for con 'continue'");
+
+
+
+while (contador <= 5){
+    contador++;
+    if( contador % 2 == 0 ) {
+        continue; // el 'continue' tambien funciona con el while
+    }
+    else {
+        console.log(contador);
+    }
+}
+
 
