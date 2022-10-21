@@ -32,7 +32,13 @@ console.log("Fin del ciclo for");
 for (let contador = 0; contador <= 10; contador++){
     if (contador % 2 == 0){
         console.log(contador);
-        break; // este break sirve para que me envie el primer valor par que encuentre y tambien terima el ciclo
+        break; // este break sirve para que me envie el primer valor par que encuentre y tambien termina el ciclo
     }
 }
 console.log("Fin del ciclo for con un break");
+
+// Palabra 'continue' en Javascript
+
+for (let i = 0; i <= 10; i++){
+}
+
