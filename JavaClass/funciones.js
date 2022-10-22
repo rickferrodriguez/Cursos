@@ -51,4 +51,27 @@ resultado = console.log("you are on the season: " + seasonCalculator(2));
     console.log("Esta función se está ejecutando");
 })()
 
-// Funciones como objetos
+
+// Funciones de tipo flecha
+
+let sumar = function(a , b){return a + b}; // Las funciones de tipo Expresión son parecidas a las de tipo flecha
+
+// Ejemplo tipo flecha
+
+const sumaTipoFlecha = (a,b) => a + b;
+resultado = sumaTipoFlecha(3,5);
+
+console.log(resultado);
+
+let resultadoArgument = sumarTodo(2, 4, 6, 10, 9);
+console.log("el resultado del argumento es: " +resultadoArgument);
+
+function sumarTodo(){
+    let suma = 0;
+    for (let i = 0; i < arguments.length; i++){
+        suma += arguments[i];
+    }
+    return suma;
+}
+
+
