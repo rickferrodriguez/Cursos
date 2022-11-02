@@ -75,3 +75,37 @@ function sumarTodo(){
 }
 
 // Paso por referencia en funciones
+
+const persona = {
+    nombre: 'Juan',
+    apellido: 'Martinez'
+}
+
+function cambiarValorObjeto (p1){
+    p1.nombre = 'Richard';
+    p1.apellido = 'Rodriguez';
+}
+
+// En este punto se hace el paso por referencia
+cambiarValorObjeto (persona);
+console.log(persona);
+
+const gymWeek = {
+    monday: 'chest',
+    tuesday: 'quads',
+    wednesday: 'back',
+    thursday:'glutes',
+    friday:'arms'
+}
+
+function gymTrainerAdvisor (d1, daytrain){
+        if (d1.friday == daytrain){
+            d1.friday = 'It is friday you have to do arms';
+        }
+        else
+            console.log('Estos dias aún no los programo');
+}
+gymTrainerAdvisor ( gymWeek, 'arms');
+console.log(gymWeek);
+
+    
