@@ -32,6 +32,8 @@ for ( propertieName in persona) {
 
 // metodo Get en objetos
 // Este lo podemos utilizar para llamar a un objeto compuesto o que pueda ser considerada una función 
+// Metodo 'set' en Javascript
+// se usa para cambiar los atributos de un objeto
 
 let gymWorkOut = {
     monday : 'chest',
@@ -39,10 +41,21 @@ let gymWorkOut = {
     wednesday : 'back',
     thursday : 'glutes',
     friday : 'arms',
+    get upperChanger (){
+        if (this.monday === this.monday.toUpperCase())
+            return this.monday;
+        else
+        return this.monday.toUpperCase() + ' Transformed';
+    },
+    set upperChanger (theChange){
+        this.monday = theChange.toUpperCase();
+    },
     get specialDays (){
         return 'el día especial es: ' +this.wednesday + ' and ' + this.friday;
     }
 }
 
 // en este caso ya solo llamamos a nuestro metodo get y nos simplifica el código porque ya no es considerada una función 
-console.log(gymWorkOut.specialDays);
+console.log(gymWorkOut.upperChanger);
+gymWorkOut.upperChanger = 'arms';
+console.log(gymWorkOut.upperChanger);
