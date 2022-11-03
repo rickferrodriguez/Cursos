@@ -30,3 +30,19 @@ for ( propertieName in persona) {
     console.log('the value of the propertie is: ' + persona[propertieName]);
 }
 
+// metodo Get en objetos
+// Este lo podemos utilizar para llamar a un objeto compuesto o que pueda ser considerada una función 
+
+let gymWorkOut = {
+    monday : 'chest',
+    tuesday : 'quads',
+    wednesday : 'back',
+    thursday : 'glutes',
+    friday : 'arms',
+    get specialDays (){
+        return 'el día especial es: ' +this.wednesday + ' and ' + this.friday;
+    }
+}
+
+// en este caso ya solo llamamos a nuestro metodo get y nos simplifica el código porque ya no es considerada una función 
+console.log(gymWorkOut.specialDays);
