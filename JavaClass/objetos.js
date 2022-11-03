@@ -57,5 +57,6 @@ let gymWorkOut = {
 
 // en este caso ya solo llamamos a nuestro metodo get y nos simplifica el código porque ya no es considerada una función 
 console.log(gymWorkOut.upperChanger);
-gymWorkOut.upperChanger = 'arms';
-console.log(gymWorkOut.upperChanger);
+gymWorkOut.upperChanger = 'arms'; // en este apartado yo llamo al metodo set de upperChanger y después del '=' el comprende que le estoy brindando un parámetro
+console.log(gymWorkOut.upperChanger); 
+console.log(gymWorkOut.monday); 
