@@ -1,10 +1,11 @@
+// creamos la función dentro del objeto, de esta forma si queremos usarlo en otro lado, podemos tener una especie de compuesto
 let persona = {
     nombre : 'Juan',
     apellidos : 'Rodriguez',
     email : 'richards@gmail.com',
     edad : 24,
     nombreCompleto : function (){
-        return this.nombre + ' '+ this.apellidos; // creamos la función dentro del objeto, de esta forma si queremos usarlo en otro lado, podemos tener una especie de compuesto
+        return this.nombre + ' '+ this.apellidos; 
     }
 }
 
@@ -20,3 +21,12 @@ person2.email = 'richardMa@gmail.com';
 person2.age = 25;
 
 console.log('name of the person 2 is: ' + person2.nombre);
+
+// Access to the properties of an object in Javascript
+// For in, recorrer un objeto
+
+for ( propertieName in persona) {
+    console.log('the propertie Name is: ' +propertieName);
+    console.log('the value of the propertie is: ' + persona[propertieName]);
+}
+
