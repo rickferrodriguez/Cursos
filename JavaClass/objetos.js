@@ -60,3 +60,21 @@ console.log(gymWorkOut.upperChanger);
 gymWorkOut.upperChanger = 'arms'; // en este apartado yo llamo al metodo set de upperChanger y después del '=' el comprende que le estoy brindando un parámetro
 console.log(gymWorkOut.upperChanger); 
 console.log(gymWorkOut.monday); 
+
+// Constructor de Objetos de tipo Persona
+// Método constructor in JavaScript
+
+function PersonaGymInfo(pNombre, pApellido, pEmail, pEdad, pIdioma){
+    this.nombre = pNombre;
+    this.apellido = pApellido;
+    this.email = pEmail;
+    this.edad = pEdad;
+    this.idioma = pIdioma;
+}
+
+let padre = new PersonaGymInfo('juan', 'cabrera', 'juancabrera@gmail.com','21','ES');
+console.log(padre);
+
+let madre = new PersonaGymInfo('maria','lozano', 'marialozano@gmail.com', '18','EN');
+console.log(madre);
+
