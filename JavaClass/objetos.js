@@ -95,3 +95,24 @@ function PersonaGymInfo2(pNombre, pApellido, pEmail, pEdad, pIdioma){
 
 let padre2 = new PersonaGymInfo2('Richard', 'cabrera', 'juancabrera@gmail.com','21','ES')
 console.log(padre2.nombreCompleto())
+
+// Other ways to create objects in JavaScript
+
+let myNewObject = new object();
+let myNewObject2 = {};
+
+let myNewString = new String('this is a string');
+let myNewString2 = 'this is a shorter string';
+
+let myNewNumber = new Number(2);
+let myNewNumber2 = 2;
+
+let myNewBoolean = new Boolean(false);
+let myNewBoolean2 = false;
+
+let myNewArray = new Array();
+let myNewArray2 = [];
+
+let myNewFunction = new Function();
+let myNewFunction2 = function (a , b){return a + b};
+
