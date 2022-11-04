@@ -78,3 +78,20 @@ console.log(padre);
 let madre = new PersonaGymInfo('maria','lozano', 'marialozano@gmail.com', '18','EN');
 console.log(madre);
 
+//Method inside the constructor
+
+
+function PersonaGymInfo2(pNombre, pApellido, pEmail, pEdad, pIdioma){ 
+    this.nombre = pNombre;
+    this.apellido = pApellido;
+    this.email = pEmail;
+    this.edad = pEdad;
+    this.idioma = pIdioma;
+    this.nombreCompleto = function ()
+    {
+        return this.nombre + ' '+ this.apellido;
+    };
+}
+
+let padre2 = new PersonaGymInfo2('Richard', 'cabrera', 'juancabrera@gmail.com','21','ES')
+console.log(padre2.nombreCompleto())
