@@ -98,7 +98,7 @@ console.log(padre2.nombreCompleto())
 
 // Other ways to create objects in JavaScript
 
-let myNewObject = new object();
+// let myNewObject = new object();
 let myNewObject2 = {};
 
 let myNewString = new String('this is a string');
@@ -116,3 +116,20 @@ let myNewArray2 = [];
 let myNewFunction = new Function();
 let myNewFunction2 = function (a , b){return a + b};
 
+let persona3 = {
+    nombre : 'Juan',
+    apellidos : 'granizo',
+    nombreCompleto : function(){
+        return this.nombre + ' ' + this.apellidos;
+    }
+}
+
+let persona4 = {
+    nombre : 'Ibai',
+    apellidos : 'LLanos'
+}
+
+// Using the 'call' method to call xD the persona3.nombreCompleto function, with persona4 data
+
+console.log('CALL METHOD');
+console.log(persona3.nombreCompleto.call(persona4));
