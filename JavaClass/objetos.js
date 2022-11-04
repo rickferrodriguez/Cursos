@@ -119,8 +119,8 @@ let myNewFunction2 = function (a , b){return a + b};
 let persona3 = {
     nombre : 'Juan',
     apellidos : 'granizo',
-    nombreCompleto : function(){
-        return this.nombre + ' ' + this.apellidos;
+    nombreCompleto : function(equipo, plataforma){
+        return this.nombre + ' ' + this.apellidos + ' ' + equipo + ' ' + plataforma;
     }
 }
 
@@ -132,4 +132,4 @@ let persona4 = {
 // Using the 'call' method to call xD the persona3.nombreCompleto function, with persona4 data
 
 console.log('CALL METHOD');
-console.log(persona3.nombreCompleto.call(persona4));
+console.log(persona3.nombreCompleto.call(persona4 , 'KOI', 'Twitch')); // if we want to call arguments (parametros) podemos hacerlo con una ',' después de llamar a la variable
