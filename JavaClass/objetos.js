@@ -133,3 +133,28 @@ let persona4 = {
 
 console.log('CALL METHOD');
 console.log(persona3.nombreCompleto.call(persona4 , 'KOI', 'Twitch')); // if we want to call arguments (parametros) podemos hacerlo con una ',' después de llamar a la variable
+
+
+
+const animes = [
+    "boku no hero",
+    "Spy X Family",
+    "Chainsaw Man",
+    "Mob"
+];
+
+function animeShow (){
+    let i = 0;
+    let arraylenght = animes.length;
+    while (i <= arraylenght){
+        let miAnime = animes[i];
+        i++;
+        if ( miAnime == "Mob"){
+            return 'este anime si se encuentra en la lista';
+        }
+        else 
+            return 'este anime no se encuentra en la lista';
+    };
+}
+
+console.log(animeShow());
