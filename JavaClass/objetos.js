@@ -143,6 +143,7 @@ const animes = [
     "Mob"
 ];
 
+// este no me va,no sé porqué
 function animeShow (){
     let i = 0;
     let arraylenght = animes.length;
@@ -158,3 +159,24 @@ function animeShow (){
 }
 
 console.log(animeShow());
+
+// Metodo 'apply' en Javascript
+
+let clase1 = {
+    nombre : 'Camilo',
+    apellido : 'Flores',
+    nombreCompleto : function (titulo , telefono){
+        return titulo + ': ' +this.nombre + ' '+ this.apellido + ' ' + telefono;
+    }
+}
+
+let clase2 = {
+    nombre : 'Brandon',
+    apellido : 'Jimenez'
+}
+
+//
+//cuando se utiliza el 'apply' y existe una función con parámetros, se bebe crear un arreglos con estos para poder usar el metodo 'apply'
+//
+let arreglo = ['ing','22422'];
+console.log(clase1.nombreCompleto.apply(clase2, arreglo));
