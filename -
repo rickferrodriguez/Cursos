@@ -50,6 +50,12 @@ console.log(persona1.nombre)
 let empleado1 = new Empleado('richard','Rodriguez','Sistemas');
 console.log(empleado1.nombreCompleto())
 
-
-let persona2 = new Entreno('richard','Rodriguez','Sistemas')
-console.log(persona2.tipoEjercicio())
+// Ejercicio
+class Entreno {
+    constructor(ejercicio)
+    {
+        super(nombre, apellido);
+        this._ejercicio = ejercicio
+    }
+    get ejercicio() {return this._ejercicio;}
+}
