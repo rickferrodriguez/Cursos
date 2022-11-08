@@ -51,5 +51,27 @@ let empleado1 = new Empleado('richard','Rodriguez','Sistemas');
 console.log(empleado1.nombreCompleto())
 
 
-let persona2 = new Entreno('richard','Rodriguez','Sistemas')
+class Entreno extends Persona {
+    constructor(nombre, apellido, dia) 
+    { 
+        super(nombre, apellido); //Lamar al constructor de la clase padre
+        this._dia = dia
+    }
+
+    get dia() { return this._dia;}
+    set dia(dia) { this._dia = dia;}
+    //Sobreescritura
+    //Lo que se hace es volver a llamar el código que estaba en la clase padre, pero ahora le añadimos la propiedad de nuestra clase hija
+    tipoEjercicio(){
+        // return this._nombre + ' ' + this._apellido + ' ' + this._departamento;
+        // para no tener que volver a escribir este código y solamente llamar a esta función se hace lo siguiente:
+        // usamos el metodo 'super' + el metodo creado dentro de la clase
+        if (this._dia == 1)
+        return super.nombreCompleto() + ' ' + this._dia;
+        else 
+            return 'este día no está registrado'
+    }
+}
+
+let persona2 = new Entreno('richard','Rodriguez','2')
 console.log(persona2.tipoEjercicio())
