@@ -2,6 +2,7 @@
 // let persona2 = new Persona('Karla','Sanchez');
 // constructor de un proyecto
 // para usar los metodos 'get' y 'set' es necesario que los nombres de las propiedades de la clase se llamen igual, por eso estos deben tener un '_' antes para no confundirse
+// Clase Padre (object)
 class Persona {
 
     constructor(nombre, apellido) {
@@ -18,6 +19,11 @@ class Persona {
 
     nombreCompleto(){
         return this._nombre + ' ' + this._apellido;
+    }
+    // cuando se trate de imprimir esta información dentro de un navegador web, el sistema solo mostrará la información como si fuera un objeto sin nada, por eso se debe sobreescribir sus valores con el metodo 'toString'
+    // ahora estamos transformando esta información en una cadena de caracteres
+    toString(){
+        return this.nombreCompleto();
     }
 }
 
@@ -46,9 +52,14 @@ let persona1 = new Persona('Juan', 'Perez');
 persona1.nombre = 'Juan Carlos';
 // ahora vamos a llamar a el metedo 'get' de forma indirecta de la siguiente forma
 console.log(persona1.nombre)
+// Todo depende del objeto que estamos creando, este al parte de la clase padre solo muestra la información inicial y no la del empleado (clase hijo)
+console.log(persona1.toString())
 
 let empleado1 = new Empleado('richard','Rodriguez','Sistemas');
 console.log(empleado1.nombreCompleto())
+// En este caso, como esta clase hijo hace referencia en su constructor a la clase padre, además de imprimir el departamento, también mostrará el nombre y el apellido
+// La clase padre va a heredar el 'toString' dentro del hijo y lo imprimirá todo como tal
+console.log(empleado1.toString())
 
 
 class Entreno extends Persona {
@@ -67,11 +78,12 @@ class Entreno extends Persona {
         // para no tener que volver a escribir este código y solamente llamar a esta función se hace lo siguiente:
         // usamos el metodo 'super' + el metodo creado dentro de la clase
         if (this._dia == 1)
-        return super.nombreCompleto() + ' ' + this._dia;
+            return super.nombreCompleto() + ' ' + this._dia;
         else 
             return 'este día no está registrado'
     }
 }
 
-let persona2 = new Entreno('richard','Rodriguez','2')
-console.log(persona2.tipoEjercicio())
+let persona2 = new Entreno('richard','Rodriguez','2');
+console.log(persona2.tipoEjercicio());
+
