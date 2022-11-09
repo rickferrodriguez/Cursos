@@ -10,8 +10,8 @@ class Persona {
         this._nombre = nombre;
         this._apellido = apellido;
         // en este ejercicio se va a acceder a el atributo 'static' por medio nuevamente de la clase, ya que no podemos usar 'this'
-        Persona.contadorPersonas++;
-        console.log('Se incrementa el contador de persona ' + Persona.contadorPersonas);
+        this._idPersona = Persona.contadorPersonas++; // lo que hará es que cada vez que se crea un objeto de tipo persona se aumentará en 1 el contador y lo asignara como un ID de cada objeto creado, por lo que todos estos tendrán un valor único
+        // console.log('Se incrementa el contador de persona ' + Persona.contadorPersonas);
     }
     get nombre(){return this._nombre;}
     set nombre(nombre){ this._nombre = nombre;}
@@ -19,7 +19,7 @@ class Persona {
     set apellido(apellido){ this._apellido = apellido;}
 
     nombreCompleto (){
-        this._nombre + ' ' + this._apellido;
+        return this._idPersona + ' ' +this._nombre + ' ' + this._apellido;
     }
     //static, metodo exclusivo
     static saludar(){
@@ -32,6 +32,7 @@ class Persona {
 }
 
 let persona1 = new Persona('Juan','Rodriguez');
+console.log(persona1.nombreCompleto())
 // console.log(persona1.saludar()); no es posible llamar desde un objeto a un metodo 'static' ligado a una clase
 
 // Para usarlo se debe llamar a la clase contenedora de este método 'static'
@@ -60,3 +61,7 @@ class PersonaHija extends Persona{
 console.log('esto es desde el hijo: ' + PersonaHija.contadorPersonas);
 
 console.log(persona1.email)
+
+let empleado1 =new PersonaHija('Richard' + 'Rodriguez' + 'ingeniero');
+console.log(empleado1.combinacion());
+console.log(empleado1.nombreCompleto())
