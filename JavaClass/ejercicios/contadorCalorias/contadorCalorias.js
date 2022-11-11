@@ -22,7 +22,7 @@ class Comida{
 
 class Platos{
     static contadorPlatos = 0;
-    static get MAX_CALORIAS(){
+    static get MAX_COMIDAS(){
         return 3;
     }
     constructor(){
@@ -33,12 +33,12 @@ class Platos{
     get idPlatos() { return this._idPlatos; }
 
     agregarPlatos(micomida){
-        if(this._comidas.length < Platos.MAX_CALORIAS){
+        if(this._comidas.length < Platos.MAX_COMIDAS){
             // aqui se agregan las comidas dentro del array de comida
             this._comidas.push(micomida);
         }
         else 
-            console.log("se ha exedido el máximo de calorias");
+            console.log("se ha exedido el máximo de comidas");
     }
     calcularTotal(){
         let totalCalorias = 0;
