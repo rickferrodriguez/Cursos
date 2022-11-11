@@ -20,7 +20,7 @@ class Orden {
     static contadorOrdenes = 0;
     // static contadorProductosAgregados = 0;
     static get MAX_PRODUCTOS(){
-        return 5; 
+        return 3; 
     }
     constructor(){
         this._idOrden = ++ Orden.contadorOrdenes;
@@ -31,7 +31,7 @@ class Orden {
     get idOrden() { return this._idOrden; }
 
     agregarProducto(producto){
-        if(this._productos.length <= Orden.MAX_PRODUCTOS){
+        if(this._productos.length < Orden.MAX_PRODUCTOS){
             this._productos.push(producto);
         }
         else{
@@ -64,6 +64,8 @@ let producto4 = new Producto('Aracachas', 2500);
 
 let orden1 = new Orden();
 orden1.agregarProducto(producto1);
+orden1.agregarProducto(producto2);
+orden1.agregarProducto(producto3);
 orden1.agregarProducto(producto2);
 
 orden1.mostrarOrden();
