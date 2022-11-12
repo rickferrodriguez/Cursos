@@ -13,10 +13,18 @@ class Gerente extends Empleado {
         super(nombre, sueldo);
         this._deportamento = departamento;
     }
-    toString(){ return `Gerente => [${super.obtenerDetalle()} Departamento: ${this._deportamento}]`}
+    obtenerDetalle(){ return `Gerente => [${super.obtenerDetalle()} Departamento: ${this._deportamento}]`}
 }
 
+
+// Polimorfismo es cuando a partir de una misma linea de código dependiendo del objeto se puede acceder a diferentes metodos,tanto padre como hijo.
+
+// en este caso el tipo puede ser tanto de empleado como de cliente y dependiendo del que se usa el resultado es diferente
+function imprimir(tipo){
+    console.log(tipo.obtenerDetalle());
+}
 let empleado1 = new Empleado('Sofia', 1450000);
-console.log(empleado1.obtenerDetalle());
-let gerente1 = new Gerente('Sofia', 1450000,'Sistema');
-console.log(gerente1.toString())
+let gerente1 = new Gerente('Sofia', 1450000,'Sistemas');
+
+imprimir(empleado1)
+imprimir(gerente1)
