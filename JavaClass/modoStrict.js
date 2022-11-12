@@ -13,3 +13,4 @@ miFuncion();
 function miFuncion() {
     y = 22; // aqui el sistema bota que esta función no ha sido declarada
 }
+
