@@ -37,3 +37,12 @@ function gimnasio (dia, funcionCallback){
 }
 
 gimnasio('martes',ejercicio)
+
+// setInterval en Javascript
+
+let reloj = () => {
+    let fecha = new Date();
+    console.log(`${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`)
+}
+
+setInterval(reloj, 1000); // Cada un segundo se va a imprimir la nueva hora actual
