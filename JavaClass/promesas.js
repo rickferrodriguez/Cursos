@@ -33,10 +33,16 @@ let promesaTime = new Promise((resolve) =>{
 // Ejerccio de promesa un tanto diferente
 const laSumacion = (numero1, numero2) =>{
     let resultado = numero1 + numero2;
-    return new Promise((resolve) =>{
-        resolve(`el resultado es: ${resultado}`);
-    });
+    if (resultado < 5){
+        return new Promise((reject) =>{
+            reject('ERROR: este valor es muy grande');
+        });
+    }
+    else
+        return new Promise((resolve) =>{
+            resolve(`el resultado es: ${resultado}`)
+        })
 }
 
 // Para acceder a los metodos de una promesa se usa el metodo 'then'
-laSumacion(1,2).then( x => console.log(x));
+laSumacion(1,2).then( x => console.log(x)).catch(error => conlose.log(error));
