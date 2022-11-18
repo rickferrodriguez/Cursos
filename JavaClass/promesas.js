@@ -28,4 +28,15 @@ let promesaTime = new Promise((resolve) =>{
     setTimeout(()=>resolve('saludo con promesa y timeout de tres segúndos de delay'), 3000);
 });
 
-promesaTime.then(valor => console.log(valor));
+// promesaTime.then(valor => console.log(valor));
+
+// Ejerccio de promesa un tanto diferente
+const laSumacion = (numero1, numero2) =>{
+    let resultado = numero1 + numero2;
+    return new Promise((resolve) =>{
+        resolve(`el resultado es: ${resultado}`);
+    });
+}
+
+// Para acceder a los metodos de una promesa se usa el metodo 'then'
+laSumacion(1,2).then( x => console.log(x));
