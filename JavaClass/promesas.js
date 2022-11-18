@@ -55,4 +55,15 @@ async function miFuncionConPromesa(){
     return 'Saludos desde mi funcion con promesa y async';
 } 
 
-miFuncionConPromesa().then( x => console.log(x));
+// miFuncionConPromesa().then( x => console.log(x));
+
+// 'await' sirve para esperar el resultado de una promesa, esto con el fin de no usar al momente de llamarla la función 'then'
+// función async con await
+async function miFuncAsyncAwait(){ 
+    let miPromesa = new Promise((resolve) =>{
+        resolve('Promesa con await');
+    })
+    return console.log(await miPromesa);
+}
+
+miFuncAsyncAwait()
