@@ -66,4 +66,16 @@ async function miFuncAsyncAwait(){
     return console.log(await miPromesa);
 }
 
-miFuncAsyncAwait()
+// miFuncAsyncAwait()
+
+// ejercicio promesas async await setTimeout
+
+async function miFuncionCompleta(){
+    let miPromesa = new Promise((resolve) =>{
+        // es setTimeout se debe aplicar a la función del resolve como tal y no a la variable completa como tenía pensado
+        setTimeout(() => resolve('miFunción completa por fin'),3000)
+    })
+    return console.log(await miPromesa);
+}
+
+miFuncionCompleta()
