@@ -45,4 +45,14 @@ const laSumacion = (numero1, numero2) =>{
 }
 
 // Para acceder a los metodos de una promesa se usa el metodo 'then'
+// Para atrapar un evento rechazado dentro de una promesa se utiliza el metodo 'catch'
 laSumacion(1,2).then( x => console.log(x)).catch(error => conlose.log(error));
+
+// simplificar el uso de promesas con 'async'
+// 'async' sirve para definir a una función obligatoriamente con retorno de promesa
+
+async function miFuncionConPromesa(){
+    return 'Saludos desde mi funcion con promesa y async';
+} 
+
+miFuncionConPromesa().then( x => console.log(x));
