@@ -5,10 +5,13 @@
     <title>Ejemplo DOM con JavaScript</title>
 </head>
 <body>
-    <h1>Mi Titulo ahora es otro</h1>
+    <h1 id='mih1'>Mi Titulo ahora es otro</h1>
     <p>Saludos!</p>
     <script>
+        // esto es para traer lo que dice este objeto con un id
+        let mih1 = document.getElementById('mih1').innerHTML;
         console.log('parece que todo está funcionando');
+        console.log(`estoy usando el título h1 que dice: ${mih1}`)
     </script>
 </body>
 </html>
