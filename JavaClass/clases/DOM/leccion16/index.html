@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Ejemplo DOM con JavaScript</title>
-</head>
-<body>
-    <h1 id='mih1'>Mi Titulo ahora es otro</h1>
-    <p>Saludos!</p>
-    <script>
-        // esto es para traer lo que dice este objeto con un id
-        let mih1 = document.getElementById('mih1').innerHTML;
-        console.log('parece que todo está funcionando');
-        console.log(`estoy usando el título h1 que dice: ${mih1}`)
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejemplo DOM con JavaScript</title>
+    </head>
+    <body>
+        <h1 id='mih1'>Mi Titulo ahora es otro</h1>
+        <p id='saludo'>Saludos!</p>
+        <script>
+            // esto es para traer lo que dice este objeto con un id
+            let mih1 = document.getElementById('mih1').innerHTML;
+            let saludo = document.getElementById('saludo').innerHTML;
+            let parrafo1 = document.getElementById('saludo');
+            let oracio = mih1 + ' ' + parrafo1.innerHTML;
+            console.log('parece que todo está funcionando');
+            console.log(`estoy usando el título h1 que dice: ${mih1}`);
+            console.log(`este es mi saludo: ${saludo}`);
+            console.log(`esta es la oración: ${oracio}`)
+        </script>
+    </body>
 </html>
