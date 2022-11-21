@@ -7,16 +7,22 @@
     <body>
         <h1 id='mih1'>Mi Titulo ahora es otro</h1>
         <p id='saludo'>Saludos!</p>
+        <div>
+            <form action="">
+                <label >Nombre</label><br>
+                <input class='nombreLabel' type="text"><br>
+                <label >Apellido</label><br>
+                <input class='apellidoLabel' type="text"><br>
+            </form>
+        </div>
         <script>
             // esto es para traer lo que dice este objeto con un id
-            let mih1 = document.getElementById('mih1').innerHTML;
-            let saludo = document.getElementById('saludo').innerHTML;
-            let parrafo1 = document.getElementById('saludo');
-            let oracio = mih1 + ' ' + parrafo1.innerHTML;
-            console.log('parece que todo está funcionando');
-            console.log(`estoy usando el título h1 que dice: ${mih1}`);
-            console.log(`este es mi saludo: ${saludo}`);
-            console.log(`esta es la oración: ${oracio}`)
+            let mih1 = document.getElementById('mih1');
+            console.log(`valor Título es: ${mih1.innerHTML}`);
+            let saludo = document.getElementById('saludo');
+            console.log(`valor Saludo es: ${saludo.innerHTML}`);
+            // aquí tambien se pueden cambiar lo que dicen los objetos en su interior
+            mih1.innerHTML = 'nuevo valor del titulo';
         </script>
     </body>
 </html>
