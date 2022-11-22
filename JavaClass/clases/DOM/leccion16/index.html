@@ -7,6 +7,7 @@
     <body>
         <h1 id='mih1'>Mi Titulo ahora es otro</h1>
         <p id='saludo'>Saludos!</p>
+        <p id='saludo2'>Saludos en pares!</p>
         <div>
             <form action="">
                 <label >Nombre</label><br>
@@ -22,7 +23,17 @@
             let saludo = document.getElementById('saludo');
             console.log(`valor Saludo es: ${saludo.innerHTML}`);
             // aquí tambien se pueden cambiar lo que dicen los objetos en su interior
-            mih1.innerHTML = 'nuevo valor del titulo';
+            // mih1.innerHTML = 'nuevo valor del titulo';
+
+            // en este caso llama a todas las etiquetas p y se las guarda en una variable
+            let saludos2 = document.getElementsByTagName('p')
+            // aquí es interesante porque se llama a la variable pero con '.length' para saber cuantos hay
+            console.log(`este es el número de parrafos ${saludos2.length}`)
+            // después se realiza un ciclo 'for' para recorrer todos los objetos
+            for(let i = 0; i <saludos2.length; i++){
+                // una vez se recorren uno por uno se imprime su contenido con '.innerHTML'
+                console.log(`id: ${i} Parrafos: ${saludos2[i].innerHTML}`);
+            }
         </script>
     </body>
 </html>
