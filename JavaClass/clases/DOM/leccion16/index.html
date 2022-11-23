@@ -5,9 +5,15 @@
         <title>Ejemplo DOM con JavaScript</title>
     </head>
     <body>
-        <h1 id='mih1'>Mi Titulo ahora es otro</h1>
+        <h1 class="miTitulo" id='mih1'>Mi Titulo ahora es otro</h1>
         <p id='saludo'>Saludos!</p>
         <p id='saludo2'>Saludos en pares!</p>
+        <style>
+            .title { 
+                color: blue;
+                font-style: italic;
+            }
+        </style>
         <div>
             <form action="">
                 <label >Nombre</label><br>
@@ -34,6 +40,10 @@
                 // una vez se recorren uno por uno se imprime su contenido con '.innerHTML'
                 console.log(`id: ${i} Parrafos: ${saludos2[i].innerHTML}`);
             }
+
+            // llamar a un elemento por su clase
+            let miTituloClase = document.getElementsByClassName('miTitulo');
+            console.log(`Extraido desde la clase: ${miTituloClase[0].innerHTML}`)
         </script>
     </body>
 </html>
