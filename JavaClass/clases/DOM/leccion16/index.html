@@ -9,17 +9,22 @@
         <p id='saludo'>Saludos!</p>
         <p id='saludo2'>Saludos en pares!</p>
         <style>
-            .title { 
+            .miTitulo { 
                 color: blue;
                 font-style: italic;
             }
         </style>
         <div>
             <form action="">
-                <label >Nombre</label><br>
-                <input class='nombreLabel' type="text"><br>
+                <label class='nombreLabel' >Nombre</label><br>
+                <input type="text"><br>
                 <label >Apellido</label><br>
                 <input class='apellidoLabel' type="text"><br>
+                <style>
+                    .nombreLabel{
+                        color:red;
+                    }   
+                </style>
             </form>
         </div>
         <script>
@@ -44,6 +49,10 @@
             // llamar a un elemento por su clase
             let miTituloClase = document.getElementsByClassName('miTitulo');
             console.log(`Extraido desde la clase: ${miTituloClase[0].innerHTML}`)
+
+            // Llamar a un elemento por su clase y su tag de HTML
+            let miLabelAll = document.querySelectorAll('label.nombreLabel')
+            console.log(`label con tipo tag y la clase: ${miLabelAll[0].innerHTML }`)
         </script>
     </body>
 </html>
