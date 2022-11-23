@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios HTML y JavaScript</title>
+</head>
+<body>
+    <form id="formulario">
+        <label for="">Nombre</label><br>
+        <input type="text" name="nombre" value="Richard"><br>
+        <br>
+        <label for="">Apellido</label><br>
+        <input type="text" name="apellido" value="Rodriguez"><br>
+    </form>
+    <br>
+    <button onclick='mostrarValores()'>Mostrar</button>
+    <div id="valores">
+    </div>
+    <script>
+        function mostrarValores() {
+            let formulario = document.forms['formulario']
+            let texto ='';
+            for(let elemento of formulario){
+                texto += elemento.value + ' ';
+            }
+            // imprimir consola los elementos agregados
+            // return console.log(texto)
+            // trae el elemento con el que voy a mostrar los valores en HTML por el id y después le asigna la variable texto que tiene los valores de las cajas de texto
+            document.getElementById('valores').innerHTML = `mis valores ingresados son: ${texto}`;
+        }
+    </script>
+</body>
+</html>

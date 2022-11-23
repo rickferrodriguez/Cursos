@@ -3,28 +3,26 @@
     <head>
         <meta charset="UTF-8">
         <title>Ejemplo DOM con JavaScript</title>
-    </head>
-    <body>
-        <h1 class="miTitulo" id='mih1'>Mi Titulo ahora es otro</h1>
-        <p id='saludo'>Saludos!</p>
-        <p id='saludo2'>Saludos en pares!</p>
         <style>
+            .nombreLabel{
+                color:red;
+            }   
             .miTitulo { 
                 color: blue;
                 font-style: italic;
             }
         </style>
+    </head>
+    <body>
+        <h1 class="miTitulo" id='mih1'>Mi Titulo ahora es otro</h1>
+        <p id='saludo'>Saludos!</p>
+        <p id='saludo2'>Saludos en pares!</p>
         <div>
             <form action="">
                 <label class='nombreLabel' >Nombre</label><br>
                 <input type="text"><br>
                 <label >Apellido</label><br>
                 <input class='apellidoLabel' type="text"><br>
-                <style>
-                    .nombreLabel{
-                        color:red;
-                    }   
-                </style>
             </form>
         </div>
         <script>
