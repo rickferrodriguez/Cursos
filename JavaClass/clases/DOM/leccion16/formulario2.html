@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Gimnasio</title>
+</head>
+<body>
+    <h1>Qué piensas hacer hoy?</h1>
+    <form action="">
+        <label for="">Cuál es tu nombre?</label><br>
+        <input type="text"><br>
+        <label for="">Qué piensas hacer hoy?</label><br>
+        <input type="text" id="elEjercicio"><br>
+        <button>Enviar</button><br>
+        <label for="">Estas son tus opciones: </label><br>
+        <input type="radio"><br>
+        <input type="radio"><br>
+    </form>
+    <script>
+        function mostrarEjercicio() {
+            let miTexto = '';
+            let elEjercicio = document.getElementById('elEjercicio'); 
+            return miTexto =`este es mi ejercicio: ${elEjercicio.value}`;
+        }
+    </script>
+</body>
+</html>
