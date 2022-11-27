@@ -8,20 +8,21 @@
 </head>
 <body>
     <h1>Qué piensas hacer hoy?</h1>
-    <form action="">
+    <form id='formulario'>
         <label for="">Cuál es tu nombre?</label><br>
         <input type="text"><br>
         <label for="">Qué piensas hacer hoy?</label><br>
         <input type="text" id="elEjercicio"><br>
-        <button>Enviar</button><br>
+        <button onclick='enviarInfo()'>Enviar</button><br>
         <label for="">Estas son tus opciones: </label><br>
         <input type="radio"><br>
         <input type="radio"><br>
     </form>
     <script>
-        function mostrarEjercicio() {
+        function enviarInfo() {
+            let elFormulario = document.forms['formulario']; 
             let miTexto = '';
-            let elEjercicio = document.getElementById('elEjercicio'); 
+            let 
             return miTexto =`este es mi ejercicio: ${elEjercicio.value}`;
         }
     </script>
