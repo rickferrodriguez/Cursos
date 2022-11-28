@@ -10,20 +10,26 @@
     <h1>Qué piensas hacer hoy?</h1>
     <form id='formulario'>
         <label for="">Cuál es tu nombre?</label><br>
-        <input type="text"><br>
+        <input type="text" id="nombre"><br>
         <label for="">Qué piensas hacer hoy?</label><br>
         <input type="text" id="elEjercicio"><br>
         <button onclick='enviarInfo()'>Enviar</button><br>
         <label for="">Estas son tus opciones: </label><br>
-        <input type="radio"><br>
-        <input type="radio"><br>
+        <input type="radio" ><p id="ejercicio1">hola</p><br>
+        <input type="radio" id="ejercicio2"><br>
     </form>
     <script>
         function enviarInfo() {
             let elFormulario = document.forms['formulario']; 
             let miTexto = '';
-            let 
-            return miTexto =`este es mi ejercicio: ${elEjercicio.value}`;
+            let elNombre = elFormulario['nombre'];
+            let ejercicio = elFormulario['elEjercicio'];
+            let ejercicio1 = document.getElementById('ejercicio1');
+            let ejercicio2 = elFormulario['ejercicio2'];
+            if(ejercicio.value == 'pierna'){
+                ejercicio1.innerHTML = "jacca";
+                return miTexto =console.log(`${elNombre.value} este es tu ejercicio: ${ejercicio.value}`);
+            }
         }
     </script>
 </body>
