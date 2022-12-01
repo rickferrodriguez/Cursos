@@ -12,8 +12,18 @@
   <h1 onclick="this.innerHTML= 'Nuevo Valor'">Manejo del DOM con Javascript</h1>
   <!-- En este caso podemos llamar a una función  -->
   <h2 onclick="cambiarTexto(this)">Nuevo título dos</h2>
+  <h3 id="titulo3">Nuevo título tres</h3>
+  <div id="div-dina"></div>
   <br>
   <script>
+    // en este caso se realiza un callback para poder llamar al id de un elemento HTML y asignarle un evento 'onclick'
+    document.getElementById('titulo3').onclick = cambiarTres;
+
+    // se crea la función que se llama en el anterior callback con lo que deseemos en este caso es cambiar un título
+    function cambiarTres(){
+      let elTitulo ='Mi nuevo titulo tres dinámico';
+      document.getElementById('div-dina').innerHTML = elTitulo;
+    }
     function cambiarTexto(titulo) {
       // justo en este apartado el sistema me va traer el título que tenía antes de cambiar
       console.log(titulo.innerHTML);
