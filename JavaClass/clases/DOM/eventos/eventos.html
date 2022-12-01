@@ -8,7 +8,8 @@
 </head>
 <body>
   <!-- evento onclick, me permite capturar exactamente un elemento dentro de un apartado del codigo html -->
-  <h1 onclick="">Manejo del DOM con Javascript</h1>
+  <!-- automáticamente se crea un objeto de tipo 'this' para que podamos llamarlo así mismo  -->
+  <h1 onclick="this.innerHTML= 'Nuevo Valor'">Manejo del DOM con Javascript</h1>
   <button onclick="mostrar()">Mostrar</button>
   <br>
   <script>
