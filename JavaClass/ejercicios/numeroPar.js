@@ -16,4 +16,5 @@ if (edad >= adulto)
 else {
     console.log("Este es un menor de edad");
 }
+console.log(a)
 
