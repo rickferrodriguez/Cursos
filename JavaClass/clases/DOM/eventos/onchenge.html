@@ -16,6 +16,8 @@
     <br>
     <!-- 'onmouseover' sirve para asignar algún tipo de funcionalidad cuando se pasa el mouse por encima, y 'onmouseout' cuando el mouse ya no está -->
     <h2 id='elH2' onmouseover="colorConvertor(this)" onmouseout="colorOut(this)">El título h2</h2>
+    <!-- 'onmousedown' sirve para detectar cuando se está presionando un elemento con el mouse, y el 'mouseup' cuando se deja de presionar -->
+    <h2 id="dosH2" onmousedown="colorConvertor(this)" onmouseup="colorOut(this)" onclick="colorChanger(this)">El segúndo título dos</h2>
     <script>
         function convertir(nombreInput) {
             // esta es una forma de obtener el elemento de un HTML
@@ -29,6 +31,10 @@
         }
         function colorOut(miElementoOut){
             miElementoOut.style.color ='blue';
+        }
+        // este proviene del 'onclick' lo que hace es dejar este cambio una vez se presiona y deja de funcionar el evento de 'onmouseup'
+        function colorChanger(miElemento){
+            miElemento.style.color = 'green';
         }
     </script>
 </body>
