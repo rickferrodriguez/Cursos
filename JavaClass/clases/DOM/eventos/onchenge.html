@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo DOM Eventos</title>
+</head>
+<body>
+    <h1 id='titulo'>Manejo de DOM eventos</h1>
+    <br>
+    <!-- recordemos que al colocar un 'this' llamamos directamente a este mismo elemento que estamos creandon por lo tanto no es necesario el uso de un 'id' -->
+    Nombre: <input type="text" name=""  onchange="convertir(this)">
+    <br>
+    <id id="elCambio"></id>
+    <script>
+        function convertir(nombreInput) {
+            // esta es una forma de obtener el elemento de un HTML
+            // let nombre =document.getElementById("nombre");
+            let elTexto = nombreInput.value = nombreInput.value.toUpperCase();
+            // apenas el sistema detecta un cambio me va a mostrar el texto en el nuevo div
+            document.getElementById('elCambio').innerHTML = elTexto
+        }
+    </script>
+</body>
+</html>
