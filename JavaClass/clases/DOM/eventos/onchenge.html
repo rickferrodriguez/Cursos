@@ -13,6 +13,9 @@
     Nombre: <input type="text" name=""  onchange="convertir(this)">
     <br>
     <id id="elCambio"></id>
+    <br>
+    <!-- 'onmouseover' sirve para asignar algún tipo de funcionalidad cuando se pasa el mouse por encima, y 'onmouseout' cuando el mouse ya no está -->
+    <h2 id='elH2' onmouseover="colorConvertor(this)" onmouseout="colorOut(this)">El título h2</h2>
     <script>
         function convertir(nombreInput) {
             // esta es una forma de obtener el elemento de un HTML
@@ -20,6 +23,12 @@
             let elTexto = nombreInput.value = nombreInput.value.toUpperCase();
             // apenas el sistema detecta un cambio me va a mostrar el texto en el nuevo div
             document.getElementById('elCambio').innerHTML = elTexto
+        }
+        function colorConvertor (miElemento){
+            miElemento.style.color = 'red';
+        }
+        function colorOut(miElementoOut){
+            miElementoOut.style.color ='blue';
         }
     </script>
 </body>
