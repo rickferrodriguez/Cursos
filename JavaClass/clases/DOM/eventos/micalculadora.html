@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Aplicación Calculadora</h1>
+    <form id="form">
+        Operando A: <br><input type="number" id="opa" placeholder="Escribe operando A">
+        <br>
+        Operando B: <br><input type="number" id="opb"placeholder="Escribe operando B">
+    </form>
+    <button onclick="sumar()">Sumar</button>
+    <script>
+        const form = document.getElementById("form");
+        const opa = document.getElementById("opa");
+        const opb = document.getElementById("opb");
+        function sumar(){
+            let resultado = (opa.value + opb.value);
+            return console.log(resultado)
+        }
+    </script>
+</body>
+</html>
