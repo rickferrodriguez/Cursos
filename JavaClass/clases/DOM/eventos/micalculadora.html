@@ -15,11 +15,10 @@
     </form>
     <button onclick="sumar()">Sumar</button>
     <script>
-        const form = document.getElementById("form");
-        const opa = document.getElementById("opa");
-        const opb = document.getElementById("opb");
+        let x = document.forms["form"]["opa"].value;
+        let y = document.forms["form"]["opb"].value;
         function sumar(){
-            let resultado = (opa.value + opb.value);
+            let resultado = (x + y);
             return console.log(resultado)
         }
     </script>
