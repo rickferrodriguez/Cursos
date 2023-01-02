@@ -12,5 +12,5 @@ let index1 = Math.floor(Math.random() * cartas.length);
 
 console.log(index1);
 console.log(cartas[index1])
-console.log(`de un numero random sale : ${index1}`)
+console.log(`de un numero random sale : ${cartas[index1].numero}`)
 
