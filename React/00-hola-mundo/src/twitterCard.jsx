@@ -1,7 +1,12 @@
 export function TwitterCard (){
     return (
-        <div>
-            <h1>Twitter Card</h1>
-        </div>
+        <article>
+            <header className='tw-followCard'>
+                <img 
+                    className='tw-followCard-avatar'
+                    alt='El avatar de Rick'
+                    src='https://unavatar.io/midudev' />
+            </header>
+        </article>
     )
 }
