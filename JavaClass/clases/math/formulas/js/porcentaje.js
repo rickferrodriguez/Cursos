@@ -16,10 +16,10 @@ const cupones = [
     {nombre: 'LaMerced', valor: 22},
 ]
 
-const cupon = (myKey) => {
+const cupon = (myName) => {
     let cupVal = 0
     cupones.map((cup) => {
-        if(cup.nombre != myKey)return 
+        if(cup.nombre != myName)return 
 
         console.log(cup.valor)
         cupVal = cup.valor
@@ -40,13 +40,6 @@ const descuento = () => {
     return prodDesc
 }
 
-
-$res_desc.addEventListener('click', () => {
-    // const prodDesc = productos.map(prod => (prod.precio * parseInt($desc_val)))
-    descuento()
-    before()
-})
-
 const before = () => {
     let before = `<h3>Before</h3>`
     productos.map( prod => {
@@ -54,4 +47,11 @@ const before = () => {
     })
     $before.innerHTML = before
 }
+
+$res_desc.addEventListener('click', () => {
+    // const prodDesc = productos.map(prod => (prod.precio * parseInt($desc_val)))
+    descuento()
+    before()
+})
+
 
