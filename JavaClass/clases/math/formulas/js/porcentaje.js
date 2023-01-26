@@ -8,20 +8,43 @@ const productos = [
     {nombre: 'zapato', precio: 700},
 ] 
 
+const cupones = [
+    {nombre: 'MrStore', valor: 20},
+    {nombre: 'Adidas', valor: 10},
+    {nombre: 'Optica', valor: 15},
+    {nombre: 'Carmelita', valor: 10},
+    {nombre: 'LaMerced', valor: 22},
+]
 
-$res_desc.addEventListener('click', () => {
+const cupon = (myKey) => {
+    let cupVal = 0
+    cupones.map((cup) => {
+        if(cup.nombre != myKey)return 
+
+        console.log(cup.valor)
+        cupVal = cup.valor
+    })
+    return cupVal
+}
+
+const descuento = () => {
+    // const $desc_val = parseInt(document.querySelector('#desc-val').value)    
+    const $desc_cupon = document.querySelector('#desc-cupon')
     let after = '<h3>after</h3>'
-    const $desc_val = document.querySelector('#desc-val').value
-    // const prodDesc = productos.map(prod => (prod.precio * parseInt($desc_val)))
-    before()
     const prodDesc = productos.map( (prod) => {
-        let result = [prod.precio] * ((100 - parseInt($desc_val))/100)
+        let result = [prod.precio] * ((100 - parseInt(cupon($desc_cupon.value)))/100)
         after += `<div class="linea"><p>${prod.nombre}</p> <br> <p>${result}</p></div>`
         return result
     })
     $after.innerHTML= after
-    console.log(prodDesc)
     return prodDesc
+}
+
+
+$res_desc.addEventListener('click', () => {
+    // const prodDesc = productos.map(prod => (prod.precio * parseInt($desc_val)))
+    descuento()
+    before()
 })
 
 const before = () => {
