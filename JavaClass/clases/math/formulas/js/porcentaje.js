@@ -16,23 +16,43 @@ const cupones = [
     {nombre: 'LaMerced', valor: 22},
 ]
 
+const numeros = [ 1,2,3,4,5,4,2,22,23,15]
+
+const promedio = () => {
+    let indice = 0
+    let suma = 0
+    numeros.map(num => {
+        indice ++
+        suma += num
+    })
+    return (suma / indice)
+}
+console.log('el promedio es ' + promedio())
+
 const cupon = (myName) => {
     let cupVal = 0
-    cupones.map((cup) => {
-        if(cup.nombre != myName)return 
+    // busca dentro de un array y devuelve 
+    cupones.some(cup => {
+        if(cup.nombre != myName) return 
 
-        console.log(cup.valor)
         cupVal = cup.valor
     })
+    // cupones.map((cup) => {
+    //     if(cup.nombre != myName)return
+    //
+    //
+    //     console.log(cup.valor)
+    //     cupVal = cup.valor
+    // })
     return cupVal
 }
 
 const descuento = () => {
     // const $desc_val = parseInt(document.querySelector('#desc-val').value)    
-    const $desc_cupon = document.querySelector('#desc-cupon')
+    const $desc_cupon = document.querySelector('#desc-cupon').value
     let after = '<h3>after</h3>'
     const prodDesc = productos.map( (prod) => {
-        let result = [prod.precio] * ((100 - parseInt(cupon($desc_cupon.value)))/100)
+        let result = [prod.precio] * ((100 - parseInt(cupon($desc_cupon)))/100)
         after += `<div class="linea"><p>${prod.nombre}</p> <br> <p>${result}</p></div>`
         return result
     })
