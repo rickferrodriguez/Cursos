@@ -19,13 +19,11 @@ const cupones = [
 const numeros = [ 1,2,3,4,5,4,2,22,23,15]
 
 const promedio = () => {
-    let indice = 0
     let suma = 0
     numeros.map(num => {
-        indice ++
         suma += num
     })
-    return (suma / indice)
+    return (suma / numeros.length)
 }
 console.log('el promedio es ' + promedio())
 
