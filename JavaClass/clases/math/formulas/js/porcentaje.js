@@ -27,6 +27,13 @@ const promedio = () => {
 }
 console.log('el promedio es ' + promedio())
 
+// const sumarTodosElementos = (valorAcumulado, nuevoValor) => {
+//     return valorAcumulado + nuevoValor
+// }
+
+// const sumaLista = numeros.reduce((key, value) => sumarTodosElementos(key, value))
+// console.log("esta es mi suma " + sumaLista)
+
 const cupon = (myName) => {
     let cupVal = 0
     // busca dentro de un array y devuelve 
