@@ -25,7 +25,6 @@ const promedio = () => {
     })
     return (suma / numeros.length)
 }
-console.log('el promedio es ' + promedio())
 
 // const sumarTodosElementos = (valorAcumulado, nuevoValor) => {
 //     return valorAcumulado + nuevoValor
