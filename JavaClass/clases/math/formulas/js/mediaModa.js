@@ -1,5 +1,4 @@
 const lista = [ 2, 3, 1, 5, 2, 6, 7, 4]
-console.log(lista)
 const sizeArray = lista.length
 
 // es decir si el resultado de esta operación no tiene en residuo
@@ -44,26 +43,17 @@ const calculoPromedio = (a ,b) => {
 }
 
 const calcularModa = () => {
-    let moda = []
-    let repite = 1
-    let counter = 0
-    lista.map( lis => {
-        counter ++
-        if(moda.length == 0){
-            moda.push({num: lis, cant: repite})
-        } 
-
-        let elemento = moda[0].num
-        console.log(elemento)
-        if(elemento == lis){
-            moda.push({num: lis, cant: 2})
-        } else{
-            moda.push({num: lis, cant: 3})
-        }
-
+    let moda = {}
+    lista.map( elem => {
+        // sepregunta si este elemento del recorrida ya existe dentro del objeto, gracias a la key 'lis'
+        if(moda[elem]){
+            // si ya existe este elemento solo se debe sumar el valor de la cantidad de veces que se repite en +1
+            moda[elem] ++
+        } else 
+            // se crea un nuevo objeto en donde la 'key' va a ser el numero del array, y el value será la cantidad de veces que se repite
+            moda[elem] = 1
     })
     console.log(moda)
-    console.log(moda[0].num)
 }
 
 calcularModa()
