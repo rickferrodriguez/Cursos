@@ -1,13 +1,14 @@
-const lista = [ 2, 3, 1, 5, 6, 6, 2]
+const lista = [ 2, 3, 1, 5, 2, 6, 7, 4]
+const sizeArray = lista.length
 
 // es decir si el resultado de esta operación no tiene en residuo
 const esPar = () => {
-    return !(lista.length % 2)
+    return !(sizeArray % 2)
 }
 
 // es decir si el resultado de esta operación tiene en residuo
 const esImpar = () => {
-    return lista.length % 2
+    return sizeArray % 2
 }
 
 // el sort determina si uno de estos dos elementos (a,b) se encuentra por delante o por detras del indice del otro
@@ -18,13 +19,26 @@ const esImpar = () => {
 const li_orden = lista.sort( (a, b) => a - b)
 console.log(li_orden)
 const mediana = () => {
+    let indexGeneral = 0
     if(esPar()){
-        console.log("es par")
+        indexGeneral = li_orden.length / 2
+        console.log("el array es par, el index es: " + indexGeneral)
     } else {
-        let indexMedia = Math.round(li_orden.length / 2)
-        console.log("es impar, la media es: " + li_orden[indexMedia - 1])
+        let indexImpar = Math.round(li_orden.length / 2)
+        console.log("el array es impar, la mediana es: " + li_orden[indexImpar - 1])
     }
 
+    if(indexGeneral){
+        let elMismo = parseInt(li_orden[indexGeneral - 1])
+        let elSigu = parseInt(li_orden[indexGeneral])
+        console.log("el index es " + parseInt(indexGeneral - 1) + " y " + indexGeneral +", la mediana es: " + calculo(elMismo, elSigu))
+    }
+}
+
+const calculo = (a ,b) => {
+    let valor = 0
+    valor = (a + b) / 2
+    return valor
 }
 
 mediana()
