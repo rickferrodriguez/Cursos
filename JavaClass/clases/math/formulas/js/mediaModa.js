@@ -15,14 +15,14 @@ const esImpar = () => {
 // <0 (menor que sero) 'a' está en un índice mener que 'b', a es menor que b
 // 0 'a' y 'b' prodrían estar igual
 // >0 -> a está en un índice mayor que b, a es mayor que b
-const orden = lista.sort( (a, b) => a - b)
-console.log(orden)
+const li_orden = lista.sort( (a, b) => a - b)
+console.log(li_orden)
 const mediana = () => {
     if(esPar()){
         console.log("es par")
     } else {
-        let media = Math.round(orden.length / 2)
-        console.log("es impar, la media es: " + orden[media - 1])
+        let indexMedia = Math.round(li_orden.length / 2)
+        console.log("es impar, la media es: " + li_orden[indexMedia - 1])
     }
 
 }
