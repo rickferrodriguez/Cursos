@@ -53,6 +53,8 @@ const calcularModa = () => {
             // se crea un nuevo objeto en donde la 'key' va a ser el numero del array, y el value será la cantidad de veces que se repite
             moda[elem] = 1
     })
+    console.log("mi Moda")
+    console.log(moda)
     const mappedModa =Object.entries(moda).map(entry => {
         const [key, value] = entry
         return {key, value}
