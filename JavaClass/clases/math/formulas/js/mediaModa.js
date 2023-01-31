@@ -1,4 +1,4 @@
-const lista = [ 2, 3, 1, 5, 2, 6, 7, 4]
+const lista = [ 5, 3, 5, 5, 2, 6, 7, 4]
 const sizeArray = lista.length
 
 // es decir si el resultado de esta operación no tiene en residuo
@@ -53,11 +53,14 @@ const calcularModa = () => {
             // se crea un nuevo objeto en donde la 'key' va a ser el numero del array, y el value será la cantidad de veces que se repite
             moda[elem] = 1
     })
-    const mappedResult = Object.keys(moda).map(key => {
-        const value = moda[key]
-        return value
+    const mappedModa =Object.entries(moda).map(entry => {
+        const [key, value] = entry
+        return {key, value}
     })
-    console.log(mappedResult)
+    const  li_moda = mappedModa.sort( (a, b) => b.value - a.value)
+    console.log("la moda es " + li_moda[0].key + " este valor se repitió " +  li_moda[0].value + " veces")
+    // let maximo = Math.max(...myvalue) 
+    // console.log(parseInt(maximo))
 }
 
 calcularModa()
