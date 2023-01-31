@@ -1,4 +1,4 @@
-const lista = [ 5, 3, 5, 5, 2, 6, 7, 4]
+const lista = [ 5, 3, 5, 5, 2, 6, 7, 4, 4, 4, 2, 2]
 const sizeArray = lista.length
 
 // es decir si el resultado de esta operación no tiene en residuo
@@ -42,6 +42,8 @@ const calculoPromedio = (a ,b) => {
     return valor
 }
 
+mediana()
+
 const calcularModa = () => {
     let moda = {}
     lista.map( elem => {
@@ -53,17 +55,38 @@ const calcularModa = () => {
             // se crea un nuevo objeto en donde la 'key' va a ser el numero del array, y el value será la cantidad de veces que se repite
             moda[elem] = 1
     })
-    console.log("mi Moda")
-    console.log(moda)
     const mappedModa =Object.entries(moda).map(entry => {
         const [key, value] = entry
         return {key, value}
     })
     const  li_moda = mappedModa.sort( (a, b) => b.value - a.value)
-    console.log("la moda es " + li_moda[0].key + " este valor se repitió " +  li_moda[0].value + " veces")
+    const multiModa = []
+    multiModa.push(li_moda[0])
+
+    for (let i = 1; i < li_moda.length; i++) {
+        const element = li_moda[i];
+        if(element.value >= multiModa[0].value){
+            multiModa.push(element)
+        } else{
+            break
+        }
+    }
+    console.log(multiModa)
+    let texto = ''
+    if(multiModa.length >= 1){
+        texto = `La moda se repite ${multiModa.length} veces y sus valores son: `
+        multiModa.forEach(multi => {
+            texto += `${multi.key} y la cantidad es  ${multi.value}, `
+        })
+    } else {
+        console.log('aca tambien')
+        texto = `la moda es ${multiModa[0].key} y se repie ${multiModa[0].value}`
+    }
+
+    console.log( texto)
     // let maximo = Math.max(...myvalue) 
     // console.log(parseInt(maximo))
 }
 
+
 calcularModa()
-mediana()
