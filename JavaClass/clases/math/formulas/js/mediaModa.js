@@ -1,3 +1,4 @@
+const MediayModa = {}
 const lista = [ 5, 3, 5, 5, 2, 6, 7, 4, 4, 4, 2, 2]
 const sizeArray = lista.length
 

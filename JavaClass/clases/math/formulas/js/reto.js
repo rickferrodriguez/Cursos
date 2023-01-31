@@ -59,3 +59,4 @@ const sumNotas = () => {
 }
 const mediaArit = sumNotas() / notes.length
 console.log(mediaArit)
+
