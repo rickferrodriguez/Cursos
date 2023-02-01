@@ -89,5 +89,4 @@ const calcularModa = () => {
     // console.log(parseInt(maximo))
 }
 
-
 calcularModa()
