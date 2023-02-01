@@ -1,3 +1,5 @@
+console.log(MediayModa.esPar)
+
 const notes = [
     {
         course: "Math",

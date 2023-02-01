@@ -7,6 +7,7 @@ const esPar = () => {
     return !(sizeArray % 2)
 }
 
+
 // es decir si el resultado de esta operación tiene en residuo
 // const esImpar = () => {
 //     return sizeArray % 2
@@ -20,6 +21,7 @@ const esPar = () => {
 let li_orden = []
 li_orden = lista.sort( (a, b) => a - b)
 console.log(li_orden)
+
 const mediana = () => {
     let indexGeneral = 0
     if(esPar()){
@@ -90,3 +92,8 @@ const calcularModa = () => {
 }
 
 calcularModa()
+
+MediayModa.esPar = esPar()
+MediayModa.mediana = mediana()
+MediayModa.calculoPromedio = calculoPromedio()
+MediayModa.calcularModa = calcularModa()
