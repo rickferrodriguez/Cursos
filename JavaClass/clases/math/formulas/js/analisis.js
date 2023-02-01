@@ -4,17 +4,22 @@ const encontrarPersona = (persona) => {
     return salarios.find(sal => sal.name === persona)
 }
 
-const medianPorPersona = (nombrePersona) => {
-    const laPersona = encontrarPersona(nombrePersona)
-    const mappedPeople = Object.entries(laPersona).map(entry => {
-        const [key, value] = entry
-        return {key, value}
-    })
-    const trabajo = mappedPeople.forEach( map => {
-        if(map.key == 'trabajos'){
-            console.log(map.value)
-        }
-    })
+const arrayTrabajos = (nombrePersona) => {
+    const trabajos = encontrarPersona(nombrePersona).trabajos
+    return trabajos
 }
 
-medianPorPersona('Juanita')
+// arrayTrabajos("Juanita")
+
+const arraySalarios = (persona) => {
+    const salarios = arrayTrabajos(persona).map(trab =>{
+        return trab.salario
+    })
+    console.log(salarios)
+    return salarios
+}
+
+
+const arrayOrden = arraySalarios("Juanita").sort( (a,b) => a - b )
+const arrayPar = () => !(arrayOrden.length % 2)
+console.log(arrayPar())
