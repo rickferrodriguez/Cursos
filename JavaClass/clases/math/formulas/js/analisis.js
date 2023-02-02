@@ -46,14 +46,21 @@ const calcularMediana = () =>{
 }
 calcularMediana()
 
-const calPorSala = (_, index, arr) => {
-    let res = (arr[index + 1]) - (arr[index])
-    let div = res / (arr[index])
-    let por = div * 100
-    return por
-}
 
+const arrPorc = []
+arraySalarios('Juanita').forEach((_, index, arr) => {
+    let res = (arr[index]) - (arr[index- 1])
+    let div = res / (arr[index -1])
+    if(isNaN(div)) {
+        return
+    }
+    else {
+        arrPorc.push(div)
+        return
+    }
+})
 
-const mio =arraySalarios('Juanita').map(calPorSala)
-console.log(mio)
+console.log(arrPorc)
+const porOrden = arrPorc.sort( (a,b) => a - b )
+console.log(porOrden)
 
