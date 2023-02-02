@@ -44,5 +44,16 @@ const calcularMediana = () =>{
         console.log(text)
     }
 }
-console.log(arrayPar())
 calcularMediana()
+
+const calPorSala = (_, index, arr) => {
+    let res = (arr[index + 1]) - (arr[index])
+    let div = res / (arr[index])
+    let por = div * 100
+    return por
+}
+
+
+const mio =arraySalarios('Juanita').map(calPorSala)
+console.log(mio)
+
