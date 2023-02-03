@@ -1,0 +1,19 @@
+.tab-content {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.salary {
+    flex-grow: 1
+}
+
+.porc-salary{
+    flex-grow: 1
+}
+.ul{
+    list-style: none;
+    text-align: center;
+    padding: 0
+}
+

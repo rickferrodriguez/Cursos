@@ -3,6 +3,7 @@ const $mostrar = document.querySelector('#mostrar')
 const $ulSalary = document.querySelector('#ul-salary')
 const $ulPorc = document.querySelector('#ul-porc')
 const $porcCre = document.querySelector('#porc-cre')
+const $newSala = document.querySelector('#new-sala')
 
 
 const encontrarPersona = (persona) => {
@@ -48,7 +49,7 @@ const calcularMediana = (arr, par) =>{
 
 
 const mostrarPorcentajes = (arr) => {
-    let texto = ``
+    let texto = `<li>&nbsp;<li>`
     arr.forEach(a => {
         texto += `<li>${a}</li>`
     });
@@ -75,6 +76,13 @@ const porcSalary = (persona) => {
     })
 }
 
+const newSalary = (arr,porc) => {
+    let ultSalary = arr[arr.length -1]
+    let sum = 1.0 + (Math.round( porc * 1e12 ) / 1e12 )
+    let mul = ultSalary * sum
+    return mul
+}
+
 const mostrarSalarios = (arr) => {
     let texto = ``
     arr.forEach(a => {
@@ -85,6 +93,10 @@ const mostrarSalarios = (arr) => {
 
 const mostrarPorCre = (el) => {
     $porcCre.innerText = `Tu porcentaje de crecimiento es: ${el}`
+}
+
+const mostrarNewSal = (el) => {
+    $newSala.innerText = `Tu posible nuevo salario es: ${el}`
 }
 
 
@@ -99,4 +111,7 @@ $mostrar.addEventListener('click', () => {
     let porOrden = arrOrder(arrPorc)
     let arrayParPor= () => !(porOrden.length % 2)
     mostrarPorCre(calcularMediana(porOrden, arrayParPor()))
+    let miPorcentaje = calcularMediana(porOrden, arrayParPor())
+    let miSalary = arraySalarios(valor)
+    mostrarNewSal(newSalary(miSalary, miPorcentaje))
 })
