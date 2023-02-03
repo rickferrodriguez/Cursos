@@ -4,11 +4,21 @@ const $ulSalary = document.querySelector('#ul-salary')
 const $ulPorc = document.querySelector('#ul-porc')
 const $porcCre = document.querySelector('#porc-cre')
 const $newSala = document.querySelector('#new-sala')
+const $personaSel = document.querySelector('#persona-sel')
 
 
 const encontrarPersona = (persona) => {
     return salarios.find(sal => sal.name === persona)
 }
+
+const mostrarPersonas = (arr) => {
+    let text = ``
+    arr.forEach(el => {
+        text += `${el.name},`
+    });
+    $personaSel.textContent = text
+}
+mostrarPersonas(salarios)
 
 const arrayTrabajos = (nombrePersona) => {
     const trabajos = encontrarPersona(nombrePersona).trabajos
