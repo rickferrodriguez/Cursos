@@ -2,7 +2,7 @@ const $inpPersona = document.querySelector('#inp-persona')
 const $mostrar = document.querySelector('#mostrar')
 const $ulSalary = document.querySelector('#ul-salary')
 const $ulPorc = document.querySelector('#ul-porc')
-const $results = document.querySelector('#results')
+const $porcCre = document.querySelector('#porc-cre')
 
 
 const encontrarPersona = (persona) => {
@@ -84,7 +84,7 @@ const mostrarSalarios = (arr) => {
 }
 
 const mostrarPorCre = (el) => {
-    $results.innerHTML = `<h3> Tu porcentaje de crecimiento es: ${el}`
+    $porcCre.innerText = `Tu porcentaje de crecimiento es: ${el}`
 }
 
 
