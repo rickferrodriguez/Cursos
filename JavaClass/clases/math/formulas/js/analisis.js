@@ -32,7 +32,8 @@ const calcularMediana = (arr, par) =>{
         iGeneral = Math.round(arr.length / 2)
     } else {
         let inImpar = Math.round(arr.length / 2)
-        text = `el array es impar, la mediana es ${arr[inImpar]}`
+        text = `${arr[inImpar-1]}`
+        return text
     }
 
     if(iGeneral > 0){
@@ -40,7 +41,7 @@ const calcularMediana = (arr, par) =>{
         let iSiguiente = iGeneral
         let sum = parseInt(arr[iActual])+ parseInt(arr[iSiguiente])
         let divi = sum / 2
-        text = `el array es par, la mediana es ${divi.toFixed(2)}`
+        text = `${divi.toFixed(2)}`
     }
     return text
 }
@@ -59,6 +60,7 @@ const arrOrder = (arr) => {
 }
 
 let arrPorc = []
+
 const porcSalary = (persona) => {
     arraySalarios(persona).forEach((_, index, arr) => {
         let res = (arr[index]) - (arr[index- 1])
@@ -81,6 +83,10 @@ const mostrarSalarios = (arr) => {
     $ulSalary.innerHTML = texto
 }
 
+const mostrarPorCre = (el) => {
+    $results.innerHTML = `<h3> Tu porcentaje de crecimiento es: ${el}`
+}
+
 
 $mostrar.addEventListener('click', () => {
     let valor = $inpPersona.value
@@ -92,5 +98,5 @@ $mostrar.addEventListener('click', () => {
     mostrarPorcentajes(arrPorc)
     let porOrden = arrOrder(arrPorc)
     let arrayParPor= () => !(porOrden.length % 2)
-    calcularMediana(porOrden, arrayParPor())
+    mostrarPorCre(calcularMediana(porOrden, arrayParPor()))
 })
