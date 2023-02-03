@@ -69,7 +69,7 @@ const porcSalary = (persona) => {
             return
         }
         else {
-            arrPorc.push(div)
+            arrPorc.push(div.toFixed(3))
             return
         }
     })
