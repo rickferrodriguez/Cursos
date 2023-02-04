@@ -17,3 +17,14 @@
     padding: 0
 }
 
+.seleccionador {
+    display: flex;
+    width: 50%
+}
+
+.persona-sel {
+    width: 100px;
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+}
+

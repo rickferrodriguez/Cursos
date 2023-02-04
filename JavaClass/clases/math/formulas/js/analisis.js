@@ -5,27 +5,43 @@ const $ulPorc = document.querySelector('#ul-porc')
 const $porcCre = document.querySelector('#porc-cre')
 const $newSala = document.querySelector('#new-sala')
 const $personaSel = document.querySelector('#persona-sel')
+const $btnNext = document.querySelector('#btn-next')
+const $btnBefore = document.querySelector('#btn-before')
+
+
+
+
+let laPersona = salarios.find(sal => sal.name === salarios[0].name)
+let count = 0
+let text = `${salarios[0].name}`
+$btnNext.addEventListener('click', () => {
+    count ++
+    text = `${salarios[count].name}`
+    $personaSel.textContent = text
+    laPersona = salarios.find(sal => sal.name === text)
+    mostrarGeneral()
+})
+$btnBefore.addEventListener('click', () =>{
+    count --
+    text = `${salarios[count].name}`
+    $personaSel.textContent = text
+    laPersona = salarios.find(sal => sal.name === text)
+    mostrarGeneral()
+})
+$personaSel.textContent = text
+console.log(laPersona)
 
 
 const encontrarPersona = (persona) => {
     return salarios.find(sal => sal.name === persona)
 }
 
-const mostrarPersonas = (arr) => {
-    let text = ``
-    arr.forEach(el => {
-        text += `${el.name},`
-    });
-    $personaSel.textContent = text
-}
-mostrarPersonas(salarios)
-
 const arrayTrabajos = (nombrePersona) => {
-    const trabajos = encontrarPersona(nombrePersona).trabajos
+    // const trabajos = encontrarPersona(nombrePersona).trabajos
+    const trabajos = laPersona.trabajos
     return trabajos
 }
 
-// arrayTrabajos("Juanita")
 
 const arraySalarios = (persona) => {
     const salarios = arrayTrabajos(persona).map(trab =>{
@@ -34,7 +50,6 @@ const arraySalarios = (persona) => {
     return salarios
 }
 
-let arrayOrden = []
 
 const calcularMediana = (arr, par) =>{
     let iGeneral = 0
@@ -70,9 +85,9 @@ const arrOrder = (arr) => {
     return arr.sort( (a, b) => a -b )
 }
 
-let arrPorc = []
 
 const porcSalary = (persona) => {
+    let arrPorc = []
     arraySalarios(persona).forEach((_, index, arr) => {
         let res = (arr[index]) - (arr[index- 1])
         let div = res / (arr[index -1])
@@ -84,6 +99,7 @@ const porcSalary = (persona) => {
             return
         }
     })
+    return arrPorc
 }
 
 const newSalary = (arr,porc) => {
@@ -111,17 +127,36 @@ const mostrarNewSal = (el) => {
 
 
 $mostrar.addEventListener('click', () => {
+    mostrarGeneral()
+    // let arrayOrden = []
+    // let valor = $inpPersona.value
+    // arrayOrden = arrOrder(arraySalarios(valor))    
+    // mostrarSalarios(arrayOrden)
+    // let arrayPar = () => !(arrayOrden.length % 2)
+    // calcularMediana(arrayOrden, arrayPar())
+    // porcSalary(valor)
+    // mostrarPorcentajes(porcSalary(valor))
+    // let porOrden = arrOrder(porcSalary(valor))
+    // let arrayParPor= () => !(porOrden.length % 2)
+    // mostrarPorCre(calcularMediana(porOrden, arrayParPor()))
+    // let miPorcentaje = calcularMediana(porOrden, arrayParPor())
+    // let miSalary = arraySalarios(valor)
+    // mostrarNewSal(newSalary(miSalary, miPorcentaje))
+})
+
+const mostrarGeneral = () => {
+    let arrayOrden = []
     let valor = $inpPersona.value
     arrayOrden = arrOrder(arraySalarios(valor))    
     mostrarSalarios(arrayOrden)
     let arrayPar = () => !(arrayOrden.length % 2)
     calcularMediana(arrayOrden, arrayPar())
     porcSalary(valor)
-    mostrarPorcentajes(arrPorc)
-    let porOrden = arrOrder(arrPorc)
+    mostrarPorcentajes(porcSalary(valor))
+    let porOrden = arrOrder(porcSalary(valor))
     let arrayParPor= () => !(porOrden.length % 2)
     mostrarPorCre(calcularMediana(porOrden, arrayParPor()))
     let miPorcentaje = calcularMediana(porOrden, arrayParPor())
     let miSalary = arraySalarios(valor)
     mostrarNewSal(newSalary(miSalary, miPorcentaje))
-})
+}
