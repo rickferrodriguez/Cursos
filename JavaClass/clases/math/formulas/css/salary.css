@@ -8,9 +8,12 @@
     flex-grow: 1
 }
 
+
 .porc-salary{
     flex-grow: 1
 }
+
+
 .ul{
     list-style: none;
     text-align: center;
@@ -19,7 +22,7 @@
 
 .seleccionador {
     display: flex;
-    width: 50%
+    flex-direction: row;
 }
 
 .persona-sel {
@@ -27,4 +30,35 @@
     text-align: center;
     padding: 10px 10px 10px 10px;
 }
+
+.btn:hover{
+    cursor: pointer;
+}
+.btn-before {
+    margin-left: 20px;
+    align-self: center;
+    height: 20px;
+    width: 20px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0px 1px 1px 0px;
+    background-color: transparent;
+    padding: 10px;
+    transform: rotate(135deg);
+    transition: border-width 150ms ease-in-out;
+}
+
+.btn-next {
+    align-self: center;
+    height: 20px;
+    width: 20px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0px 1px 1px 0px;
+    background-color: transparent;
+    padding: 10px;
+    transform: rotate(315deg);
+    transition: border-width 150ms ease-in-out;
+}
+
 
