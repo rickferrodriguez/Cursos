@@ -1,3 +1,8 @@
+body {
+    background-color: #252726;
+    color: #FFFFFF
+}
+
 .tab-content {
     display: flex;
     flex-direction: row;
