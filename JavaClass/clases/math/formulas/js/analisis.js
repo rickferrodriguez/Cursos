@@ -136,14 +136,6 @@ const mostrarNewSal = (el) => {
     $newSala.innerText = `Tu posible nuevo salario es: ${el}`
 }
 
-
-$mostrar.addEventListener('click', () => {
-    // encontrarPersona($inpPersona.value)
-    encontrarPersona(capturarValor())
-    $personaSel.textContent = capturarValor()
-    mostrarGeneral()
-})
-
 const capturarValor =() => {
     let valor = ''
     if($inpPersona.value){
@@ -153,6 +145,12 @@ const capturarValor =() => {
     }
     return valor
 }
+
+$mostrar.addEventListener('click', () => {
+    $personaSel.textContent = capturarValor()
+    mostrarGeneral()
+})
+
 
 const mostrarGeneral = () => {
     let arrayOrden = []
