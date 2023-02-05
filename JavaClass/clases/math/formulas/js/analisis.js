@@ -48,8 +48,8 @@ const encontrarPersona = (persona) => {
 }
 
 const arrayTrabajos = (nombrePersona) => {
-    // const trabajos = encontrarPersona(nombrePersona).trabajos
-    const trabajos = laPersona.trabajos
+    const trabajos = encontrarPersona(nombrePersona).trabajos
+    // const trabajos = laPersona.trabajos
     return trabajos
 }
 
@@ -138,15 +138,26 @@ const mostrarNewSal = (el) => {
 
 
 $mostrar.addEventListener('click', () => {
-    encontrarPersona($inpPersona.value)
-    $personaSel.textContent = $inpPersona.value
+    // encontrarPersona($inpPersona.value)
+    encontrarPersona(capturarValor())
+    $personaSel.textContent = capturarValor()
     mostrarGeneral()
 })
 
+const capturarValor =() => {
+    let valor = ''
+    if($inpPersona.value){
+        valor = $inpPersona.value
+    } else {
+        valor = $personaSel.textContent
+    }
+    return valor
+}
+
 const mostrarGeneral = () => {
     let arrayOrden = []
-    let valor = $inpPersona.value
-    console.log(valor)
+    // let valor = $inpPersona.value
+    let valor = capturarValor()
     arrayOrden = arrOrder(arraySalarios(valor))    
     mostrarSalarios(arrayOrden)
     let arrayPar = () => !(arrayOrden.length % 2)
