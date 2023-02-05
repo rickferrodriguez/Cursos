@@ -32,20 +32,19 @@ const mostrarPersona = (valor) => {
         text = `${salarios[count].name}`
         $personaSel.textContent = text
         laPersona = salarios.find(sal => sal.name === text)
-        mostrarGeneral()
     } else if(valor === 'before' && count > 0){
         count --
         text = `${salarios[count].name}`
         $personaSel.textContent = text
         laPersona = salarios.find(sal => sal.name === text)
-        mostrarGeneral()
     }
     $personaSel.textContent = text
 }
 
 
 const encontrarPersona = (persona) => {
-    return salarios.find(sal => sal.name === persona)
+    // return salarios.find(sal => sal.name === persona)
+    return laPersona = salarios.find(sal => sal.name === persona)
 }
 
 const arrayTrabajos = (nombrePersona) => {
@@ -139,26 +138,15 @@ const mostrarNewSal = (el) => {
 
 
 $mostrar.addEventListener('click', () => {
+    encontrarPersona($inpPersona.value)
+    $personaSel.textContent = $inpPersona.value
     mostrarGeneral()
-    // let arrayOrden = []
-    // let valor = $inpPersona.value
-    // arrayOrden = arrOrder(arraySalarios(valor))    
-    // mostrarSalarios(arrayOrden)
-    // let arrayPar = () => !(arrayOrden.length % 2)
-    // calcularMediana(arrayOrden, arrayPar())
-    // porcSalary(valor)
-    // mostrarPorcentajes(porcSalary(valor))
-    // let porOrden = arrOrder(porcSalary(valor))
-    // let arrayParPor= () => !(porOrden.length % 2)
-    // mostrarPorCre(calcularMediana(porOrden, arrayParPor()))
-    // let miPorcentaje = calcularMediana(porOrden, arrayParPor())
-    // let miSalary = arraySalarios(valor)
-    // mostrarNewSal(newSalary(miSalary, miPorcentaje))
 })
 
 const mostrarGeneral = () => {
     let arrayOrden = []
     let valor = $inpPersona.value
+    console.log(valor)
     arrayOrden = arrOrder(arraySalarios(valor))    
     mostrarSalarios(arrayOrden)
     let arrayPar = () => !(arrayOrden.length % 2)
