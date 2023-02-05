@@ -12,24 +12,36 @@ const $btnBefore = document.querySelector('#btn-before')
 
 
 let laPersona = salarios.find(sal => sal.name === salarios[0].name)
-let count = 0
-let text = `${salarios[0].name}`
 $btnNext.addEventListener('click', () => {
-    count ++
-    text = `${salarios[count].name}`
-    $personaSel.textContent = text
-    laPersona = salarios.find(sal => sal.name === text)
+    mostrarPersona($btnNext.value)
     mostrarGeneral()
 })
 $btnBefore.addEventListener('click', () =>{
-    count --
-    text = `${salarios[count].name}`
-    $personaSel.textContent = text
-    laPersona = salarios.find(sal => sal.name === text)
+    mostrarPersona($btnBefore.value)
     mostrarGeneral()
 })
-$personaSel.textContent = text
+// $personaSel.textContent = text
 console.log(laPersona)
+
+let count = 0
+let text = `${salarios[0].name}`
+$personaSel.textContent = text
+const mostrarPersona = (valor) => {
+    if( valor === 'next' && count < (salarios.length- 1)){
+        count ++
+        text = `${salarios[count].name}`
+        $personaSel.textContent = text
+        laPersona = salarios.find(sal => sal.name === text)
+        mostrarGeneral()
+    } else if(valor === 'before' && count > 0){
+        count --
+        text = `${salarios[count].name}`
+        $personaSel.textContent = text
+        laPersona = salarios.find(sal => sal.name === text)
+        mostrarGeneral()
+    }
+    $personaSel.textContent = text
+}
 
 
 const encontrarPersona = (persona) => {
