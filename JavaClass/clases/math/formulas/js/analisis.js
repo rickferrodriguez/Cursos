@@ -72,9 +72,28 @@ const arrayEmpresas = () => {
     return empresas
 }
 
+
 arrayEmpresas()
 
+const arrEmpresasDos = () => {
+    let empresas = {}
+    for (let persona of salarios){
+        let elTrabajo = persona.trabajos
+        for( let trabajo of elTrabajo){
+            if( !empresas[trabajo.empresa]){
+                empresas[trabajo.empresa] = {}
+            }
 
+            if( !empresas[trabajo.empresa][trabajo.year]){
+                empresas[trabajo.empresa][trabajo.year] = []
+            }
+
+            empresas[trabajo.empresa][trabajo.year].push(trabajo.salario);
+        }
+    }
+    console.log(empresas)
+    return empresas
+}
 
 const arraySalarios = (persona) => {
     const salarios = arrayTrabajos(persona).map(trab =>{
@@ -108,10 +127,11 @@ const calcularMediana = (arr, par) =>{
 }
 
 const laEmpresa = (empresa, year ) => {
-    Object.entries(arrayEmpresas()).forEach(entry => {
+    Object.entries(arrEmpresasDos()).forEach(entry => {
         // const clave = entry[0]
         // const valor = entry[1]
         const [clave, valor] = entry
+        console.log(valor)
         if(clave === empresa){
             console.log(valor[year])
             const sinOrden = valor[year]
