@@ -50,6 +50,7 @@ const arrayTrabajos = (nombrePersona) => {
 }
 
 // convertimos un array de dos niveles en uno solo
+// TODO: usar el entries para tambien traer a la persona
 const granTrabajos = salarios.flatMap(sal => sal.trabajos)
 const arrayEmpresas = () => {
     let empresas = {}
@@ -108,8 +109,9 @@ const calcularMediana = (arr, par) =>{
 
 const laEmpresa = (empresa, year ) => {
     Object.entries(arrayEmpresas()).forEach(entry => {
-        const clave = entry[0]
-        const valor = entry[1]
+        // const clave = entry[0]
+        // const valor = entry[1]
+        const [clave, valor] = entry
         if(clave === empresa){
             console.log(valor[year])
             const sinOrden = valor[year]
