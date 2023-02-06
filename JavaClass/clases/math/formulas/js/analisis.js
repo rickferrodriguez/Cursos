@@ -68,10 +68,11 @@ const arrayEmpresas = () => {
         empresas[emp.empresa][emp.year].push(emp.salario)
         
     })
-    console.log(empresas)
+    return empresas
 }
 
 arrayEmpresas()
+
 
 
 const arraySalarios = (persona) => {
@@ -87,10 +88,11 @@ const calcularMediana = (arr, par) =>{
     let text = ''
     if(par){
         iGeneral = Math.round(arr.length / 2)
+    } else if( arr.length == 1){
+        text = `${arr[0]}`
     } else {
         let inImpar = Math.round(arr.length / 2)
         text = `${arr[inImpar-1]}`
-        return text
     }
 
     if(iGeneral > 0){
@@ -100,8 +102,27 @@ const calcularMediana = (arr, par) =>{
         let divi = sum / 2
         text = `${divi.toFixed(2)}`
     }
+    console.log(text)
     return text
 }
+
+const laEmpresa = (empresa, year ) => {
+    const miEmpresa =Object.entries(arrayEmpresas()).find(entry => {
+        const [key, value] = entry
+        if(key === empresa){
+            return { key,value}
+        } 
+    })
+    const sinOrden =miEmpresa[1][year];
+    const esPar = !(sinOrden.length % 2)
+    const enOrden = sinOrden.sort((a, b) => a-b)
+    calcularMediana(enOrden, esPar)
+    return miEmpresa
+}
+
+
+laEmpresa('Industrias Mokepon', 2022)
+
 
 
 const mostrarPorcentajes = (arr) => {
