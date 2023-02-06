@@ -9,8 +9,6 @@ const $btnNext = document.querySelector('#btn-next')
 const $btnBefore = document.querySelector('#btn-before')
 
 
-
-
 let laPersona = salarios.find(sal => sal.name === salarios[0].name)
 $btnNext.addEventListener('click', () => {
     mostrarPersona($btnNext.value)
@@ -20,8 +18,6 @@ $btnBefore.addEventListener('click', () =>{
     mostrarPersona($btnBefore.value)
     mostrarGeneral()
 })
-// $personaSel.textContent = text
-console.log(laPersona)
 
 let count = 0
 let text = `${salarios[0].name}`
@@ -52,6 +48,30 @@ const arrayTrabajos = (nombrePersona) => {
     // const trabajos = laPersona.trabajos
     return trabajos
 }
+
+// convertimos un array de dos niveles en uno solo
+const granTrabajos = salarios.flatMap(sal => sal.trabajos)
+const arrayEmpresas = () => {
+    let empresas = {}
+    granTrabajos.map(emp => {
+        // si la empresa no existe cree el objeto de forma vacia
+        if(!empresas[emp.empresa]){
+            empresas[emp.empresa] = {}
+        }
+
+        // si la empresa con el array de año no existe, creelo con un array de cada año
+        if(!empresas[emp.empresa][emp.year]){
+            empresas[emp.empresa][emp.year] = []
+        }
+
+        // dentro del array de cada año se hace un push del salario que le corresponde
+        empresas[emp.empresa][emp.year].push(emp.salario)
+        
+    })
+    console.log(empresas)
+}
+
+arrayEmpresas()
 
 
 const arraySalarios = (persona) => {
