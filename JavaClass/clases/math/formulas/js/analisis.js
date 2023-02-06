@@ -107,21 +107,22 @@ const calcularMediana = (arr, par) =>{
 }
 
 const laEmpresa = (empresa, year ) => {
-    const miEmpresa =Object.entries(arrayEmpresas()).find(entry => {
-        const [key, value] = entry
-        if(key === empresa){
-            return { key,value}
-        } 
+    const miEmpresa = Object.entries(arrayEmpresas()).forEach(entry => {
+        const clave = entry[0]
+        const valor = entry[1]
+        if(clave === empresa){
+            console.log(valor[year])
+            const sinOrden = valor[year]
+            const esPar = !(sinOrden.length % 2)
+            const enOrden = sinOrden.sort((a, b) => a-b)
+            calcularMediana(enOrden, esPar)
+        }
     })
-    const sinOrden =miEmpresa[1][year];
-    const esPar = !(sinOrden.length % 2)
-    const enOrden = sinOrden.sort((a, b) => a-b)
-    calcularMediana(enOrden, esPar)
     return miEmpresa
 }
 
 
-laEmpresa('Industrias Mokepon', 2022)
+laEmpresa('Industrias Mokepon', 2021)
 
 
 
