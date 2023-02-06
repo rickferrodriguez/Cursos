@@ -107,7 +107,7 @@ const calcularMediana = (arr, par) =>{
 }
 
 const laEmpresa = (empresa, year ) => {
-    const miEmpresa = Object.entries(arrayEmpresas()).forEach(entry => {
+    Object.entries(arrayEmpresas()).forEach(entry => {
         const clave = entry[0]
         const valor = entry[1]
         if(clave === empresa){
@@ -118,7 +118,6 @@ const laEmpresa = (empresa, year ) => {
             calcularMediana(enOrden, esPar)
         }
     })
-    return miEmpresa
 }
 
 
