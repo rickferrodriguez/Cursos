@@ -7,36 +7,41 @@ const $newSala = document.querySelector('#new-sala')
 const $personaSel = document.querySelector('#persona-sel')
 const $btnNext = document.querySelector('#btn-next')
 const $btnBefore = document.querySelector('#btn-before')
+const $mostrarEmp = document.querySelector('#mostrar-emp')
+const $impEmpresa = document.querySelector('#imp-empresa')
+const $impYear = document.querySelector('#imp-year')
+const $ulEmpresa = document.querySelector('#ul-empresa')
+const $empresaSel = document.querySelector('#empresa-sel')
+const $mediaEmpre = document.querySelector('#media-empre')
 
 
 let laPersona = salarios.find(sal => sal.name === salarios[0].name)
+let laEmpresa = 
 $btnNext.addEventListener('click', () => {
-    mostrarPersona($btnNext.value)
+    recoUnoporUno(salarios, $personaSel, $btnNext.value)
     mostrarGeneral()
 })
 $btnBefore.addEventListener('click', () =>{
-    mostrarPersona($btnBefore.value)
+    recoUnoporUno(salarios, $personaSel, $btnBefore.value)
     mostrarGeneral()
 })
 
 let count = 0
-let text = `${salarios[0].name}`
-$personaSel.textContent = text
-const mostrarPersona = (valor) => {
-    if( valor === 'next' && count < (salarios.length- 1)){
+
+const recoUnoporUno = (arr, contenido, valor) => {
+    if( valor === 'next' && count < (arr.length- 1)){
         count ++
-        text = `${salarios[count].name}`
-        $personaSel.textContent = text
-        laPersona = salarios.find(sal => sal.name === text)
+        text = `${arr[count].name}`
+        contenido.textContent = text
+        laPersona = arr.find(sal => sal.name === text)
     } else if(valor === 'before' && count > 0){
         count --
-        text = `${salarios[count].name}`
-        $personaSel.textContent = text
-        laPersona = salarios.find(sal => sal.name === text)
+        text = `${arr[count].name}`
+        contenido.textContent = text
+        laPersona = arr.find(sal => sal.name === text)
     }
-    $personaSel.textContent = text
+    contenido.textContent = text
 }
-
 
 const encontrarPersona = (persona) => {
     // return salarios.find(sal => sal.name === persona)
@@ -72,9 +77,6 @@ const arrayEmpresas = () => {
     return empresas
 }
 
-
-arrayEmpresas()
-
 const arrEmpresasDos = () => {
     let empresas = {}
     for (let persona of salarios){
@@ -91,7 +93,6 @@ const arrEmpresasDos = () => {
             empresas[trabajo.empresa][trabajo.year].push(trabajo.salario);
         }
     }
-    console.log(empresas)
     return empresas
 }
 
@@ -122,28 +123,36 @@ const calcularMediana = (arr, par) =>{
         let divi = sum / 2
         text = `${divi.toFixed(2)}`
     }
-    console.log(text)
     return text
 }
 
-const laEmpresa = (empresa, year ) => {
-    Object.entries(arrEmpresasDos()).forEach(entry => {
+const entriesEmpresas = Object.entries(arrEmpresasDos())
+const mediaEmpYear = (empresa, year ) => {
+    const forArray =entriesEmpresas.forEach(entry => {
         // const clave = entry[0]
         // const valor = entry[1]
         const [clave, valor] = entry
-        console.log(valor)
         if(clave === empresa){
-            console.log(valor[year])
             const sinOrden = valor[year]
+            // forArray.push(valor[year])
             const esPar = !(sinOrden.length % 2)
             const enOrden = sinOrden.sort((a, b) => a-b)
-            calcularMediana(enOrden, esPar)
+            console.log(enOrden)
+            $mediaEmpre.textContent =`La media de salarios de ${clave} del año ${year} es: ${calcularMediana(enOrden, esPar)}`
+            mostrarSalarios(enOrden, $ulEmpresa)
+            return enOrden
         }
     })
+    console.log(forArray)
+    return forArray
 }
 
 
-laEmpresa('Industrias Mokepon', 2021)
+$mostrarEmp.addEventListener('click', () => {
+    let emp = $impEmpresa.value
+    let year = $impYear.value
+    mediaEmpYear(emp, year)
+})
 
 
 
@@ -183,12 +192,12 @@ const newSalary = (arr,porc) => {
     return mul
 }
 
-const mostrarSalarios = (arr) => {
+const mostrarSalarios = (arr, contenido) => {
     let texto = ``
     arr.forEach(a => {
         texto += `<li>${a}</li>`
     })
-    $ulSalary.innerHTML = texto
+    contenido.innerHTML = texto
 }
 
 const mostrarPorCre = (el) => {
@@ -215,12 +224,31 @@ $mostrar.addEventListener('click', () => {
 })
 
 
+const mostrarDefault = () => {
+    let text = `${salarios[0].name}`
+    $personaSel.textContent = text
+    let arrayOrden = []
+    let valor = capturarValor()
+    arrayOrden = arrOrder(arraySalarios(valor))    
+    mostrarSalarios(arrayOrden, $ulSalary)
+    let arrayPar = () => !(arrayOrden.length % 2)
+    calcularMediana(arrayOrden, arrayPar())
+    porcSalary(valor)
+    mostrarPorcentajes(porcSalary(valor))
+    let porOrden = arrOrder(porcSalary(valor))
+    let arrayParPor= () => !(porOrden.length % 2)
+    mostrarPorCre(calcularMediana(porOrden, arrayParPor()))
+    let miPorcentaje = calcularMediana(porOrden, arrayParPor())
+    let miSalary = arraySalarios(valor)
+    mostrarNewSal(newSalary(miSalary, miPorcentaje))
+}
+
 const mostrarGeneral = () => {
     let arrayOrden = []
     // let valor = $inpPersona.value
     let valor = capturarValor()
     arrayOrden = arrOrder(arraySalarios(valor))    
-    mostrarSalarios(arrayOrden)
+    mostrarSalarios(arrayOrden, $ulSalary)
     let arrayPar = () => !(arrayOrden.length % 2)
     calcularMediana(arrayOrden, arrayPar())
     porcSalary(valor)
