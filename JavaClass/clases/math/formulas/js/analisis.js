@@ -15,8 +15,11 @@ const $empresaSel = document.querySelector('#empresa-sel')
 const $mediaEmpre = document.querySelector('#media-empre')
 
 
+const ordernarArray = (arr) => {
+    return enOrden = arr.sort((a, b) => a-b)
+}
+
 let laPersona = salarios.find(sal => sal.name === salarios[0].name)
-let laEmpresa = 
 $btnNext.addEventListener('click', () => {
     recoUnoporUno(salarios, $personaSel, $btnNext.value)
     mostrarGeneral()
@@ -96,11 +99,13 @@ const arrEmpresasDos = () => {
     return empresas
 }
 
+const entriesEmpresas = Object.entries(arrEmpresasDos())
 const arraySalarios = (persona) => {
     const salarios = arrayTrabajos(persona).map(trab =>{
         return trab.salario
     })
-    return salarios
+    const ordenado = ordernarArray(salarios)
+    return ordenado
 }
 
 
@@ -126,32 +131,15 @@ const calcularMediana = (arr, par) =>{
     return text
 }
 
-const entriesEmpresas = Object.entries(arrEmpresasDos())
-const mediaEmpYear = (empresa, year ) => {
-    const forArray =entriesEmpresas.forEach(entry => {
-        // const clave = entry[0]
-        // const valor = entry[1]
-        const [clave, valor] = entry
-        if(clave === empresa){
-            const sinOrden = valor[year]
-            // forArray.push(valor[year])
-            const esPar = !(sinOrden.length % 2)
-            const enOrden = sinOrden.sort((a, b) => a-b)
-            console.log(enOrden)
-            $mediaEmpre.textContent =`La media de salarios de ${clave} del año ${year} es: ${calcularMediana(enOrden, esPar)}`
-            mostrarSalarios(enOrden, $ulEmpresa)
-            return enOrden
-        }
-    })
-    console.log(forArray)
-    return forArray
-}
 
 
 $mostrarEmp.addEventListener('click', () => {
     let emp = $impEmpresa.value
     let year = $impYear.value
-    mediaEmpYear(emp, year)
+    let innerArray = empresasSalarios('Freelance', year)
+    const esPar = !(innerArray.length % 2)
+    $mediaEmpre.textContent =`La media de salarios de ${emp} del año ${year} es: ${calcularMediana(innerArray, esPar)}`
+    mostrarSalarios(innerArray, $ulEmpresa)
 })
 
 
@@ -162,10 +150,6 @@ const mostrarPorcentajes = (arr) => {
         texto += `<li>${a}</li>`
     });
     $ulPorc.innerHTML = texto
-}
-
-const arrOrder = (arr) => {
-    return arr.sort( (a, b) => a -b )
 }
 
 
@@ -223,19 +207,32 @@ $mostrar.addEventListener('click', () => {
     mostrarGeneral()
 })
 
+const empresasSalarios = (emp, date) => {
+    let innerArray
+    for(let [key,value] of entriesEmpresas){
+        if(key === emp && Array.isArray(value[date])){
+            innerArray = value[date]
+            break
+        }
+    }
+    const enOrden = ordernarArray(innerArray)
+    return enOrden
+}
+
+
 
 const mostrarDefault = () => {
     let text = `${salarios[0].name}`
     $personaSel.textContent = text
     let arrayOrden = []
     let valor = capturarValor()
-    arrayOrden = arrOrder(arraySalarios(valor))    
+    arrayOrden = arraySalarios(valor)
     mostrarSalarios(arrayOrden, $ulSalary)
     let arrayPar = () => !(arrayOrden.length % 2)
     calcularMediana(arrayOrden, arrayPar())
     porcSalary(valor)
     mostrarPorcentajes(porcSalary(valor))
-    let porOrden = arrOrder(porcSalary(valor))
+    let porOrden = porcSalary(valor)
     let arrayParPor= () => !(porOrden.length % 2)
     mostrarPorCre(calcularMediana(porOrden, arrayParPor()))
     let miPorcentaje = calcularMediana(porOrden, arrayParPor())
@@ -247,13 +244,13 @@ const mostrarGeneral = () => {
     let arrayOrden = []
     // let valor = $inpPersona.value
     let valor = capturarValor()
-    arrayOrden = arrOrder(arraySalarios(valor))    
+    arrayOrden = arraySalarios(valor)
     mostrarSalarios(arrayOrden, $ulSalary)
     let arrayPar = () => !(arrayOrden.length % 2)
     calcularMediana(arrayOrden, arrayPar())
     porcSalary(valor)
     mostrarPorcentajes(porcSalary(valor))
-    let porOrden = arrOrder(porcSalary(valor))
+    let porOrden = porcSalary(valor)
     let arrayParPor= () => !(porOrden.length % 2)
     mostrarPorCre(calcularMediana(porOrden, arrayParPor()))
     let miPorcentaje = calcularMediana(porOrden, arrayParPor())
