@@ -279,8 +279,11 @@ const mediaYears = (emp) => {
 }
 
 const medianaGeneral = () => {
-    
+    const personas = salarios.map( persona => persona.name)
+    console.log(personas)
 }
+
+medianaGeneral()
 
 
 const mostrarDefault = () => {
