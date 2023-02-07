@@ -138,6 +138,7 @@ const calcularMediana = (arr, par) =>{
 
 
 
+
 $mostrarEmp.addEventListener('click', () => {
     let emp = $impEmpresa.value
     let year = $impYear.value
@@ -145,12 +146,16 @@ $mostrarEmp.addEventListener('click', () => {
     const esPar = !(innerArray.length % 2)
     $mediaYears.textContent =`La mediana de salarios de ${emp} del año ${year} es: ${calcularMediana(innerArray, esPar)}`
     let arrayPar = () => !(mediaYears.length % 2)
-    $mediaEmpre.textContent =`La mediana general de la empresa: ${emp} es: ${calcularMediana((mediaYears('Freelance')), arrayPar)}`
-    console.log(mediaYears('Freelance'))
+    $mediaEmpre.textContent =`La mediana general de la empresa: ${emp} es: ${calcularMediana((mediaYears(emp)), arrayPar)}`
     mostrarSalarios(innerArray, $ulEmpresa)
     // $porcEmp
 
-    porcentajeGeneral(mediaYears('Freelance'))
+    let porcGeneralOrd = ordernarArray(porcentajeGeneral(mediaYears(emp)))
+    let porcArrayPar = () => !(porcGeneralOrd.length % 2)
+    let mediaPorGeneral = calcularMediana(porcGeneralOrd, porcArrayPar())
+
+    console.log(mediaPorGeneral, porcGeneralOrd, mediaYears(emp))
+    $porcEmp.textContent = `El crecimiento del salario para el año que viene es de: ${newSalary(mediaYears(emp), mediaPorGeneral)}`
 })
 
 
@@ -187,13 +192,15 @@ const porcentajeGeneral = (arr) => {
         let div = res / (arr[index -1])
         if(isNaN(div)) {
             return
+        } else if(div < 0){
+            div = 0
+            arrPorc.push(div.toFixed(3))
         }
         else {
             arrPorc.push(div.toFixed(3))
             return
         }
     })
-    console.log(arrPorc)
     return arrPorc
 }
 
@@ -262,7 +269,6 @@ const mediaYears = (emp) => {
             const enOrden = ordernarArray(value)
             arrYearEmpre.push(enOrden);
             
-            // console.log(value)
         }
     })
     let media = arrYearEmpre.map(arr => {
@@ -270,6 +276,10 @@ const mediaYears = (emp) => {
         return calcularMediana(arr, arrayPar)
     })
     return media
+}
+
+const medianaGeneral = () => {
+    
 }
 
 
