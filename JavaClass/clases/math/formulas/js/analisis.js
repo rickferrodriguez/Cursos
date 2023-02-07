@@ -13,6 +13,7 @@ const $impYear = document.querySelector('#imp-year')
 const $ulEmpresa = document.querySelector('#ul-empresa')
 const $empresaSel = document.querySelector('#empresa-sel')
 const $mediaEmpre = document.querySelector('#media-empre')
+const $porcEmp = document.querySelector('#porc-emp')
 
 
 const ordernarArray = (arr) => {
@@ -111,14 +112,6 @@ const arraySalarios = (persona) => {
     return ordenado
 }
 
-// const recoYears = () => {
-//     // let arraYear
-//     arrayTrabajos().map((entry) => {
-//         const [key, value] = entry
-//         console.log(value)
-//     })
-// }
-// recoYears()
 
 const calcularMediana = (arr, par) =>{
     let iGeneral = 0
@@ -139,6 +132,7 @@ const calcularMediana = (arr, par) =>{
         let divi = sum / 2
         text = `${divi.toFixed(2)}`
     }
+    console.log(text)
     return text
 }
 
@@ -151,6 +145,9 @@ $mostrarEmp.addEventListener('click', () => {
     const esPar = !(innerArray.length % 2)
     $mediaEmpre.textContent =`La media de salarios de ${emp} del año ${year} es: ${calcularMediana(innerArray, esPar)}`
     mostrarSalarios(innerArray, $ulEmpresa)
+    // $porcEmp
+
+    porcentajeGeneral(mediaYears('Freelance'))
 })
 
 
@@ -177,6 +174,23 @@ const porcSalary = (persona) => {
             return
         }
     })
+    return arrPorc
+}
+
+const porcentajeGeneral = (arr) => {
+    let arrPorc = []
+    arr.forEach((_, index) => {
+        let res = (arr[index]) - (arr[index- 1])
+        let div = res / (arr[index -1])
+        if(isNaN(div)) {
+            return
+        }
+        else {
+            arrPorc.push(div.toFixed(3))
+            return
+        }
+    })
+    console.log(arrPorc)
     return arrPorc
 }
 
@@ -230,6 +244,29 @@ const empresasSalarios = (emp, date) => {
     return enOrden
 }
 
+const mediaYears = (emp) => {
+    let arraYear
+    for(let [key,value] of entriesEmpresas){
+        if(key === emp && typeof value === 'object'){
+            arraYear = value
+            break
+        }
+    }
+    let arrYearEmpre = []
+    Object.entries(arraYear).map(entry => {
+        const [key,value] = entry
+        if(Array.isArray(value)){
+            const enOrden = ordernarArray(value)
+            arrYearEmpre.push(enOrden);
+            
+            // console.log(value)
+        }
+    })
+    let media = arrYearEmpre.map(arr => {
+        return calcularMediana(arr)
+    })
+    return media
+}
 
 
 const mostrarDefault = () => {
