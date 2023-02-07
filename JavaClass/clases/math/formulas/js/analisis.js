@@ -46,6 +46,7 @@ const recoUnoporUno = (arr, contenido, valor) => {
     contenido.textContent = text
 }
 
+
 const encontrarPersona = (persona) => {
     // return salarios.find(sal => sal.name === persona)
     return laPersona = salarios.find(sal => sal.name === persona)
@@ -99,6 +100,8 @@ const arrEmpresasDos = () => {
     return empresas
 }
 
+
+
 const entriesEmpresas = Object.entries(arrEmpresasDos())
 const arraySalarios = (persona) => {
     const salarios = arrayTrabajos(persona).map(trab =>{
@@ -108,6 +111,14 @@ const arraySalarios = (persona) => {
     return ordenado
 }
 
+// const recoYears = () => {
+//     // let arraYear
+//     arrayTrabajos().map((entry) => {
+//         const [key, value] = entry
+//         console.log(value)
+//     })
+// }
+// recoYears()
 
 const calcularMediana = (arr, par) =>{
     let iGeneral = 0
