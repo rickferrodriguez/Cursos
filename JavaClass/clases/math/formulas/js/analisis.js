@@ -13,6 +13,7 @@ const $impYear = document.querySelector('#imp-year')
 const $ulEmpresa = document.querySelector('#ul-empresa')
 const $empresaSel = document.querySelector('#empresa-sel')
 const $mediaEmpre = document.querySelector('#media-empre')
+const $mediaYears = document.querySelector('#media-years')
 const $porcEmp = document.querySelector('#porc-emp')
 
 
@@ -132,7 +133,6 @@ const calcularMediana = (arr, par) =>{
         let divi = sum / 2
         text = `${divi.toFixed(2)}`
     }
-    console.log(text)
     return text
 }
 
@@ -143,7 +143,10 @@ $mostrarEmp.addEventListener('click', () => {
     let year = $impYear.value
     let innerArray = empresasSalarios('Freelance', year)
     const esPar = !(innerArray.length % 2)
-    $mediaEmpre.textContent =`La media de salarios de ${emp} del año ${year} es: ${calcularMediana(innerArray, esPar)}`
+    $mediaYears.textContent =`La mediana de salarios de ${emp} del año ${year} es: ${calcularMediana(innerArray, esPar)}`
+    let arrayPar = () => !(mediaYears.length % 2)
+    $mediaEmpre.textContent =`La mediana general de la empresa: ${emp} es: ${calcularMediana((mediaYears('Freelance')), arrayPar)}`
+    console.log(mediaYears('Freelance'))
     mostrarSalarios(innerArray, $ulEmpresa)
     // $porcEmp
 
@@ -263,7 +266,8 @@ const mediaYears = (emp) => {
         }
     })
     let media = arrYearEmpre.map(arr => {
-        return calcularMediana(arr)
+        let arrayPar = () => !(arr.length % 2)
+        return calcularMediana(arr, arrayPar)
     })
     return media
 }
