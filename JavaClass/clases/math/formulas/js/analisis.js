@@ -105,6 +105,7 @@ const arrEmpresasDos = () => {
 
 
 const entriesEmpresas = Object.entries(arrEmpresasDos())
+
 const arraySalarios = (persona) => {
     const salarios = arrayTrabajos(persona).map(trab =>{
         return trab.salario
@@ -279,8 +280,8 @@ const mediaYears = (emp) => {
 }
 
 const medianaGeneral = () => {
-    const personas = salarios.map( persona => persona.name)
-    console.log(personas)
+    const nombres = salarios.map( persona => persona.name)
+    arraySalarios(nombres)
 }
 
 medianaGeneral()
