@@ -281,11 +281,19 @@ const mediaYears = (emp) => {
 
 const medianaGeneral = () => {
     const nombres = salarios.map( persona => persona.name)
-    const newArray =nombres.map(nombre => {
+    const mediaPersonaGeneral =nombres.map(nombre => {
         const salarios = arraySalarios(nombre)
-        return {name:nombre, media:calcularMediana(salarios)}
+        const esPar = () => !(salarios.length % 2)
+        return {name:nombre, media:calcularMediana(salarios, esPar())}
     })
-    const enOrden = newArray.sort((a,b) => a.media-b.media)
+    const enOrden = mediaPersonaGeneral.sort((a,b) => b.media-a.media)
+    const mappedMedia = enOrden.map( ord => {
+        return ord.media
+    })
+    const esPar = () => !(mappedMedia.length % 2)
+    const medianaGen = calcularMediana(mappedMedia, esPar)
+    console.log(enOrden)
+    console.log(medianaGen)
     return enOrden
 }
 
