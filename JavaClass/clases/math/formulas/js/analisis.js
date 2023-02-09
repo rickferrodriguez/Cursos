@@ -291,9 +291,24 @@ const medianaGeneral = () => {
         return ord.media
     })
     const esPar = () => !(mappedMedia.length % 2)
-    const medianaGen = calcularMediana(mappedMedia, esPar)
+    const medianaGen = calcularMediana(mappedMedia, esPar())
+    const topDiez = []
+    enOrden.forEach((ord,index) => {
+        const diez = (enOrden.length * 10) /100
+        if(index < diez){
+            console.log(ord.name)
+            topDiez.push({name:ord.name, media:ord.media}) 
+        } 
+    })
+    const topPar = () => !(topDiez.length % 2)
+    const arraMediaTop = topDiez.map(ord => {
+        return ord.media
+    })
+    const mediaTop = calcularMediana(arraMediaTop, topPar())
     console.log(enOrden)
     console.log(medianaGen)
+    console.log(topDiez)
+    console.log(mediaTop)
     return enOrden
 }
 
