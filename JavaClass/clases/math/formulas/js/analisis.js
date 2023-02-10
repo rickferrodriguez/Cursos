@@ -280,7 +280,7 @@ const mediaYears = (emp) => {
 }
 
 const medianaGeneral = () => {
-    const nombres = salarios.map( persona => persona.name)
+    const nombres = salarios.map(persona => persona.name)
     const mediaPersonaGeneral =nombres.map(nombre => {
         const salarios = arraySalarios(nombre)
         const esPar = () => !(salarios.length % 2)
