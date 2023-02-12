@@ -39,7 +39,29 @@ const productor = new Promise ((resolve, reject) => {
     }
 })
 
+// El finally pasa primero
 productor.then(song => console.log(song))
     .catch((error) => {
         console.log(error)
     }).finally(console.log('Como fan al fin tienes tu respuesta'))
+
+// Ejemplo: loadScript
+
+const loadScript = (direccion) => {
+    return new Promise((resolve, reject) => {
+        let script = document.createElement('script')
+        script.src = direccion
+
+        script.onload = () => resolve(script)
+        script.onerror = () => reject(new Error('Error cargando el script'))
+
+        document.head.append(script)
+    })
+}
+
+const miScript = loadScript('https//bla')
+
+miScript.then(
+    script => console.log(`${script.src} está cargado`),
+    error => console.log(error.message)
+)
