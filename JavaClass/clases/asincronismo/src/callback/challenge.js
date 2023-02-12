@@ -1,5 +1,5 @@
 // const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest
-// const API = 'https://api.escuela.js.co/api/vi'
+// const API = 'https://api.escuelajs.co/api/v1/products'
 //
 // function fetchData(urlApi, callback) {
 //     let xhttp = new XMLHttpRequest()
@@ -30,3 +30,13 @@
 //         })
 //     })
 // })
+
+fetch('https://api.escuelajs.co/api/v1/products')
+    .then(res => res.json())
+    .then(response => {
+        console.log(response[0])
+        console.log(response[0].title)
+        console.log(response[0].category.name)
+    })
+
+
