@@ -65,3 +65,17 @@ miScript.then(
     script => console.log(`${script.src} está cargado`),
     error => console.log(error.message)
 )
+
+// Ejemplo: Demora una promesa
+//
+
+const delay = (ms) => {
+    return new Promise(resolve => {
+        setTimeout(resolve, ms)
+    })
+}
+
+delay(3000).then(
+    () => alert('se ejecuta después de 3 segundos')
+)
+
