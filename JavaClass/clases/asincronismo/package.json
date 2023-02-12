@@ -10,5 +10,8 @@
     "javascript"
   ],
   "author": "richard rodriguez richardfernandorodriguez@gmail.com",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
 }
