@@ -76,6 +76,16 @@ const delay = (ms) => {
 }
 
 delay(3000).then(
-    () => alert('se ejecuta después de 3 segundos')
+    () => console.log('se ejecuta después de 3 segundos')
 )
 
+const operation = (num1, num2) => {
+    const result = num1 + num2
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(result)
+        }, 500);
+    })
+}
+
+operation(5,3).then(total => console.log(total))
