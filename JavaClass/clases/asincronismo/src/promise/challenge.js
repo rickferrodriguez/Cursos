@@ -1,28 +1,28 @@
 // import fetch from 'node-fetch'
 
-const API = 'https://api.escuelajs.co/api/v1'
+const url = 'https://api.escuelajs.co/api/v1'
 
 const fetchData = (urlApi) => {
     return fetch(urlApi)
 }
 
-// fetchData(`${API}/products`)
+// fetchData(`${url}/products`)
 //     .then(res => res.json())
 //     .then(products => {
 //         console.log(products)
 //     })
 //     .catch(error => console.log(error))
 
-fetchData(`${API}/products`)
+fetchData(`${url}/products`)
     .then(res => res.json())
     .then(products => {
         console.log(products[0])
-        return fetchData(`${API}/products/${products[0].id}`)
+        return fetchData(`${url}/products/${products[0].id}`)
     })
     .then(response => response.json())
     .then(product => {
         console.log(product.title)
-        return fetchData(`${API}/categories/${product.category.id}`)
+        return fetchData(`${url}/categories/${product.category.id}`)
     })
     .then(response => response.json())
     .then(category => {
