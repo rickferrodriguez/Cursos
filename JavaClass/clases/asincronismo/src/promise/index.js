@@ -154,7 +154,6 @@ function watchTutorialCallback(){
 watchTutorialCallback().then(user => {
     console.log(user)
 }).catch(user => {
-        let miUser = user
-        console.log(`${miUser.name} ${miUser.mensaje}`);
-        
+        const {name, mensaje} = user
+        console.log(`${name} ${mensaje}`);
     })
