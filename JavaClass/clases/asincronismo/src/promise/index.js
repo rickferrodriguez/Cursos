@@ -124,3 +124,37 @@ const showCircle = (cx, cy, radius) => {
     })
 }
 
+
+function watchTutorialCallback(){
+    const user = {
+        userLeft : {
+            estado: true,
+            name: 'User Left',
+            mensaje: ':('
+        },
+        userWatchingCatMeme : {
+            estado: false,
+            nameU: 'User Watching Cat Meme',
+            mensaje: 'WebDevSimplified < Cat'
+        }
+    }
+    return new Promise((resolve, reject) => {
+        if(user.userLeft.estado) {
+            reject(user.userLeft)
+
+        } else if(user.userWatchingCatMeme.estado) {
+            reject(user.userWatchingCatMeme)
+        }
+        else {
+            resolve('Thumbs up and Subscribe')
+        }
+    })
+}
+
+watchTutorialCallback().then(user => {
+    console.log(user)
+}).catch(user => {
+        let miUser = user
+        console.log(`${miUser.name} ${miUser.mensaje}`);
+        
+    })
