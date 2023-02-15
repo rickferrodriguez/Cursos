@@ -27,7 +27,7 @@ fetchData(`${url}/products`)
                 value.forEach(image => {
                     // imagenes[0] ??= image
                     imagenes.push(image)
-                    texto += `<img src="${image}">`
+                    texto += `<img class="image" src="${image}">`
 
                 })
             }
