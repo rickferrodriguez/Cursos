@@ -17,16 +17,25 @@ fetchData(`${url}/products`)
     .then(res => res.json())
     .then(products => {
         let texto = ''
-        const filtrado = products.filter(product => product.category.name.startsWith('El'))
-        filtrado.forEach(product => {
-            const {title, category} = product
-            console.log(category.image)
-            texto += `<li>${title}
-                        <img class="img-responsive" src="${category.image }"
-                    </li>`
+        // const filtrado = products.filter(product => product.category.name.startsWith('El'))
+        const imagenes = []
+        const filtrado = products.filter(product => product.id == 41)
+        Object.entries(filtrado[0]).forEach(entry => {
+            const [key, value] = entry
+            if(key === 'images'){
+                texto = `<li>${filtrado[0].title}</li>`
+                value.forEach(image => {
+                    // imagenes[0] ??= image
+                    imagenes.push(image)
+                    texto += `<img src="${image}">`
+
+                })
+            }
+
         })
-        $listado.innerHTML = texto
+        console.log(imagenes)
         console.log(filtrado)
+        $listado.innerHTML = texto
         // return fetchData(`${url}/products/${products[0].id}`)
     })
     // .then(response => response.json())
