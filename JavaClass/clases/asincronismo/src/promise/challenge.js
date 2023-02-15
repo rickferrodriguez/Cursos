@@ -19,7 +19,7 @@ fetchData(`${url}/products`)
         let texto = ''
         const filtrado = products.filter(product => product.category.name.startsWith('El'))
         filtrado.forEach(product => {
-            texto += `<li>${product.title}</li>`
+            texto += `<li>${product.title}<img class="img-responsive" src="${product.category.image}"</li>`
         })
         $listado.innerHTML = texto
         console.log(filtrado)
