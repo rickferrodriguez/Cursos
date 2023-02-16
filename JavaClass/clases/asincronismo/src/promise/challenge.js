@@ -1,6 +1,6 @@
 const $listado = document.querySelector('#listado')
 
-const url = 'https://api.thecatapi.com/v1/images/search?limit=10&api_key=live_ZHzebMpw6KTiAsv559lo44aFshLTypdh8l6uWFDLcjV55KTttjq56rOAz36sU73L'
+const url = 'https://api.thecatapi.com/v1/images/search?limit=5&api_key=live_ZHzebMpw6KTiAsv559lo44aFshLTypdh8l6uWFDLcjV55KTttjq56rOAz36sU73L'
 
 // const fetchData = (urlApi) => {
 //     return fetch(urlApi)
@@ -13,15 +13,26 @@ const url = 'https://api.thecatapi.com/v1/images/search?limit=10&api_key=live_ZH
 //     })
 //     .catch(error => console.log(error))
 
-fetch(url)
+// fetch(url)
+//     .then(res => res.json())
+//     .then(cats => {
+//         let text = ''
+//         console.log(cats[0])
+//         const images = cats.forEach(cat => {
+//             text += `<li><img class="image" src="${cat.url}"</li>`
+//         })
+//         $listado.innerHTML = text
+//     })
+
+fetch('https://api.escuelajs.co/api/v1/users')
     .then(res => res.json())
-    .then(cats => {
+    .then(products => {
         let text = ''
-        console.log(cats[0])
-        const images = cats.forEach(cat => {
-            text += `<li><img class="image" src="${cat.url}"</li>`
+        const images = products.forEach( products => {
+            text += `<li><img class="image" src="${products.avatar}</li>"`
         })
         $listado.innerHTML = text
+        console.log(products)
     })
 // fetchData(`${url}/products`)
 //     .then(res => res.json())
