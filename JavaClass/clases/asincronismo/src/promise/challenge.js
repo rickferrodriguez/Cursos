@@ -1,10 +1,10 @@
 const $listado = document.querySelector('#listado')
 
-const url = 'https://api.escuelajs.co/api/v1'
+const url = 'https://api.thecatapi.com/v1/images/search?limit=10&api_key=live_ZHzebMpw6KTiAsv559lo44aFshLTypdh8l6uWFDLcjV55KTttjq56rOAz36sU73L'
 
-const fetchData = (urlApi) => {
-    return fetch(urlApi)
-}
+// const fetchData = (urlApi) => {
+//     return fetch(urlApi)
+// }
 
 // fetchData(`${url}/products`)
 //     .then(res => res.json())
@@ -13,31 +13,27 @@ const fetchData = (urlApi) => {
 //     })
 //     .catch(error => console.log(error))
 
-fetchData(`${url}/products`)
+fetch(url)
     .then(res => res.json())
-    .then(products => {
-        let texto = ''
-        // const filtrado = products.filter(product => product.category.name.startsWith('El'))
-        const imagenes = []
-        const filtrado = products.filter(product => product.id == 41)
-        Object.entries(filtrado[0]).forEach(entry => {
-            const [key, value] = entry
-            if(key === 'images'){
-                texto = `<li>${filtrado[0].title}</li>`
-                value.forEach(image => {
-                    // imagenes[0] ??= image
-                    imagenes.push(image)
-                    texto += `<img class="image" src="${image}">`
-
-                })
-            }
-
+    .then(cats => {
+        let text = ''
+        console.log(cats[0])
+        const images = cats.forEach(cat => {
+            text += `<li><img class="image" src="${cat.url}"</li>`
         })
-        console.log(imagenes)
-        console.log(filtrado)
-        $listado.innerHTML = texto
-        // return fetchData(`${url}/products/${products[0].id}`)
+        $listado.innerHTML = text
     })
+// fetchData(`${url}/products`)
+//     .then(res => res.json())
+//     .then(products => {
+//         let texto = ''
+//         // const filtrado = products.filter(product => product.category.name.startsWith('El'))
+//         const filtrado =products.filter(product => product.id == 41)
+//
+//         console.log(filtrado)
+//         $listado.innerHTML = texto
+//         // return fetchData(`${url}/products/${products[0].id}`)
+//     })
     // .then(response => response.json())
     // .then(product => {
     //     console.log(product.title)
