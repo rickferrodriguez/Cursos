@@ -1,3 +1,48 @@
-.image {
-    width: 24rem;
+body {
+    background-color: #4D455D;
+    display: block;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card {
+    margin-top: 40px;
+    background-color: #F5E9CF;
+    width: 344px;
+    height: 614px;
+    border-radius: 10px;
+
+}
+
+.body-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.prod-desc {
+    padding: 0px 20px 0px 20px;
+}
+
+.title-card {
+    text-align: center;
+}
+
+
+h3 {
+    color: #E96479
+}
+
+.img-card {
+    border-radius: 10px 10px 0 0;
+    width: 344px;
+    flex-grow: 1;
+}
+
+.opciones-card {
+    display: flex;
+    justify-content: space-between;
 }
