@@ -1,5 +1,5 @@
 const API = 'https://api.escuelajs.co/api/v1'
-const $picture_product = document.querySelector('#picture-product')
+const $image_card = document.querySelector('#image-card')
 
 async function fetchData(url) {
     const response = await fetch(url)
@@ -16,7 +16,7 @@ const anotherFunction = async (urlApi) => {
         console.log(products[0])
         console.log(product.title)
         console.log(product.images)
-        $picture_product.innerHTML = `<img class="img-card" src="${product.images[0]}">`
+        $image_card.innerHTML = `<img class="img-card" src="${product.images[0]}">`
         console.log(category.name)
     } catch (error) {
         console.error(error)

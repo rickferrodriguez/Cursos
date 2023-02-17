@@ -1,48 +1,58 @@
+:root {
+    --clr-primary-400: hsl(158, 36%, 37%);
+    --clr-secondary-200: hsl(30, 38%, 92%);
+
+    --clr-neutral-dark: hsl(212, 21%, 14%);
+    --clr-neutral-grayish: hsl(228, 12%, 48%);
+    --clr-neutral-white: hsl(0, 0%, 100%);
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
 body {
-    background-color: #4D455D;
-    display: block;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
-
-
-.card {
-    margin-top: 40px;
-    background-color: #F5E9CF;
-    width: 344px;
-    height: 614px;
-    border-radius: 10px;
-
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
 }
-
-.body-card {
-    display: flex;
-    flex-direction: column;
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
 }
-
-.prod-desc {
-    padding: 0px 20px 0px 20px;
-}
-
-.title-card {
-    text-align: center;
-}
-
-
-h3 {
-    color: #E96479
-}
-
-.img-card {
-    border-radius: 10px 10px 0 0;
-    width: 344px;
-    flex-grow: 1;
-}
-
-.opciones-card {
-    display: flex;
-    justify-content: space-between;
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
 }
