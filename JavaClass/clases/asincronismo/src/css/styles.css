@@ -2,6 +2,7 @@
     --clr-primary-400: hsl(158, 36%, 37%);
     --clr-primary-500: hsl(158, 36%, 20%);
     --clr-secondary-200: hsl(30, 38%, 92%);
+    --clr-secondback: hsl(228, 12%, 83%);
 
     --clr-neutral-dark: hsl(212, 21%, 14%);
     --clr-neutral-grayish: hsl(228, 12%, 48%);
@@ -103,7 +104,8 @@ body {
 .prod-desc {
     display: grid;
     gap: var(--content-spacing);
-    padding: var(--content-padding)
+    padding: var(--content-padding);
+    background-color: var(--clr-secondback);
 }
 
 .prod-category {
