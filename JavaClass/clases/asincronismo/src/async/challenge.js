@@ -14,6 +14,7 @@ const anotherFunction = async (urlApi) => {
 
         console.log(products[0])
         console.log(product.title)
+        console.log(product.images)
         console.log(category.name)
     } catch (error) {
         console.error(error)
