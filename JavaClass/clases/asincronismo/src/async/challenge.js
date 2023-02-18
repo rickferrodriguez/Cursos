@@ -12,7 +12,7 @@ async function fetchData(url) {
     return data
 }
 
-const formatoNumero = async (num) => {
+const formatoNumero = (num) => {
      return num.toLocaleString("en-US", {
         style: 'currency',
         currency: 'USD',
@@ -28,7 +28,8 @@ const anotherFunction = async (urlApi) => {
         const allProd = products.products
 
         let texto = ''
-        allProd.forEach((prod, index) => {
+        allProd.forEach( async(prod, index) => {
+            const precioFormato =  await formatoNumero(prod.price)
             if(index > 12) {
                 texto += `
             <article class="product">
@@ -40,25 +41,14 @@ const anotherFunction = async (urlApi) => {
                         <p id="prod-category" class="prod-category">${prod.category}</p>
                         <h1 id="prod-title" class="prod-title">${prod.title}</h1>
                         <p id="prod-description">${prod.description}</p>
-                        <p id="prod-price" class="prod-price">300</p>
-                        <!-- <button class="fav-btn">Favoritos</button> -->
+                        <p id="prod-price" class="prod-price">${precioFormato}</p>
                         <button class="add-btn">Añadir al Carrito</button>
                     </div>
             </article>
-`
+            `
             }
             $main.innerHTML = texto
         });
-
-        // const precioFormato = await formatoNumero(prod12.price)
-        // console.log(products)
-        // console.log(prod12.title)
-        // console.log(prod12.images)
-        // $image_card.innerHTML = `<img class="img-card" src="${prod12.images[0]}">`
-        // $prod_category.textContent = prod12.category
-        // $prod_title.textContent = prod12.title
-        // $prod_description.textContent = prod12.description
-        // $prod_price.textContent = precioFormato
     } catch (error) {
         console.error(error)
     }
