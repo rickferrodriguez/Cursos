@@ -6,25 +6,25 @@ const getData = async (url) => {
     return data
 }
 
-const recoProd = async (url) 
+const recoProd = async (url) => {
+    let data = await getData(url)
+    let arrProd = data.products
+}
 
-// nextData(API)
-
-const g = recoProd(API)
+recoProd(API)
 
 
 
-// function* gen(arr) {
-//     for(let a of arr){
-//         if(a === undefined) return
-//
-//         yield a
-//     }
-// }
-//
-// const g = gen(arrayData)
-//
+
+function* gen(arr) {
+    for(let a of arr){
+        if(a === undefined) return
+
+        yield a
+    }
+}
+
+const g = gen(arrayData)
+
 console.log(g.next().value)
-console.log(g.next().value)
-console.log(g.next().value)
-console.log(g.next().value)
+
