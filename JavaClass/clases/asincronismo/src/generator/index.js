@@ -6,16 +6,11 @@ const getData = async (url) => {
     return data
 }
 
-async function* nextData(url) {
-    let datos = await getData(url)
-    for( let da of datos ){
-        yield da
-    }
-}
+const recoProd = async (url) 
 
 // nextData(API)
 
-const g = nextData(API)
+const g = recoProd(API)
 
 
 
