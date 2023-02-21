@@ -45,8 +45,8 @@ function ordenarPorPropiedad(arr,prop, done) {
     let ordenado = []
     if(prop === 'nombre') {
         ordenado = arr.sort((a, b) => {
-            const nameA = a.nombre.toUpperCase(); // ignore upper and lowercase
-            const nameB = b.nombre.toUpperCase(); // ignore upper and lowercase
+            const nameA = a[prop].toUpperCase(); // ignore upper and lowercase
+            const nameB = b[prop].toUpperCase(); // ignore upper and lowercase
             if (nameA < nameB) {
                 return -1;
             }
@@ -59,7 +59,7 @@ function ordenarPorPropiedad(arr,prop, done) {
         })
         return done(ordenado)
     } else {
-        ordenado =arr.sort((a,b) => a.edad -b.edad)
+        ordenado =arr.sort((a,b) => a[prop] -b[prop])
         return done(ordenado)
     }
 
@@ -81,3 +81,78 @@ const objectFunction = {
 }
 let elNombre = 'nombre'
 objectFunction[elNombre]()
+
+function ordenarPromesas(arr, prop) {
+    return new Promise((resolve, reject) => {
+    let ordenado = []
+    if(prop === 'nombre') {
+        ordenado = arr.sort((a, b) => {
+            const nameA = a[prop].toUpperCase(); // ignore upper and lowercase
+            const nameB = b[prop].toUpperCase(); // ignore upper and lowercase
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+
+            // names must be equal
+            return 0;
+        })
+        resolve( ordenado)
+    } else if(prop === 'edad') {
+        ordenado =arr.sort((a,b) => a[prop] -b[prop])
+        resolve( ordenado)
+    } else {
+            reject('No existe esta propiedad')
+        }
+
+    })
+}
+
+function imprimirConPromesas(res) {
+    console.log(res)
+}
+
+ordenarPromesas([{nombre: "Pedro", edad: 32}, {nombre: "María", edad: 25}, {nombre: "Juan", edad: 40}], "edad")
+    // .then(res => res.json())
+    .then(data => imprimirConPromesas(data))
+    .catch((error) => console.error(error))
+
+async function ordenarAsync(arr, prop) {
+    let ordenado = []
+    if(prop === 'nombre') {
+        ordenado = arr.sort((a, b) => {
+            const nameA = a[prop].toUpperCase(); // ignore upper and lowercase
+            const nameB = b[prop].toUpperCase(); // ignore upper and lowercase
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+
+            // names must be equal
+            return 0;
+        })
+        return ordenado
+    } else if(prop === 'edad') {
+        ordenado =arr.sort((a,b) => a[prop] -b[prop])
+        return ordenado
+    } else {
+        'No existe esta propiedad'
+    }
+}
+
+function imprimirAsync(res) {
+    console.log(res)
+}
+
+(async () => {
+    try {
+        const resultado = await ordenarAsync([{nombre: "Pedro", edad: 32}, {nombre: "María", edad: 25}, {nombre: "Juan", edad: 40}], "edad")
+        imprimirAsync(resultado)
+    } catch (error) {
+        console.error(error)
+    }
+})()
