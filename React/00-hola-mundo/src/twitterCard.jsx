@@ -1,6 +1,20 @@
 import './App.css'
-export function TwitterCard ({ children,userName, isFollowing}){
+import {useState} from 'react'
+
+export function TwitterCard ({ children,userName, initialIsFollowing}){
+  const [isFollowing, setIsFollowing] = useState(initialIsFollowing)
+
+
   const imageSrc = `https://unavatar.io/${userName}`
+  const text = isFollowing ? 'Siguiendo' : 'Seguir'
+  const buttonClassName = isFollowing 
+  ? 'tw-followCard-button is-following'
+  : 'tw-followCard-button'
+
+  const handleClick = () => {
+    setIsFollowing(!isFollowing)
+  }
+
   return (
     <article className="tw-followCard">
       <header className='tw-followCard-header'>
@@ -18,9 +32,10 @@ export function TwitterCard ({ children,userName, isFollowing}){
 
       <aside>
         <button
-          className='tw-followCard-button'
+          onClick={handleClick}
+          className={buttonClassName}
           type="button">
-          Seguir
+          {text}
         </button>
       </aside>
     </article>
