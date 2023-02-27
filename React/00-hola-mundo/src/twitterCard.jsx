@@ -25,7 +25,8 @@ export function TwitterCard ({ children,userName, initialIsFollowing}){
         <div className='tw-followCard-info'>
           <strong>{children}</strong>
           <span
-            className='tw-followCard-infoUserName'>{`@${userName}`}
+            className='tw-followCard-infoUserName'>
+            {`@${userName}`}
           </span>
         </div>
       </header>
