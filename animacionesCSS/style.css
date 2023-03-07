@@ -14,22 +14,45 @@ body {
   align-content:center;
 }
 
-.portfolio-group {
-  position: relative;
-}
 
 
 .svg-container {
   display: flex;
   justify-content: center;
   align-items: center;
-
   background-color: brown;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
+  transition: .3s;
+}
 
+.portfolio-group {
+  display: flex;
+  justify-content:center;
+  align-items: center;
 }
-.svg-port { 
-  padding: auto;
+
+.svg-port {
+  width: 60px
 }
+
+.texto {
+  display: none;
+}
+
+.svg-container:hover{
+  transform: scaleX(2);
+  transform-origin: left;
+  border-radius: 0 1rem 1rem 0;
+}
+
+.svg-container:hover * {
+  transform: scaleX(0.75);
+}
+
+.svg-container:hover .texto {
+  position: relative;
+  display: block;
+}
+
