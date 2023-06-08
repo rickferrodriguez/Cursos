@@ -76,3 +76,58 @@ function throwError(message: string): never {
 
 //Importante: void es cuando sabes que una funcion puede retornar algo pero no importa su tipo y valor, y never es cuando nunca vas a
 // devolver algo
+
+// inferencias de tipos en las funciones anónimas según el contexto
+
+const avengers = ['spiderman', 'hulk', 'thor']
+
+avengers.forEach(avenger => {
+  console.log(avenger.toUpperCase())
+})
+
+// Objetos
+
+// let hero = {
+//   name: 'spiderman',
+//   age: 20
+// }
+
+// function createHero(name: string, age: number) {
+//   return {name,age,}
+// }
+
+// const thor = createHero('Thor', 2010) en este caso no estamos seguros de que esta variable sea igual al tipo de la variable hero
+
+// type alias
+
+// type Hero = {
+//   name: string, age: number
+// }
+
+// let hero: Hero = {
+//   name : 'Thor',
+//   age : 20
+// }
+
+// function createHero (hero: Hero): Hero {
+//   const { name, age } = hero
+//   return { name, age}
+// }
+
+// const thor = createHero({name: 'Thor', age: 220})
+
+// Optional properties
+
+type Hero = {
+  name: string, age: number
+}
+
+let hero: Hero = {
+  name : 'Thor',
+  age : 20
+}
+
+function createHero (hero: Hero): Hero {
+  const { name, age } = hero
+  return { name, age}
+}
