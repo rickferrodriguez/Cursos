@@ -1,11 +1,11 @@
-let firstName : string = 'Richard'
+let firstName: string = 'Richard'
 
 // firstName = 2 no es posible realizar esta transformación porque es de tipo string y queremos asingnar un número
 
 // cuando se crean objetos sencillos typescript es capaz de leer los datos que contiene y hacer inferencia de su tipo
 const persona = {
   name: 'Pepe', //infiere que es de tipo string
-  age: 30 // infiere que es de tipo number
+  age: 30, // infiere que es de tipo number
 }
 
 persona.age // typescript es capaz de traerme autocompletado para los objetos, agiliza el desarrollo
@@ -43,7 +43,7 @@ let myUnknown: unknown = 'hola' // este tipo de
 
 // retornos en funciones
 
-function saludar ({name, age}: {name: string, age: number}){
+function saludar({ name, age }: { name: string; age: number }) {
   console.log(`Hola ${name} tienes ${age}`)
   return age
 }
@@ -51,7 +51,8 @@ function saludar ({name, age}: {name: string, age: number}){
 // let username: string
 // username = saludar({name: 'pepe', age: 3000}) no es posible por que ha inferido que su valor de retorno es un number del age
 
-const sayHiFromFunction = (fn: (name: string) => void) => { // void es cuando una funcion no retorna nada
+const sayHiFromFunction = (fn: (name: string) => void) => {
+  // void es cuando una funcion no retorna nada
   fn('Miguel')
 }
 
@@ -60,3 +61,18 @@ const sayHi = (name: string) => {
 }
 
 sayHiFromFunction(sayHi)
+
+// tipar arrow functions
+
+const suma = ({ a, b }: { a: number; b: number }): number => {
+  return a + b
+}
+
+// never, tipo de dato cuando una funcion nunca va a retornar nada
+
+function throwError(message: string): never {
+  throw new Error(message)
+}
+
+//Importante: void es cuando sabes que una funcion puede retornar algo pero no importa su tipo y valor, y never es cuando nunca vas a
+// devolver algo
