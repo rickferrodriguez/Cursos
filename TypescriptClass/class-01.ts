@@ -10,18 +10,53 @@ const persona = {
 
 persona.age // typescript es capaz de traerme autocompletado para los objetos, agiliza el desarrollo
 
-// tambien infiere el tipo en variables sencillas
+// tambien infiere el tipo en variables sencillas, en este caso es de tipo number
 const number = 1
 let n: number = 2
 
 let a = 'hola'
 let b: string = 'hola 2'
 
+a.toLocaleLowerCase()
+
+// a = 2 cadena de texto y no funciona ⛔
+
 let myAny // por defecto typescript infiere que una variable que no sabe lo que tiene es de tipo any => que ignora cualquier tipo
 
 let myUnknown: unknown = 'hola' // este tipo de
 
+// funciones
 
-function suma ( a: number, b: number) {
-  return a + b
+// function saludar (name: string) {
+//   console.log(`Hola ${name}`)
+// }
+
+// saludar('pepe')
+// saludar(2) no funciona porque es de tipo number
+//
+
+// funciones con objetos
+// function saludor( {name: string, age: number} )  esto esta mal ⛔ por la sintaxis de javascript
+// function saludar ({ name, age}: { name: string; age: number}) {
+//   console.log(`Hola ${name} tienes ${age}`)
+// }
+
+// retornos en funciones
+
+function saludar ({name, age}: {name: string, age: number}){
+  console.log(`Hola ${name} tienes ${age}`)
+  return age
 }
+
+// let username: string
+// username = saludar({name: 'pepe', age: 3000}) no es posible por que ha inferido que su valor de retorno es un number del age
+
+const sayHiFromFunction = (fn: (name: string) => void) => { // void es cuando una funcion no retorna nada
+  fn('Miguel')
+}
+
+const sayHi = (name: string) => {
+  console.log(`Hi ${name}`) // en este caso la funcion no retorna nada
+}
+
+sayHiFromFunction(sayHi)
