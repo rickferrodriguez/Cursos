@@ -118,8 +118,10 @@ avengers.forEach(avenger => {
 
 // Optional properties
 
+type HeroId = `${string}-${string}-${string}-${string}-${string}`
+
 type Hero = {
-  readonly id?: string
+  readonly id?: HeroId
   name: string
   age: number
   isActive?: boolean // al agregar `?` le indicamos que es un valor opcional, si se encuentra está bien, si no, no hay problema
@@ -132,9 +134,21 @@ let hero: Hero = {
 
 function createHero (hero: Hero): Hero {
   const { name, age } = hero
-  return {id: crypto.randomUUID(), name, age, isActive: true}
+  return {
+    id: crypto.randomUUID(),
+    name,
+    age,
+    isActive: true,
+  }
 }
 
 const thor = createHero({name: 'Thor', age: 22}) // si se revisa este valor, por defecto vendra el `isActive` con el valor de true
 
 thor.id?.toString() // al ser un valor opcional cuando lo queremos usar, typescript por defecto coloca el `?` porque puede darse el caso de que el valor no llegue
+
+// Templeta union type
+
+type HexadecimalColor = `#${string}`
+
+// const color: HexadecimalColor = '000BFF' // en este caso este tipo le falta `#` por eso da error
+const color2: HexadecimalColor = '#000BFF' // hexadecimales ✅
