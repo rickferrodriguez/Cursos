@@ -119,7 +119,10 @@ avengers.forEach(avenger => {
 // Optional properties
 
 type Hero = {
-  name: string, age: number
+  readonly id?: string
+  name: string
+  age: number
+  isActive?: boolean // al agregar `?` le indicamos que es un valor opcional, si se encuentra está bien, si no, no hay problema
 }
 
 let hero: Hero = {
@@ -129,5 +132,9 @@ let hero: Hero = {
 
 function createHero (hero: Hero): Hero {
   const { name, age } = hero
-  return { name, age}
+  return {id: crypto.randomUUID(), name, age, isActive: true}
 }
+
+const thor = createHero({name: 'Thor', age: 22}) // si se revisa este valor, por defecto vendra el `isActive` con el valor de true
+
+thor.id?.toString() // al ser un valor opcional cuando lo queremos usar, typescript por defecto coloca el `?` porque puede darse el caso de que el valor no llegue
