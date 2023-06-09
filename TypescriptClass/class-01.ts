@@ -154,24 +154,69 @@ avengers.forEach(avenger => {
 // const color2: HexadecimalColor = '#000BFF' // hexadecimales ✅
 
 // Union types
+// type HeroId = `${string}-${string}-${string}-${string}-${string}`
+// type HeroPowerScale = 'local' | 'planetary' | 'galactic' | 'universal' | 'multiversal' // este `|' sirve para unir diferentes tipos de datos en un solo
+
+// type Hero = {
+//   readonly id?: HeroId
+//   name: string
+//   age: number
+//   isActive?: boolean // al agregar `?` le indicamos que es un valor opcional, si se encuentra está bien, si no, no hay problema
+//   powerScale?: HeroPowerScale
+// }
+
+// let hero: Hero = {
+//   name : 'Thor',
+//   age : 20
+// }
+
+// function createHero (hero: Hero): Hero {
+//   const { name, age } = hero
+//   return {
+//     id: crypto.randomUUID(),
+//     name,
+//     age,
+//     isActive: true,
+//   }
+// }
+
+// const thor = createHero({name: 'Thor', age: 22}) // si se revisa este valor, por defecto vendra el `isActive` con el valor de true
+
+// thor.id?.toString() // al ser un valor opcional cuando lo queremos usar, typescript por defecto coloca el `?` porque puede darse el caso de que el valor no llegue
+
+// // Templeta union type
+
+// type HexadecimalColor = `#${string}`
+
+// // const color: HexadecimalColor = '000BFF' // en este caso este tipo le falta `#` por eso da error
+// const color2: HexadecimalColor = '#000BFF' // hexadecimales ✅
+// thor.powerScale = 'galactic'
+
+// intersection types
+
 type HeroId = `${string}-${string}-${string}-${string}-${string}`
 type HeroPowerScale = 'local' | 'planetary' | 'galactic' | 'universal' | 'multiversal' // este `|' sirve para unir diferentes tipos de datos en un solo
 
-type Hero = {
-  readonly id?: HeroId
-  name: string
+type HeroBasicInfo = {
+  name: string,
   age: number
+}
+
+type HeroProperties = {
+  readonly id?: HeroId
   isActive?: boolean // al agregar `?` le indicamos que es un valor opcional, si se encuentra está bien, si no, no hay problema
   powerScale?: HeroPowerScale
 }
+
+type Hero = HeroBasicInfo & HeroProperties
 
 let hero: Hero = {
   name : 'Thor',
   age : 20
 }
 
-function createHero (hero: Hero): Hero {
-  const { name, age } = hero
+function createHero (basic: HeroBasicInfo): Hero {
+  const { name, age } = basic
   return {
     id: crypto.randomUUID(),
     name,
@@ -184,7 +229,7 @@ const thor = createHero({name: 'Thor', age: 22}) // si se revisa este valor, por
 
 thor.id?.toString() // al ser un valor opcional cuando lo queremos usar, typescript por defecto coloca el `?` porque puede darse el caso de que el valor no llegue
 
-// Templeta union type
+// Template union type
 
 type HexadecimalColor = `#${string}`
 
