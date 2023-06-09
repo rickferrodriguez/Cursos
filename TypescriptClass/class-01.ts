@@ -81,7 +81,7 @@ function throwError(message: string): never {
 
 const avengers = ['spiderman', 'hulk', 'thor']
 
-avengers.forEach(avenger => {
+avengers.forEach((avenger) => {
   console.log(avenger.toUpperCase())
 })
 
@@ -184,55 +184,95 @@ avengers.forEach(avenger => {
 
 // thor.id?.toString() // al ser un valor opcional cuando lo queremos usar, typescript por defecto coloca el `?` porque puede darse el caso de que el valor no llegue
 
-// // Templeta union type
+// Templeta union type
 
 // type HexadecimalColor = `#${string}`
 
-// // const color: HexadecimalColor = '000BFF' // en este caso este tipo le falta `#` por eso da error
+// const color: HexadecimalColor = '000BFF' // en este caso este tipo le falta `#` por eso da error
 // const color2: HexadecimalColor = '#000BFF' // hexadecimales ✅
 // thor.powerScale = 'galactic'
 
 // intersection types
 
-type HeroId = `${string}-${string}-${string}-${string}-${string}`
-type HeroPowerScale = 'local' | 'planetary' | 'galactic' | 'universal' | 'multiversal' // este `|' sirve para unir diferentes tipos de datos en un solo
+// type HeroId = `${string}-${string}-${string}-${string}-${string}`
+// type HeroPowerScale = 'local' | 'planetary' | 'galactic' | 'universal' | 'multiversal' // este `|' sirve para unir diferentes tipos de datos en un solo
 
-type HeroBasicInfo = {
-  name: string,
-  age: number
-}
+// type HeroBasicInfo = {
+//   name: string,
+//   age: number
+// }
 
-type HeroProperties = {
-  readonly id?: HeroId
-  isActive?: boolean // al agregar `?` le indicamos que es un valor opcional, si se encuentra está bien, si no, no hay problema
-  powerScale?: HeroPowerScale
-}
+// type HeroProperties = {
+//   readonly id?: HeroId
+//   isActive?: boolean // al agregar `?` le indicamos que es un valor opcional, si se encuentra está bien, si no, no hay problema
+//   powerScale?: HeroPowerScale
+// }
 
-type Hero = HeroBasicInfo & HeroProperties
+// type Hero = HeroBasicInfo & HeroProperties
 
-let hero: Hero = {
-  name : 'Thor',
-  age : 20
-}
+// let hero: Hero = {
+//   name : 'Thor',
+//   age : 20
+// }
 
-function createHero (basic: HeroBasicInfo): Hero {
-  const { name, age } = basic
-  return {
-    id: crypto.randomUUID(),
-    name,
-    age,
-    isActive: true,
-  }
-}
+// function createHero (basic: HeroBasicInfo): Hero {
+//   const { name, age } = basic
+//   return {
+//     id: crypto.randomUUID(),
+//     name,
+//     age,
+//     isActive: true,
+//   }
+// }
 
-const thor = createHero({name: 'Thor', age: 22}) // si se revisa este valor, por defecto vendra el `isActive` con el valor de true
+// const thor = createHero({name: 'Thor', age: 22}) // si se revisa este valor, por defecto vendra el `isActive` con el valor de true
 
-thor.id?.toString() // al ser un valor opcional cuando lo queremos usar, typescript por defecto coloca el `?` porque puede darse el caso de que el valor no llegue
+// thor.id?.toString() // al ser un valor opcional cuando lo queremos usar, typescript por defecto coloca el `?` porque puede darse el caso de que el valor no llegue
 
 // Template union type
 
-type HexadecimalColor = `#${string}`
+// type HexadecimalColor = `#${string}`
 
 // const color: HexadecimalColor = '000BFF' // en este caso este tipo le falta `#` por eso da error
-const color2: HexadecimalColor = '#000BFF' // hexadecimales ✅
-thor.powerScale = 'galactic'
+// const color2: HexadecimalColor = '#000BFF' // hexadecimales ✅
+// thor.powerScale = 'galactic'
+
+// Type indexing
+
+// type HeroProperties = {
+//   isActive: boolean,
+//   address: {
+//     planet: string,
+//     city: string,
+//   }
+// }
+
+// const addressHero : HeroProperties['address'] = {
+//   planet: 'Earth',
+//   city: 'Madrid'
+// }
+
+// Type Off
+
+// const address = {
+//   planet: 'Earth',
+//   city: 'Madrid'
+// }
+
+// type Address = typeof address
+
+// const address2: Address = {
+//   planet: 'Mars',
+//   city: 'Pasto'
+// }
+
+// Type from function return
+
+function createAddress() {
+  return {
+    planet: 'Earth',
+    city: 'Barcelona',
+  }
+}
+
+type Address = ReturnType<typeof createAddress>
