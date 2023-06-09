@@ -268,11 +268,34 @@ avengers.forEach((avenger) => {
 
 // Type from function return
 
-function createAddress() {
-  return {
-    planet: 'Earth',
-    city: 'Barcelona',
-  }
-}
+// function createAddress() {
+//   return {
+//     planet: 'Earth',
+//     city: 'Barcelona',
+//   }
+// }
 
-type Address = ReturnType<typeof createAddress>
+// type Address = ReturnType<typeof createAddress>
+
+// Arrays
+
+const languages: (string | number)[] = [] // cuando se necesiten mas de un tipo en un array
+
+languages.push('Spanish')
+languages.push('Spanish')
+languages.push(2)
+
+// Arrays y Matrices
+
+type CellValue = 'X' | 'O' | ''
+type GameBoard = [
+  [CellValue, CellValue, CellValue],
+  [CellValue, CellValue, CellValue],
+  [CellValue, CellValue, CellValue]
+] // array de filas y columnas específicas con valores predefinidos
+
+const gameBoard: GameBoard = [
+  ['O', 'X', 'O'],
+  ['O', 'X', 'O'],
+  ['O', 'X', 'O'],
+]
