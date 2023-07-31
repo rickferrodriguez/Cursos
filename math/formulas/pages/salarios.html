@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/salary.css">
+    </head>
+    <body onload="mostrarDefault()">
+        <form >
+            <h1>Salarios Class</h1>
+            <label for=""> Nombre Persona:
+                <input type="text" id="inp-persona" value="">
+            </label>
+            <button type="button" id="mostrar">Mostrar</button>
+        </form>
+        <section class="seleccionador">
+            <button id="btn-before" class="btn btn-before" value="before"></button>
+            <h3 id="persona-sel" class="persona-sel"></h3>
+            <button id="btn-next" class="btn btn-next" value="next"></button>
+        </section>
+        <section class="tab-content">
+            <div class="salary">
+                <h3>Lista de Salarios</h3>
+                <ul id="ul-salary" class="ul ul-salary">
+
+                </ul>
+            </div>
+            <div class="porc-salary">
+                <h3>Lista de Porcentaje Salarial</h3>
+                <ul id="ul-porc" class="ul ul-porc">
+
+                </ul>
+            </div>
+        </section>
+        <section class="results">
+            <p id="porc-cre"></p>
+            <p id="new-sala"></p>
+        </section>
+        <section>
+            <div>
+                <form action="">
+                    <label for="">Nombre Empresa
+                        <input type="text" name="" id="imp-empresa" value="">
+                    </label>
+                    <label for="">Seleccionar Año
+                        <input type="number" name="" id="imp-year" value="">
+                    </label>
+                    <button type="button" id="mostrar-emp">Mostrar</button>
+                </form>
+                <section class="seleccionador">
+                    <button id="btn-before" class="btn btn-before" value="before"></button>
+                    <h3 id="empresa-sel" class="persona-sel"></h3>
+                    <button id="btn-next" class="btn btn-next" value="next"></button>
+                </section>
+                <section class="tab-content">
+                    <div class="salary">
+                        <h3>Lista de Salarios</h3>
+                        <ul id="ul-empresa" class="ul ul-salary">
+
+                        </ul>
+                    </div>
+                </section>
+                <section class="results">
+                    <p id="media-years"></p>
+                    <p id="media-empre"></p>
+                    <p id="porc-emp"></p>
+                    <p id="new-sala"></p>
+                </section>
+            </div>
+        </section>
+        <script src="../js/salarios.js"></script>
+        <script src="../js/analisis.js"></script>
+    </body>
+</html>

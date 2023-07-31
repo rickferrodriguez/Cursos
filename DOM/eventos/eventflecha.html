@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id='titulo'>Manejo DOM part 3</h1>
+    <br>
+    <!-- este elemento on focus sirve para que por ejemplo en un formulario cuando se está presionando este elemento se pueda hacer algo con el -->
+    <!-- el onblur sirve para que cuando este elemento se deje de seleccionar haga algo -->
+    Nombre: <input type="text" id="nombre">
+    Apellido: <input type="text" id="apellido">
+    <script>
+        //event listener con función flecha
+        document.getElementById('nombre').addEventListener('focus', (evento)=>{evento.target.style.backgroundColor = 'green'});
+        document.getElementById('nombre').addEventListener('blur', (evento)=>{evento.target.style.backgroundColor = 'pink'});
+        document.getElementById('apellido').addEventListener('focus', cambiarFondo);
+        document.getElementById('apellido').addEventListener('blur', regresarFondo);
+        function cambiarFondo(){
+            evento.target.style.backgroundColor = 'green';
+        }
+        function regresarFondo(evento2){
+            // en este caso es cambiar el fondo cuado deje de ser presionado
+            evento2.target.style.backgroundColor = 'red';
+        }
+    </script>
+</body>
+</html>

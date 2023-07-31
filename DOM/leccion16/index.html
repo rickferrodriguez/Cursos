@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejemplo DOM con JavaScript</title>
+        <style>
+            .nombreLabel{
+                color:red;
+            }   
+            .miTitulo { 
+                color: blue;
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="miTitulo" id='mih1'>Mi Titulo ahora es otro</h1>
+        <p id='saludo'>Saludos!</p>
+        <p id='saludo2'>Saludos en pares!</p>
+        <div>
+            <form action="">
+                <label class='nombreLabel' >Nombre</label><br>
+                <input type="text"><br>
+                <label >Apellido</label><br>
+                <input class='apellidoLabel' type="text"><br>
+            </form>
+        </div>
+        <script>
+            // esto es para traer lo que dice este objeto con un id
+            let mih1 = document.getElementById('mih1');
+            console.log(`valor Título es: ${mih1.innerHTML}`);
+            let saludo = document.getElementById('saludo');
+            console.log(`valor Saludo es: ${saludo.innerHTML}`);
+            // aquí tambien se pueden cambiar lo que dicen los objetos en su interior
+            // mih1.innerHTML = 'nuevo valor del titulo';
+
+            // en este caso llama a todas las etiquetas p y se las guarda en una variable
+            let saludos2 = document.getElementsByTagName('p')
+            // aquí es interesante porque se llama a la variable pero con '.length' para saber cuantos hay
+            console.log(`este es el número de parrafos ${saludos2.length}`)
+            // después se realiza un ciclo 'for' para recorrer todos los objetos
+            for(let i = 0; i <saludos2.length; i++){
+                // una vez se recorren uno por uno se imprime su contenido con '.innerHTML'
+                console.log(`id: ${i} Parrafos: ${saludos2[i].innerHTML}`);
+            }
+
+            // llamar a un elemento por su clase
+            let miTituloClase = document.getElementsByClassName('miTitulo');
+            console.log(`Extraido desde la clase: ${miTituloClase[0].innerHTML}`)
+
+            // Llamar a un elemento por su clase y su tag de HTML
+            let miLabelAll = document.querySelectorAll('label.nombreLabel')
+            console.log(`label con tipo tag y la clase: ${miLabelAll[0].innerHTML }`)
+        </script>
+    </body>
+</html>

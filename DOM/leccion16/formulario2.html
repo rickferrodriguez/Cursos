@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Formulario de Gimnasio</title>
+    </head>
+    <body>
+        <h1>Qué piensas hacer hoy?</h1>
+        <form id="formulario">
+            <label for="" id="label-nombre">Cuál es tu nombre?</label><br />
+            <input type="text" id="nombre" placeholder="Tu nombre" /><br />
+            <label for="" id="label-pensamiento">Qué piensas hacer hoy?</label><br />
+            <input type="text" id="el-ejercicio" placeholder="Tu Ejercicio" /><br />
+        </form>
+        <button onclick="enviarInfo()">Enviar</button><br />
+        <div id="resultado"></div>
+        <input type="radio" id="ej1" name="fav_exercise" value="HTML" />
+        <div id="tej1"></div>
+        <input type="radio" id="ej2" name="fav_exercise" value="CSS" />
+        <div id="tej2"></div>
+        <script>
+            function enviarInfo() {
+                let elFormulario = document.forms["formulario"]
+                let miTexto = ""
+                const rutinaPierna = { 0: "jacca", 1: "sentadilla" }
+                let elNombre = elFormulario["nombre"]
+                let ejercicio = elFormulario["el-ejercicio"]
+                if (ejercicio.value == "pierna") {
+                    miTexto = `${elNombre.value} este es tu ejercicio: ${ejercicio.value} y esta será tu rutina: `
+                    // return console.log(miTexto);
+                    document.getElementById("resultado").innerHTML = miTexto
+                    document.getElementById("tej1").innerHTML = rutinaPierna[0]
+                    document.getElementById("tej2").innerHTML = rutinaPierna[1]
+                } else {
+                    console.log("Este ejercicio no se encuentra registrado")
+                }
+            }
+        </script>
+    </body>
+</html>

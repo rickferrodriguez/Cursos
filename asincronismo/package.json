@@ -1,0 +1,19 @@
+{
+  "name": "asincronismo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "richard rodriguez richardfernandorodriguez@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.9",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "type": "module"
+}

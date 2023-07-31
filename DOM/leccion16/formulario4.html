@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Manejo DOM con Javascript</title>
+    </head>
+    <body>
+        <h1>Manejo del DOM con document.write</h1>
+        <h3 class="mih" id="mih3">Ahora es JavaScript</h3>
+        <button onclick='mostrar()' id="boton-mostrar">Mostrar</button>
+        <img id="imagen" src="http://globalmentoring.com.mx/imagenes/javascript.png" alt="javascript" />
+        <script>
+            function mostrar() {
+                // cambiar elementos dentro de un formulario en JavaScript, recapitulación
+                document.getElementById("mih3").innerHTML = "Ahora es HTML5";
+                // le cambiamos el estilo del boton, exactamente el margen a punteado
+                document.getElementById("boton-mostrar").style.border = "dotted";
+                document.getElementById("mih3").style.color = "blue";
+                document.getElementById("imagen").src=" http://globalmentoring.com.mx/imagenes/html5.png"
+            }
+        </script>
+    </body>
+</html>
