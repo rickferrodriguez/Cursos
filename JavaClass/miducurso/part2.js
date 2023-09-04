@@ -39,3 +39,20 @@ while (count >= 0) {
 
   console.log(count + 'segundos')
 }
+
+// while anidados
+
+const NUMERO_REVISIONES = 3
+let cuentaAtras = 10
+
+while (cuentaAtras > 0) {
+  console.log(cuentaAtras)
+
+  let revisionesRealizadas = 0
+
+  while (revisionesRealizadas < NUMERO_REVISIONES) {
+    revisionesRealizadas = revisionesRealizadas + 1
+    console.log(revisionesRealizadas + 'revisiones Realizadas')
+  }
+  cuentaAtras = cuentaAtras - 1
+}
