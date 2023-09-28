@@ -1,0 +1,372 @@
+{
+  "exercises": [
+    {
+      "name": "bench press",
+      "body part": "chest",
+      "sets": 3,
+      "reps": 15,
+      "calories": 200,
+      "image": "https://example.com/bench_press.jpg"
+    },
+    {
+      "name": "squat",
+      "body part": "legs",
+      "sets": 4,
+      "reps": 12,
+      "calories": 250,
+      "image": "https://example.com/squat.jpg"
+    },
+    {
+      "name": "deadlift",
+      "body part": "back",
+      "sets": 3,
+      "reps": 15,
+      "calories": 300,
+      "image": "https://example.com/deadlift.jpg"
+    },
+    {
+      "name": "shoulder press",
+      "body part": "shoulders",
+      "sets": 4,
+      "reps": 12,
+      "calories": 180,
+      "image": "https://example.com/shoulder_press.jpg"
+    },
+    {
+      "name": "bicep curls",
+      "body part": "biceps",
+      "sets": 3,
+      "reps": 15,
+      "calories": 120,
+      "image": "https://example.com/bicep_curls.jpg"
+    },
+    {
+      "name": "tricep dips",
+      "body part": "triceps",
+      "sets": 4,
+      "reps": 12,
+      "calories": 150,
+      "image": "https://example.com/tricep_dips.jpg"
+    },
+    {
+      "name": "leg press",
+      "body part": "legs",
+      "sets": 3,
+      "reps": 15,
+      "calories": 220,
+      "image": "https://example.com/leg_press.jpg"
+    },
+    {
+      "name": "lat pulldown",
+      "body part": "back",
+      "sets": 4,
+      "reps": 12,
+      "calories": 180,
+      "image": "https://example.com/lat_pulldown.jpg"
+    },
+    {
+      "name": "chest fly",
+      "body part": "chest",
+      "sets": 3,
+      "reps": 15,
+      "calories": 160,
+      "image": "https://example.com/chest_fly.jpg"
+    },
+    {
+      "name": "leg extension",
+      "body part": "legs",
+      "sets": 4,
+      "reps": 12,
+      "calories": 130,
+      "image": "https://example.com/leg_extension.jpg"
+    },
+    {
+      "name": "plank",
+      "body part": "core",
+      "sets": 3,
+      "reps": 1,
+      "calories": 50,
+      "image": "https://example.com/plank.jpg"
+    },
+    {
+      "name": "shoulder lateral raise",
+      "body part": "shoulders",
+      "sets": 4,
+      "reps": 12,
+      "calories": 100,
+      "image": "https://example.com/shoulder_lateral_raise.jpg"
+    },
+    {
+      "name": "hammer curls",
+      "body part": "biceps",
+      "sets": 3,
+      "reps": 15,
+      "calories": 110,
+      "image": "https://example.com/hammer_curls.jpg"
+    },
+    {
+      "name": "tricep pushdown",
+      "body part": "triceps",
+      "sets": 4,
+      "reps": 12,
+      "calories": 140,
+      "image": "https://example.com/tricep_pushdown.jpg"
+    },
+    {
+      "name": "leg curl",
+      "body part": "legs",
+      "sets": 3,
+      "reps": 15,
+      "calories": 160,
+      "image": "https://example.com/leg_curl.jpg"
+    },
+    {
+      "name": "seated row",
+      "body part": "back",
+      "sets": 4,
+      "reps": 12,
+      "calories": 170,
+      "image": "https://example.com/seated_row.jpg"
+    },
+    {
+      "name": "push-ups",
+      "body part": "chest",
+      "sets": 3,
+      "reps": 15,
+      "calories": 80,
+      "image": "https://example.com/push-ups.jpg"
+    },
+    {
+      "name": "calf raises",
+      "body part": "calves",
+      "sets": 4,
+      "reps": 12,
+      "calories": 90,
+      "image": "https://example.com/calf_raises.jpg"
+    },
+    {
+      "name": "crunches",
+      "body part": "core",
+      "sets": 3,
+      "reps": 15,
+      "calories": 60,
+      "image": "https://example.com/crunches.jpg"
+    },
+    {
+      "name": "shoulder shrugs",
+      "body part": "shoulders",
+      "sets": 4,
+      "reps": 12,
+      "calories": 80,
+      "image": "https://example.com/shoulder_shrugs.jpg"
+    },
+    {
+      "name": "preacher curls",
+      "body part": "biceps",
+      "sets": 3,
+      "reps": 15,
+      "calories": 100,
+      "image": "https://example.com/preacher_curls.jpg"
+    },
+    {
+      "name": "tricep kickbacks",
+      "body part": "triceps",
+      "sets": 4,
+      "reps": 12,
+      "calories": 120,
+      "image": "https://example.com/tricep_kickbacks.jpg"
+    },
+    {
+      "name": "step-ups",
+      "body part": "legs",
+      "sets": 3,
+      "reps": 15,
+      "calories": 140,
+      "image": "https://example.com/step-ups.jpg"
+    },
+    {
+      "name": "bent-over rows",
+      "body part": "back",
+      "sets": 4,
+      "reps": 12,
+      "calories": 200,
+      "image": "https://example.com/bent-over_rows.jpg"
+    },
+    {
+      "name": "chest press",
+      "body part": "chest",
+      "sets": 3,
+      "reps": 15,
+      "calories": 180,
+      "image": "https://example.com/chest_press.jpg"
+    },
+    {
+      "name": "leg press machine",
+      "body part": "legs",
+      "sets": 4,
+      "reps": 12,
+      "calories": 230,
+      "image": "https://example.com/leg_press_machine.jpg"
+    },
+    {
+      "name": "Russian twists",
+      "body part": "core",
+      "sets": 3,
+      "reps": 15,
+      "calories": 70,
+      "image": "https://example.com/russian_twists.jpg"
+    },
+    {
+      "name": "upright rows",
+      "body part": "shoulders",
+      "sets": 4,
+      "reps": 12,
+      "calories": 120,
+      "image": "https://example.com/upright_rows.jpg"
+    },
+    {
+      "name": "barbell curls",
+      "body part": "biceps",
+      "sets": 3,
+      "reps": 15,
+      "calories": 140,
+      "image": "https://example.com/barbell_curls.jpg"
+    },
+    {
+      "name": "dips",
+      "body part": "triceps",
+      "sets": 4,
+      "reps": 12,
+      "calories": 160,
+      "image": "https://example.com/dips.jpg"
+    },
+    {
+      "name": "leg press calf raises",
+      "body part": "calves",
+      "sets": 3,
+      "reps": 15,
+      "calories": 110,
+      "image": "https://example.com/leg_press_calf_raises.jpg"
+    },
+    {
+      "name": "superman",
+      "body part": "back",
+      "sets": 4,
+      "reps": 12,
+      "calories": 80,
+      "image": "https://example.com/superman.jpg"
+    },
+    {
+      "name": "incline chest press",
+      "body part": "chest",
+      "sets": 3,
+      "reps": 15,
+      "calories": 170,
+      "image": "https://example.com/incline_chest_press.jpg"
+    },
+    {
+      "name": "lunges",
+      "body part": "legs",
+      "sets": 4,
+      "reps": 12,
+      "calories": 180,
+      "image": "https://example.com/lunges.jpg"
+    },
+    {
+      "name": "plank twists",
+      "body part": "core",
+      "sets": 3,
+      "reps": 15,
+      "calories": 90,
+      "image": "https://example.com/plank_twists.jpg"
+    },
+    {
+      "name": "front raises",
+      "body part": "shoulders",
+      "sets": 4,
+      "reps": 12,
+      "calories": 100,
+      "image": "https://example.com/front_raises.jpg"
+    },
+    {
+      "name": "reverse curls",
+      "body part": "biceps",
+      "sets": 3,
+      "reps": 15,
+      "calories": 80,
+      "image": "https://example.com/reverse_curls.jpg"
+    },
+    {
+      "name": "overhead tricep extension",
+      "body part": "triceps",
+      "sets": 4,
+      "reps": 12,
+      "calories": 130,
+      "image": "https://example.com/overhead_tricep_extension.jpg"
+    },
+    {
+      "name": "leg press calf raise machine",
+      "body part": "calves",
+      "sets": 3,
+      "reps": 15,
+      "calories": 120,
+      "image": "https://example.com/leg_press_calf_raise_machine.jpg"
+    },
+    {
+      "name": "seated cable rows",
+      "body part": "back",
+      "sets": 4,
+      "reps": 12,
+      "calories": 190,
+      "image": "https://example.com/seated_cable_rows.jpg"
+    },
+    {
+      "name": "incline chest fly",
+      "body part": "chest",
+      "sets": 3,
+      "reps": 15,
+      "calories": 150,
+      "image": "https://example.com/incline_chest_fly.jpg"
+    },
+    {
+      "name": "step-ups with weights",
+      "body part": "legs",
+      "sets": 4,
+      "reps": 12,
+      "calories": 200,
+      "image": "https://example.com/step-ups_with_weights.jpg"
+    },
+    {
+      "name": "leg raises",
+      "body part": "core",
+      "sets": 3,
+      "reps": 15,
+      "calories": 70,
+      "image": "https://example.com/leg_raises.jpg"
+    },
+    {
+      "name": "arnold press",
+      "body part": "shoulders",
+      "sets": 4,
+      "reps": 12,
+      "calories": 130,
+      "image": "https://example.com/arnold_press.jpg"
+    },
+    {
+      "name": "concentration curls",
+      "body part": "biceps",
+      "sets": 3,
+      "reps": 15,
+      "calories": 90,
+      "image": "https://example.com/concentration_curls.jpg"
+    },
+    {
+      "name": "tricep overhead press",
+      "body part": "triceps",
+      "sets": 4,
+      "reps": 12,
+      "calories": 110,
+      "image": "https://example.com/tricep_overhead_press.jpg"
+    }
+  ]
+}

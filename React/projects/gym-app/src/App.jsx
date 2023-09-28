@@ -1,23 +1,35 @@
 import { useState } from 'react'
 import './App.css'
+import { exercises } from './exercises.json'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [toggle, setToggle] = useState(false)
+  const [exerciseData, setExerciseData] = useState(exercises.exercises)
+
+  const handleClick = () => {
+    setCount((count) => count + 1)
+    setToggle(!toggle)
+  }
 
   return (
     <>
       <h1 className='text-3xl font-bold'>Vite + React</h1>
       <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button
+          className={` p-2 rounded-sm ${toggle ? 'bg-blue-400' : 'bg-red-800'}`}
+          onClick={handleClick}
+        >
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className='read-the-docs'>
-        Click on the Vite and React logos to learn more
-      </p>
+      <section>
+        {exerciseData.map((exercise) => (
+          <div key={exercise.name}>
+            <h3>{exercise.name}</h3>
+          </div>
+        ))}
+      </section>
     </>
   )
 }
