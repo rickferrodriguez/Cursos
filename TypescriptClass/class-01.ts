@@ -1,4 +1,5 @@
 let firstName: string = 'Richard'
+// prueba
 
 // firstName = 2 no es posible realizar esta transformación porque es de tipo string y queremos asingnar un número
 
